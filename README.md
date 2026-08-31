@@ -1,10 +1,31 @@
 # runs-on.dev
 
 [![tests](https://github.com/zordhalo/runs-on.dev/actions/workflows/test.yml/badge.svg)](https://github.com/zordhalo/runs-on.dev/actions/workflows/test.yml)
+[![license: MIT](https://img.shields.io/badge/license-MIT-informational)](./LICENSE)
+[![runs-on.dev](https://img.shields.io/badge/site-runs--on.dev-black)](https://runs-on.dev)
 
-A free subdomain registry. Sign in with GitHub, claim a name, point it at
-your own hosting. `lucas.runs-on.dev` is live right now, and yours can be
-too in about a minute.
+```
+$ open https://runs-on.dev
+sign in with GitHub, type: yourname
+```
+
+`domains/yourname.json`, written the moment you claim it:
+
+```json
+{
+  "name": "yourname",
+  "owner": { "github": "yourname" },
+  "claimedAt": "2026-01-01T00:00:00.000Z",
+  "records": {}
+}
+```
+
+A free subdomain registry. Sign in with GitHub, claim a name, and
+`yourname.runs-on.dev` is live within seconds, no DNS to configure.
+`lucas.runs-on.dev` is live right now.
+
+98 tests. MIT licensed. One name per GitHub account. A subdomain
+registry, not a TLD.
 
 ## Why this exists
 
@@ -13,115 +34,75 @@ evaluation fee alone is $227,000, before you've built or run a registry to
 back it. That's not a plausible way to get a custom-looking address for a
 side project.
 
-`runs-on.dev` gets the same feeling — a distinctive ending instead of
-`vercel.app` or `github.io` — for the price of one domain, about $10 a
-year, by giving away subdomains under it. This is a subdomain registry, not
-a TLD. Every name you claim lives under `runs-on.dev`, which Advance Labs
-registered and is responsible for. Saying that plainly, instead of dressing
-it up as something bigger, is the whole basis for trusting it. There's
-prior art doing exactly this: [is-a.dev](https://www.is-a.dev),
+`runs-on.dev` gets the same feeling: a distinctive ending instead of
+`vercel.app` or `github.io`, for the price of one domain, about $10 a
+year, by giving away subdomains under it. This is a subdomain registry,
+not a TLD. Every name you claim lives under `runs-on.dev`, which Advance
+Labs registered and is responsible for. Saying that plainly, instead of
+dressing it up as something bigger, is the whole basis for trusting it.
+There's prior art doing exactly this: [is-a.dev](https://www.is-a.dev),
 [js.org](https://js.org), [eu.org](https://eu.org).
 
 ## Claim a name
 
-Go to [runs-on.dev](https://runs-on.dev), sign in with GitHub, and type the
-name you want. If it's available, claiming it writes a record to
-`domains/<name>.json` in this repo, and the name is live within seconds —
-no DNS to configure. See [docs/claiming.md](./docs/claiming.md) for
-eligibility rules and why they exist.
+Go to [runs-on.dev](https://runs-on.dev), sign in with GitHub, and type
+the name you want. If it's available, claiming it writes a record to
+`domains/<name>.json` in this repo, as shown above, and the name is live
+within seconds. One name per GitHub account. See
+[docs/claiming.md](./docs/claiming.md) for eligibility rules, the
+per-account limit, and why they exist.
 
 ## Point it at your own hosting
 
 By default a claimed name serves a small profile card built from your
-GitHub account. To point it at your own site instead, edit its record and
-open a pull request:
+GitHub account. To point it at your own site, forward email, or a plain
+redirect instead, edit its record and open a pull request:
 
 1. Fork this repo.
-2. Edit `domains/<name>.json`, adding a `CNAME`, `A`, or `TXT` record under
-   `records`.
+2. Edit `domains/<name>.json`, adding a record under `records` (and
+   optionally `subdomains`, for a one-level-deep entry like `_atproto`).
 3. Open a pull request. CI validates the change against
    [`schema/record.schema.json`](./schema/record.schema.json); once it's
    green and merged, a workflow pushes the record to DNS automatically.
 
-Worked examples, verified against the schema so a straight copy-paste
-passes CI:
+| Type | Shape | Coexistence |
+| --- | --- | --- |
+| `CNAME` | a hostname string | Alone: cannot sit next to `A`, `TXT`, or `MX`. |
+| `A` | 1+ IPv4 addresses | With `TXT`, `MX`. |
+| `TXT` | 1+ strings, up to 255 chars each | With `A`, `MX`. |
+| `MX` | 1 to 5 `{ priority, value }` entries | With `A`, `TXT`. |
+| `URL` | one absolute `http(s)://` string | Alone: cannot sit next to anything, not allowed under `subdomains`. |
 
-### Vercel
+Nine hosting providers, a URL redirect, email forwarding, a Bluesky
+handle, and Discord verification, each with the exact record to copy, are
+in [docs/guides.md](./docs/guides.md). The same walkthroughs render on the
+site at `/docs/guides/<provider>` with more detail per provider; the
+markdown file is the compact version for reading here.
+
+<details>
+<summary>Two worked examples</summary>
+
+Vercel, the shortest path from claim to a live custom domain:
 
 ```json
-{
-  "name": "you",
-  "owner": { "github": "you" },
-  "claimedAt": "2026-01-01T00:00:00.000Z",
-  "records": { "CNAME": "cname.vercel-dns.com" }
-}
+"records": { "CNAME": "cname.vercel-dns.com" }
 ```
 
-Add `you.runs-on.dev` as a custom domain on the Vercel project; it gives
+Add `you.runs-on.dev` as a custom domain on the Vercel project; it shows
 you this same CNAME target.
 
-### GitHub Pages
+A Bluesky handle, which needs no hosting at all, just a subdomain entry:
 
 ```json
-{
-  "name": "you",
-  "owner": { "github": "you" },
-  "claimedAt": "2026-01-01T00:00:00.000Z",
-  "records": { "CNAME": "you.github.io" }
+"subdomains": {
+  "_atproto": { "TXT": ["did=did:plc:abc123"] }
 }
 ```
 
-Also add a `CNAME` file to the Pages repo itself containing
-`you.runs-on.dev`, per GitHub's usual custom-domain setup.
+Full record reference, the `subdomains` grammar, and why `CNAME` can't
+coexist with anything else: [docs/records.md](./docs/records.md).
 
-### Netlify
-
-```json
-{
-  "name": "you",
-  "owner": { "github": "you" },
-  "claimedAt": "2026-01-01T00:00:00.000Z",
-  "records": { "CNAME": "apex-loadbalancer.netlify.com" }
-}
-```
-
-Add `you.runs-on.dev` as a custom domain in the Netlify site's settings so
-it issues a certificate for it.
-
-### Cloudflare Pages
-
-```json
-{
-  "name": "you",
-  "owner": { "github": "you" },
-  "claimedAt": "2026-01-01T00:00:00.000Z",
-  "records": { "CNAME": "you-project.pages.dev" }
-}
-```
-
-Replace `you-project` with your Pages project's own `*.pages.dev`
-subdomain, then add `you.runs-on.dev` as a custom domain in the Pages
-project's settings.
-
-Full record reference, including `A` and `TXT` records and the
-CNAME-exclusivity rule: [docs/records.md](./docs/records.md).
-
-## The rules
-
-Everything CI checks on a `domains/**` pull request, so you can verify a PR
-yourself before opening it:
-
-- One file per pull request.
-- The path must match `domains/<name>.json`, matching
-  `^domains/([a-z0-9-]+)\.json$`.
-- Renaming a record is refused outright — claim a new name instead.
-- `owner` and `claimedAt` are immutable once set; only the recorded owner
-  may edit or remove a record.
-- New names are claimed on the site, never by pull request.
-- An owner may delete their own record by pull request; a maintainer can do
-  the same under [POLICY.md](./POLICY.md).
-
-See [`lib/pr.js`](./lib/pr.js) for the implementation CI actually runs.
+</details>
 
 ## How it works
 
@@ -129,49 +110,73 @@ A single wildcard `*.runs-on.dev` DNS record points every possible
 subdomain at one Vercel project, so an unclaimed or record-less name still
 resolves with a valid HTTPS certificate and gets served the profile-card
 page. Claiming a name is therefore a git commit, not a DNS write. Pointing
-a name at your own hosting merges a `CNAME`/`A`/`TXT` record into
-`domains/<name>.json`, and a GitHub Actions workflow pushes that exact
-record to Vercel's DNS API on merge, which then takes priority over the
-wildcard for that one name. More detail, including the two write paths and
-the token split, in [docs/architecture.md](./docs/architecture.md).
+a name at your own hosting merges a record into `domains/<name>.json`, and
+a GitHub Actions workflow pushes that exact record to Vercel's DNS API on
+merge, which then takes priority over the wildcard for that one name. More
+detail, including the two write paths and the token split, in
+[docs/architecture.md](./docs/architecture.md).
 
-## Self-hosting
+## The rules
 
-This is an open registry, not a hosted product with a private backend —
-running your own copy under a domain you own means:
+Everything CI checks on a `domains/**` pull request, so you can verify a
+PR yourself before opening it:
 
-- Fork this repo and rename it; `REGISTRY_REPO` in `.env.example` points at
-  wherever the fork lives.
+- One file per pull request.
+- The path must match `domains/<name>.json`, matching
+  `^domains/([a-z0-9-]+)\.json$`.
+- Renaming a record is refused outright. Claim a new name instead.
+- `owner` and `claimedAt` are immutable once set; only the recorded owner
+  may edit or remove a record.
+- New names are claimed on the site, never by pull request; that's the
+  only path that checks account age, public-repo count, and the
+  one-name-per-account limit.
+- An owner may delete their own record by pull request; a maintainer can
+  do the same under [POLICY.md](./POLICY.md).
+
+See [`lib/pr.js`](./lib/pr.js) for the implementation CI actually runs,
+and [docs/contributing.md](./docs/contributing.md) for the full breakdown
+of what it checks.
+
+<details>
+<summary>Self-hosting</summary>
+
+This is an open registry, not a hosted product with a private backend.
+Running your own copy under a domain you own means:
+
+- Fork this repo and rename it; `REGISTRY_REPO` in `.env.example` points
+  at wherever the fork lives.
 - Register your own domain, point a wildcard record at your deployment,
   and add it to Vercel (or adapt `scripts/sync-dns.mjs` and `lib/dns.js`
   for a different DNS provider).
-- Change `ROOT` in `proxy.js` and the hostname literals in
-  `app/page.jsx` and `app/sites/[name]/page.jsx` from `runs-on.dev` to
-  your domain.
+- Change `ROOT` in `proxy.js` and the hostname literals in `app/page.jsx`
+  and `app/sites/[name]/page.jsx` from `runs-on.dev` to your domain.
 - Create your own GitHub OAuth app and set `GITHUB_CLIENT_ID` /
   `GITHUB_CLIENT_SECRET`.
 - Review `data/reserved-*.json` and adjust `lib/eligibility.js` for your
   own abuse tolerance.
 
-## Local development
+</details>
+
+<details>
+<summary>Local development</summary>
 
 ```bash
 npm install
 npm run dev
 ```
 
-The claim flow needs a signed-in GitHub session, and the session and OAuth
-cookies are set `Secure` (see `app/api/auth/github/route.js` and
+The claim flow needs a signed-in GitHub session, and the session and
+OAuth cookies are set `Secure` (see `app/api/auth/github/route.js` and
 `.../callback/route.js`). A `Secure` cookie is dropped by the browser over
 plain HTTP, so the GitHub sign-in flow cannot be exercised on
-`http://localhost`. This is correct for production: `runs-on.dev` is on the
-HSTS preload list, so it's always HTTPS there, and a cookie that only ever
-travels over HTTPS shouldn't get a `Secure`-free code path just for local
-convenience.
+`http://localhost`. This is correct for production: `runs-on.dev` is on
+the HSTS preload list, so it's always HTTPS there, and a cookie that only
+ever travels over HTTPS shouldn't get a `Secure`-free code path just for
+local convenience.
 
 To exercise sign-in locally, serve the app over HTTPS with a
-locally-trusted certificate, [mkcert](https://github.com/FiloSottile/mkcert)
-being the simplest way:
+locally-trusted certificate,
+[mkcert](https://github.com/FiloSottile/mkcert) being the simplest way:
 
 ```bash
 mkcert -install
@@ -180,10 +185,12 @@ mkcert localhost
 
 Then run `next dev` behind a TLS-terminating proxy pointed at it, and set
 `APP_ORIGIN` to the `https://` URL you're serving from so the OAuth
-redirect URI matches. Everything that doesn't touch sign-in — name
-validation, schema checks, the blocklist, the record UI — works over plain
+redirect URI matches. Everything that doesn't touch sign-in, name
+validation, schema checks, the blocklist, the record UI, works over plain
 `http://localhost` without any of this. See
 [.env.example](./.env.example) for every variable the app reads.
+
+</details>
 
 ## Contributing
 
@@ -191,19 +198,25 @@ Bug fixes, blocklist additions, and doc improvements are welcome. See
 [docs/contributing.md](./docs/contributing.md) for how to add to the
 blocklists, run the tests, and what CI checks.
 
+```bash
+npm install
+npm test
+```
+
 ## License
 
 The code in this repository is [MIT licensed](./LICENSE). The bundled
 profanity blocklist (`data/reserved-words.json`) is seeded from
 [LDNOOBW/List-of-Dirty-Naughty-Obscene-and-Otherwise-Bad-Words](https://github.com/LDNOOBW/List-of-Dirty-Naughty-Obscene-and-Otherwise-Bad-Words)
 (English list) and keeps its own
-[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) license — see
+[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) license; see
 [data/README.md](./data/README.md).
 
 ## Credits
 
 The idea of giving away free subdomains under one registered domain isn't
-new; credit to [is-a.dev](https://www.is-a.dev) for the prior art.
+new; credit to [is-a.dev](https://www.is-a.dev) for the prior art, and to
+[js.org](https://js.org) and [eu.org](https://eu.org) for more of it.
 
 ---
 

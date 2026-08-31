@@ -20,13 +20,13 @@ against [`schema/record.schema.json`](../schema/record.schema.json) and
 The subdomain, lowercase. Validated by `lib/name.js`: 2–32 characters,
 `[a-z0-9]` with internal hyphens (never leading or trailing), and no
 punycode (`xn--` prefixes and `--` at the third/fourth character are
-rejected). Must match the filename — `domains/you.json` must contain
+rejected). Must match the filename: `domains/you.json` must contain
 `"name": "you"`.
 
 ### `owner`
 
 Exactly one key, `github`, the GitHub login that owns the record. Set once
-at claim time and immutable by pull request afterward — `lib/pr.js` rejects
+at claim time and immutable by pull request afterward; `lib/pr.js` rejects
 any PR that changes it.
 
 ### `claimedAt`
@@ -37,7 +37,7 @@ pull request.
 ### `records`
 
 An object holding zero or more record types. An empty `records` object is
-valid — it's the default state right after claiming, and it means the name
+valid. It's the default state right after claiming, and it means the name
 serves the built-in profile card instead of pointing anywhere else.
 
 | Type | Shape | Notes |
@@ -46,12 +46,12 @@ serves the built-in profile card instead of pointing anywhere else.
 | `A` | a non-empty array of IPv4 addresses | One DNS record is created per address. |
 | `TXT` | a non-empty array of strings, each up to 255 characters | One DNS record per string. |
 | `MX` | a non-empty array (max 5) of `{ "priority": 0-65535, "value": "<hostname>" }` | Cannot appear alongside `CNAME`; may coexist with `A` and `TXT`. |
-| `URL` | a single absolute `http://` or `https://` string | Cannot appear alongside any other record type. No DNS record is created — see [URL redirects](#url-redirects) below. |
+| `URL` | a single absolute `http://` or `https://` string | Cannot appear alongside any other record type. No DNS record is created; see [URL redirects](#url-redirects) below. |
 
 ### `subdomains`
 
 An optional object, keyed by label, letting an owner set records at a
-subdomain of their claimed name instead of at the name itself — for example
+subdomain of their claimed name instead of at the name itself, for example
 `_atproto.you` for a Bluesky handle or `_discord.you` for Discord
 verification.
 
@@ -62,12 +62,12 @@ verification.
 ```
 
 - At most 10 entries.
-- Each label matches `^_?[a-z0-9]([a-z0-9-]{0,61}[a-z0-9])?$` — the same
+- Each label matches `^_?[a-z0-9]([a-z0-9-]{0,61}[a-z0-9])?$`, the same
   grammar as `name`, plus one optional leading underscore, and no dots (a
   subdomain is exactly one level deep).
 - Each value holds `A`, `TXT`, `CNAME`, or `MX` under the same coexistence
   rules as the root `records` object. `URL` is not allowed on a
-  subdomain — the app only ever looks up the claimed name itself, so a
+  subdomain. The app only ever looks up the claimed name itself, so a
   redirect record there could never be served.
 - The resulting full name (`<label>.<name>.runs-on.dev`) must stay within
   the 253-character DNS name limit.
@@ -77,7 +77,7 @@ so `_atproto` under `you` becomes `_atproto.you`.
 
 ## Why CNAME can't coexist with other record types
 
-This isn't a rule the registry invented — it's a DNS protocol constraint.
+This isn't a rule the registry invented. It's a DNS protocol constraint.
 A CNAME record aliases a name to another name entirely, and the DNS spec
 doesn't allow a name that has a CNAME to have any other record type
 alongside it (an A record at the same name, for instance, would leave a
@@ -140,7 +140,7 @@ project's settings.
 "records": { "URL": "https://github.com/you" }
 ```
 
-The only record type that needs no hosting at all — a plain short link to a
+The only record type that needs no hosting at all: a plain short link to a
 profile, project, or anything else. See [URL redirects](#url-redirects)
 below for how this is served and what's rejected.
 
@@ -174,17 +174,17 @@ actual DID (Settings → Advanced → your DID, in the Bluesky app).
 
 ## URL redirects
 
-A `URL` record has no DNS representation — a `CNAME`, `A`, or `TXT` record
+A `URL` record has no DNS representation. A `CNAME`, `A`, or `TXT` record
 is a DNS-level pointer, but a `URL` redirect is served by the app itself.
 The wildcard `*.runs-on.dev` record already routes every claimed name to
 the app, so when a record's `records` object holds only `URL`,
 `app/sites/[name]/page.jsx` issues a 307 redirect to that URL instead of
 rendering the profile card. `lib/dns.js`'s `planDnsChanges` ignores `URL`
-entirely — it plans no DNS change for it.
+entirely; it plans no DNS change for it.
 
 Because this makes a `runs-on.dev` name an open redirector for whatever URL
 is in the file, the target is validated as an absolute `http://` or
-`https://` URL and nothing else — `javascript:`, `data:`, `vbscript:`, and
+`https://` URL and nothing else. `javascript:`, `data:`, `vbscript:`, and
 protocol-relative (`//evil.com`) values are all rejected. This is enforced
 twice: in `lib/schema.js`'s `validateRecord` (so CI refuses a bad value at
 review time) and again at render time in `page.jsx` (so a record merged

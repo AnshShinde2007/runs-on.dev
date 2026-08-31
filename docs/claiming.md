@@ -19,7 +19,7 @@
 
 The write is an atomic create: no `sha` is sent, so GitHub itself refuses
 to overwrite a file that already exists. That's what stops two people
-claiming the same name in a race — whoever's request lands first wins, and
+claiming the same name in a race: whoever's request lands first wins, and
 the second gets `409 taken`. See `putRecord` in `lib/registry.js`.
 
 Once the file exists, the name resolves immediately: `*.runs-on.dev` is a
@@ -49,11 +49,24 @@ a real developer and expensive for a bot farm to fake at scale, which is
 the actual goal: keep the barrier low for genuine users and high for a
 land-grab.
 
-### What isn't enforced (yet)
+### The one-name-per-account limit
 
-There's currently no limit on how many names a single GitHub account can
-claim — `lib/eligibility.js` and `lib/claim.js` don't check that. If you're
-relying on a hard one-name-per-account cap, don't; it isn't there today.
+Each GitHub account may hold one claimed name at a time, enforced by
+`evaluateClaim` in `lib/claim.js`: `MAX_NAMES_PER_ACCOUNT` is `1`, and a
+claim past that returns `403 limit_reached`. `POST /api/claim`
+(`app/api/claim/route.js`) tracks how many names an account owns in a
+per-account index file, `owners/<login>.json`, read with `getOwnerIndex`
+and written with `putOwnerIndex` (both in `lib/owners.js`). A successful
+claim appends the new name to that account's index right after the record
+itself is written.
+
+This closes the same land-grab door the eligibility rules open partway:
+even a 30-day-old account with a real repo could otherwise sweep a long
+list of short names. The index write happens after the record write and is
+not atomic with it, so a claim that races the same account twice in a
+narrow window can, in the worst case, leave that account owning one name
+more than the limit. The record write itself stays safe either way, since
+GitHub's Contents API refuses to create a file that already exists.
 
 ## Reserved names
 
@@ -62,7 +75,7 @@ relying on a hard one-name-per-account cap, don't; it isn't there today.
 Three lists back this, documented in [`data/README.md`](../data/README.md):
 infrastructure names the registry itself needs, brands actually
 impersonated in the wild, and an English profanity/slur list. Matching is
-exact (case-insensitive, trimmed) — no substring matching, so a reserved
+exact (case-insensitive, trimmed), no substring matching, so a reserved
 word appearing inside a longer valid name is fine.
 
 ## Releasing a name

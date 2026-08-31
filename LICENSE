@@ -25,4 +25,4 @@ SOFTWARE.
 This MIT license covers the code in this repository only. The bundled
 profanity word list at `data/reserved-words.json` is seeded from
 LDNOOBW/List-of-Dirty-Naughty-Obscene-and-Otherwise-Bad-Words and keeps its
-own CC BY 4.0 license — see `data/README.md` and the README's Credits section.
+own CC BY 4.0 license. See `data/README.md` and the README's Credits section.
