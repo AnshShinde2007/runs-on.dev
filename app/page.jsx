@@ -1,21 +1,34 @@
 import { cookies } from 'next/headers';
 import ClaimForm from './claim-form.jsx';
+import JsonLd from './components/JsonLd.jsx';
+import { Section, Quote } from './components/Section.jsx';
 import { readSession } from '../lib/session.js';
 
-function Section({ title, children }) {
-  return (
-    <section className="mt-10">
-      <h2 className="border-b border-(--color-accent) pb-2 text-lg font-bold text-(--color-accent)">
-        {title}
-      </h2>
-      <div className="mt-4 space-y-3">{children}</div>
-    </section>
-  );
-}
+export const metadata = {
+  title: 'runs-on.dev — free subdomains',
+  description: 'Claim your own name.runs-on.dev in seconds. Free, forever.',
+  alternates: { canonical: 'https://runs-on.dev' },
+};
 
-function Quote({ children }) {
-  return <p className="border-l-2 border-(--color-edge) pl-4 text-sm leading-relaxed">{children}</p>;
-}
+const websiteJsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebSite',
+      '@id': 'https://runs-on.dev/#website',
+      url: 'https://runs-on.dev',
+      name: 'runs-on.dev',
+      description: 'A free subdomain registry. Claim your own name.runs-on.dev in seconds.',
+      publisher: { '@id': 'https://advancelabs.dev/#organization' },
+    },
+    {
+      '@type': 'Organization',
+      '@id': 'https://advancelabs.dev/#organization',
+      name: 'Advance Labs',
+      url: 'https://advancelabs.dev',
+    },
+  ],
+};
 
 export default async function Home() {
   const raw = (await cookies()).get('session')?.value;
@@ -23,6 +36,8 @@ export default async function Home() {
 
   return (
     <main className="mx-auto max-w-3xl px-6 py-12">
+      <JsonLd data={websiteJsonLd} />
+
       <div className="border border-(--color-edge) bg-(--color-panel) px-6 py-14 text-center">
         <span className="text-4xl tracking-widest text-(--color-accent)">.runs-on.dev</span>
       </div>
@@ -44,9 +59,11 @@ export default async function Home() {
 
       <Section title="Important links">
         <ul className="list-disc space-y-1 pl-6 text-sm text-(--color-accent)">
+          <li><a href="/docs">Point your name at your own hosting</a></li>
+          <li><a href="/about">About runs-on.dev</a></li>
+          <li><a href="/faq">FAQ</a></li>
+          <li><a href="/policy">Policy</a></li>
           <li><a href="https://github.com/zordhalo/runs-on.dev">Registry on GitHub</a></li>
-          <li><a href="https://github.com/zordhalo/runs-on.dev/blob/main/README.md">How to point your name</a></li>
-          <li><a href="https://github.com/zordhalo/runs-on.dev/blob/main/POLICY.md">Policy</a></li>
         </ul>
       </Section>
 
@@ -56,10 +73,6 @@ export default async function Home() {
           abuse@runs-on.dev and it will be reclaimed.
         </Quote>
       </Section>
-
-      <footer className="mt-16 border-l-2 border-(--color-edge) pl-4 text-sm text-(--color-muted)">
-        <p>© 2026 runs-on.dev — a project by Advance Labs.</p>
-      </footer>
     </main>
   );
 }

@@ -1,0 +1,50 @@
+// Plain-text summary for AI assistants and crawlers. Regenerated on each
+// deploy from static facts below, no data fetch needed.
+export const dynamic = 'force-static';
+
+function block(title, lines) {
+  return `## ${title}\n\n${lines.filter(Boolean).join('\n')}\n`;
+}
+
+function buildLlmsTxt() {
+  const sections = [
+    '# runs-on.dev\n\n> A free subdomain registry. Sign in with GitHub, claim a name like you.runs-on.dev, and point it at your own hosting.\n',
+
+    block('What this is', [
+      'runs-on.dev is a subdomain registry, not a top-level domain. A real TLD means an ICANN application (the 2026 round\'s evaluation fee alone is $227,000) plus operating a registry. This gets the same distinctive-address feeling for about $10 a year by giving away subdomains under one registered domain.',
+      'Prior art: is-a.dev, js.org, eu.org.',
+    ]),
+
+    block('How to claim', [
+      'Go to https://runs-on.dev, sign in with GitHub, and type a name. If it\'s available, claiming it writes a record to domains/<name>.json in the public registry and the name is live within seconds, no DNS to configure.',
+      'Eligibility: the GitHub account must be at least 30 days old with at least one public repository. One name per account.',
+    ]),
+
+    block('How to point a name at your own hosting', [
+      'Edit domains/<name>.json in a pull request, adding a CNAME, A, or TXT record. CI validates it against the schema; once merged, DNS is updated automatically. Worked examples for Vercel, GitHub Pages, Netlify, and Cloudflare Pages: https://runs-on.dev/docs',
+    ]),
+
+    block('The rules', [
+      'Names are free and may be reclaimed if dormant, or immediately for impersonation, phishing, malware, or illegal content, no warning required. Full policy: https://runs-on.dev/policy',
+      'Report abuse: abuse@runs-on.dev',
+    ]),
+
+    block('Links', [
+      '- Claim a name: https://runs-on.dev',
+      '- Hosting docs: https://runs-on.dev/docs',
+      '- About: https://runs-on.dev/about',
+      '- FAQ: https://runs-on.dev/faq',
+      '- Policy: https://runs-on.dev/policy',
+      '- Registry source: https://github.com/zordhalo/runs-on.dev',
+      '- Operated by Advance Labs: https://advancelabs.dev',
+    ]),
+  ];
+
+  return sections.join('\n');
+}
+
+export function GET() {
+  return new Response(buildLlmsTxt(), {
+    headers: { 'content-type': 'text/plain; charset=utf-8' },
+  });
+}
