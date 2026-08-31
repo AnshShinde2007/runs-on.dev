@@ -22,7 +22,6 @@ sign in with GitHub, type: yourname
 
 A free subdomain registry. Sign in with GitHub, claim a name, and
 `yourname.runs-on.dev` is live within seconds, no DNS to configure.
-`lucas.runs-on.dev` is live right now.
 
 98 tests. MIT licensed. One name per GitHub account. A subdomain
 registry, not a TLD.
