@@ -47,7 +47,11 @@ if (!filesRes.ok) {
 const files = await filesRes.json();
 
 const result = await validateChangeset({
-  files: files.map((f) => ({ filename: f.filename, status: f.status })),
+  files: files.map((f) => ({
+    filename: f.filename,
+    status: f.status,
+    previous_filename: f.previous_filename,
+  })),
   prAuthor: user.login,
   readFile: (p) => readAt(p, HEAD_SHA),
   readBase: (p) => readAt(p, BASE_SHA),

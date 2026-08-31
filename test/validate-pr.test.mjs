@@ -97,3 +97,24 @@ test('rejects a new file claiming a reserved name', async () => {
   });
   assert.equal(out.ok, false);
 });
+
+test('rejects a renamed file', async () => {
+  const out = await validateChangeset({
+    files: [{ filename: 'domains/attacker.json', status: 'renamed', previous_filename: 'domains/lucas.json' }],
+    prAuthor: 'attacker',
+    readFile: async () => ({ ...owned, name: 'attacker', owner: { github: 'attacker' } }),
+    readBase: async () => null,
+  });
+  assert.equal(out.ok, false);
+  assert.ok(out.errors.some((e) => e.includes('renam')));
+});
+
+test('rejects a rename even when only previous_filename is set', async () => {
+  const out = await validateChangeset({
+    files: [{ filename: 'domains/attacker.json', status: 'modified', previous_filename: 'domains/lucas.json' }],
+    prAuthor: 'attacker',
+    readFile: async () => ({ ...owned, name: 'attacker', owner: { github: 'attacker' } }),
+    readBase: async () => null,
+  });
+  assert.equal(out.ok, false);
+});

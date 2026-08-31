@@ -12,7 +12,14 @@ jobs:
   validate:
     runs-on: ubuntu-latest
     steps:
+      # Check out the BASE branch, never the PR's merge commit. `actions/checkout` with no
+      # `ref` checks out the pull request's own content, so the job would run the PR's copy
+      # of lib/pr.js and scripts/validate-pr.mjs — a PR that rewrites validateChangeset to
+      # return { ok: true } would approve itself. The validator reads the PR's files over
+      # the API, so it never needs the PR's working tree.
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.base.sha }}
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
