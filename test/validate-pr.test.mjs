@@ -109,6 +109,38 @@ test('rejects a renamed file', async () => {
   assert.ok(out.errors.some((e) => e.includes('renam')));
 });
 
+test('rejects a new name claimed by pull request', async () => {
+  const out = await validateChangeset({
+    files: [{ filename: 'domains/newname.json', status: 'added' }],
+    prAuthor: 'zordhalo',
+    readFile: async () => ({ ...owned, name: 'newname' }),
+    readBase: async () => null,
+  });
+  assert.equal(out.ok, false);
+  assert.ok(out.errors.some((e) => e.includes('not by pull request')));
+});
+
+test('allows an owner to remove their own record', async () => {
+  const out = await validateChangeset({
+    files: [{ filename: 'domains/lucas.json', status: 'removed' }],
+    prAuthor: 'zordhalo',
+    readFile: async () => null,
+    readBase: async () => base,
+  });
+  assert.deepEqual(out, { ok: true, errors: [] });
+});
+
+test('rejects a non-owner removing a record', async () => {
+  const out = await validateChangeset({
+    files: [{ filename: 'domains/lucas.json', status: 'removed' }],
+    prAuthor: 'attacker',
+    readFile: async () => null,
+    readBase: async () => base,
+  });
+  assert.equal(out.ok, false);
+  assert.ok(out.errors.some((e) => e.includes('owner')));
+});
+
 test('rejects a rename even when only previous_filename is set', async () => {
   const out = await validateChangeset({
     files: [{ filename: 'domains/attacker.json', status: 'modified', previous_filename: 'domains/lucas.json' }],

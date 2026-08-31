@@ -49,18 +49,42 @@ async function existingFor(name) {
   }
 }
 
+async function deleteStale(name) {
+  for (const stale of await existingFor(name)) {
+    const res = await vercel(`/v2/domains/records/${stale.id}`, { method: 'DELETE' });
+    // A rejected delete must stop the sync here: continuing on to create the new
+    // records would leave the stale ones live alongside them, with a green
+    // workflow log claiming everything is in sync.
+    if (!res.ok) {
+      console.error(`sync-dns: failed to delete ${stale.type} ${stale.name}: ${res.status} ${res.statusText}`);
+      process.exit(1);
+    }
+    console.log(`deleted ${stale.type} ${stale.name}`);
+  }
+}
+
 for (const file of changed) {
   const match = /^domains\/([a-z0-9-]+)\.json$/.exec(file);
   if (!match) continue;
 
   const name = match[1];
-  const record = JSON.parse(await readFile(file, 'utf8'));
+
+  let record;
+  try {
+    record = JSON.parse(await readFile(file, 'utf8'));
+  } catch (err) {
+    if (err.code !== 'ENOENT') throw err;
+    // The record file is gone (owner released the name, or a maintainer removed
+    // it). Without this, readFile throws and the workflow crashes here, leaving
+    // the ex-owner's DNS live indefinitely.
+    await deleteStale(name);
+    console.log(`${name}: record removed, DNS cleared`);
+    continue;
+  }
+
   const desired = planDnsChanges(record);
 
-  for (const stale of await existingFor(name)) {
-    await vercel(`/v2/domains/records/${stale.id}`, { method: 'DELETE' });
-    console.log(`deleted ${stale.type} ${stale.name}`);
-  }
+  await deleteStale(name);
 
   for (const change of desired) {
     const res = await vercel(`/v2/domains/${DOMAIN}/records`, {
