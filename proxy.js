@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server';
+import { validateName } from './lib/name.js';
 
 const ROOT = 'runs-on.dev';
 
@@ -21,8 +22,16 @@ export function proxy(request) {
 
   if (!host.endsWith(`.${ROOT}`)) return NextResponse.next();
 
-  const name = host.slice(0, -1 * (ROOT.length + 1));
+  const name = host.slice(0, -1 * (ROOT.length + 1)).toLowerCase();
   if (name.includes('.')) return NextResponse.next();
+
+  // Validate before rewriting. The card route spends an authenticated GitHub request
+  // per render, drawn from the same quota the claim path depends on, so an unvalidated
+  // Host header would let anyone burn that budget for free and push real claims into
+  // the 503 path. Same rule /api/claim and /api/check already apply.
+  if (!validateName(name).ok) {
+    return new NextResponse('not found', { status: 404 });
+  }
 
   return NextResponse.rewrite(new URL(`/sites/${name}${request.nextUrl.pathname}`, request.url));
 }

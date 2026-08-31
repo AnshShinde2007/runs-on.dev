@@ -2,9 +2,14 @@ import { createHmac, timingSafeEqual } from 'node:crypto';
 import { revalidatePath } from 'next/cache';
 
 export async function POST(request) {
+  const secret = process.env.GITHUB_WEBHOOK_SECRET;
+  if (!secret) {
+    return new Response('webhook secret not configured', { status: 503 });
+  }
+
   const raw = await request.text();
   const signature = request.headers.get('x-hub-signature-256') ?? '';
-  const expected = `sha256=${createHmac('sha256', process.env.GITHUB_WEBHOOK_SECRET).update(raw).digest('hex')}`;
+  const expected = `sha256=${createHmac('sha256', secret).update(raw).digest('hex')}`;
 
   const a = Buffer.from(signature);
   const b = Buffer.from(expected);
