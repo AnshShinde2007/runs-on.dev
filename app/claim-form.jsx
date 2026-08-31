@@ -133,12 +133,14 @@ export default function ClaimForm({ signedIn }) {
             spellCheck={false}
             size={1}
             style={{ width: inputWidth ? `${inputWidth}px` : undefined }}
-            className="border-b-2 border-(--color-signal) bg-transparent outline-none placeholder:text-(--color-muted)/60 focus-visible:border-b-4"
+            className="border-b-2 border-(--color-signal) bg-transparent text-[0.94em] outline-none placeholder:text-(--color-muted)/60 focus-visible:border-b-4"
           />
+          {/* Measures the input's width. Its font MUST match the input exactly,
+              including text-[0.94em], or the brackets stop hugging the text. */}
           <span
             ref={mirrorRef}
             aria-hidden="true"
-            className="pointer-events-none absolute top-0 left-0 -z-10 whitespace-pre opacity-0"
+            className="pointer-events-none absolute top-0 left-0 -z-10 text-[0.94em] whitespace-pre opacity-0"
           >
             {displayName}
           </span>
