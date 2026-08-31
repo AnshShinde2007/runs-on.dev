@@ -1,0 +1,30 @@
+name: sync-dns
+
+on:
+  push:
+    branches: [main]
+    paths: ['domains/**']
+
+permissions:
+  contents: read
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - id: changed
+        run: |
+          echo 'files<<EOF' >> $GITHUB_OUTPUT
+          git diff --name-only HEAD^ HEAD -- domains/ >> $GITHUB_OUTPUT
+          echo 'EOF' >> $GITHUB_OUTPUT
+      - run: node scripts/sync-dns.mjs
+        env:
+          CHANGED_FILES: ${{ steps.changed.outputs.files }}
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_TEAM_ID: ${{ secrets.VERCEL_TEAM_ID }}
