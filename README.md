@@ -1,6 +1,9 @@
 <p align="center">
   <a href="https://runs-on.dev">
-    <img src="https://runs-on.dev/opengraph-image" alt="runs-on.dev" width="820">
+    <picture>
+      <source media="(prefers-color-scheme: light)" srcset="https://runs-on.dev/opengraph-image">
+      <img src="https://runs-on.dev/banner-dark" alt="runs-on.dev" width="820">
+    </picture>
   </a>
 </p>
 
