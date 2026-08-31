@@ -72,7 +72,8 @@ export default async function Home() {
 
       <Section title="Important links">
         <ul className="space-y-1.5 text-sm sm:text-base">
-          <li><a className="text-(--color-signal) underline" href="/docs">Point your name at your own hosting</a></li>
+          <li><a className="text-(--color-signal) underline" href="/docs/quickstart">Quickstart</a></li>
+          <li><a className="text-(--color-signal) underline" href="/docs/guides">Guides: point your name at your own hosting</a></li>
           <li><a className="text-(--color-signal) underline" href="/about">About runs-on.dev</a></li>
           <li><a className="text-(--color-signal) underline" href="/faq">FAQ</a></li>
           <li><a className="text-(--color-signal) underline" href="/policy">Policy</a></li>

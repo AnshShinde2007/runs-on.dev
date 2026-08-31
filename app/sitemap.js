@@ -3,7 +3,24 @@
 // site's route tree, so they don't belong in its sitemap.
 export default function sitemap() {
   const now = new Date();
-  const routes = ['', '/docs', '/about', '/faq', '/policy'];
+  const routes = [
+    '', '/about', '/faq', '/policy',
+    '/docs', '/docs/quickstart', '/docs/records', '/docs/resources',
+    '/docs/guides',
+    '/docs/guides/url-redirect',
+    '/docs/guides/vercel',
+    '/docs/guides/netlify',
+    '/docs/guides/github-pages',
+    '/docs/guides/cloudflare-pages',
+    '/docs/guides/render',
+    '/docs/guides/railway',
+    '/docs/guides/firebase',
+    '/docs/guides/replit',
+    '/docs/guides/codeberg-pages',
+    '/docs/guides/email-forwarding',
+    '/docs/guides/bluesky-handle',
+    '/docs/guides/discord-verification',
+  ];
 
   return routes.map((route) => ({
     url: `https://runs-on.dev${route}`,

@@ -21,7 +21,8 @@ function buildLlmsTxt() {
     ]),
 
     block('How to point a name at your own hosting', [
-      'Edit domains/<name>.json in a pull request, adding a CNAME, A, or TXT record. CI validates it against the schema; once merged, DNS is updated automatically. Worked examples for Vercel, GitHub Pages, Netlify, and Cloudflare Pages: https://runs-on.dev/docs',
+      'Edit domains/<name>.json in a pull request, adding one or more records. CI validates it against the schema; once merged, DNS is updated automatically. Supported types: CNAME (a hostname, alone), A (array of IPv4), TXT (array of strings, up to 255 chars each), MX (array of { priority, value }, 1 to 5 entries, may coexist with A and TXT), and URL (an absolute http(s) redirect served by the app itself, alone, no DNS). An optional subdomains object adds one-level-deep records (e.g. _atproto or _discord) under the claimed name, same types except URL, up to 10 entries.',
+      'Full record reference: https://runs-on.dev/docs/records. Copy-paste guides for hosts (Vercel, Netlify, GitHub Pages, Cloudflare Pages, Render, Railway, Firebase Hosting, Replit, Codeberg Pages), email forwarding, and social verification (Bluesky, Discord): https://runs-on.dev/docs/guides',
     ]),
 
     block('The rules', [
@@ -31,7 +32,10 @@ function buildLlmsTxt() {
 
     block('Links', [
       '- Claim a name: https://runs-on.dev',
-      '- Hosting docs: https://runs-on.dev/docs',
+      '- Docs: https://runs-on.dev/docs',
+      '- Quickstart: https://runs-on.dev/docs/quickstart',
+      '- Record reference: https://runs-on.dev/docs/records',
+      '- Guides: https://runs-on.dev/docs/guides',
       '- About: https://runs-on.dev/about',
       '- FAQ: https://runs-on.dev/faq',
       '- Policy: https://runs-on.dev/policy',
