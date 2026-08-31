@@ -1,17 +1,50 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+
+const CHECK_DEBOUNCE_MS = 300;
 
 export default function ClaimForm({ signedIn }) {
   const [name, setName] = useState('');
   const [status, setStatus] = useState(null);
+  const nameRef = useRef('');
+  const debounceRef = useRef(null);
+  const lastCheckedRef = useRef('');
+  const lastResultRef = useRef({ value: '', status: null });
+
+  useEffect(() => () => clearTimeout(debounceRef.current), []);
+
+  function onChange(value) {
+    nameRef.current = value;
+    setName(value);
+    clearTimeout(debounceRef.current);
+
+    if (value.length < 2) {
+      setStatus(null);
+      return;
+    }
+
+    debounceRef.current = setTimeout(() => check(value), CHECK_DEBOUNCE_MS);
+  }
 
   async function check(value) {
-    setName(value);
-    if (value.length < 2) return setStatus(null);
+    if (value === lastCheckedRef.current) {
+      // Already have a result for this exact name (e.g. typed, edited, then
+      // retyped back) — reuse it instead of spending another API call.
+      if (nameRef.current === value) setStatus(lastResultRef.current.status);
+      return;
+    }
+    lastCheckedRef.current = value;
+
     const res = await fetch(`/api/check?name=${encodeURIComponent(value)}`);
     const body = await res.json();
-    setStatus(body.available ? 'available' : body.code);
+    const result = body.available ? 'available' : body.code;
+    lastResultRef.current = { value, status: result };
+
+    // The input may have changed (or been retyped) while this was in flight —
+    // discard a response that no longer matches what's on screen.
+    if (nameRef.current !== value) return;
+    setStatus(result);
   }
 
   async function claim() {
@@ -42,7 +75,7 @@ export default function ClaimForm({ signedIn }) {
         <input
           id="claim-name"
           value={name}
-          onChange={(e) => check(e.target.value.trim().toLowerCase())}
+          onChange={(e) => onChange(e.target.value.trim().toLowerCase())}
           placeholder="e.g. lucas"
           className="flex-1 bg-transparent px-4 py-3 outline-none"
         />
