@@ -1,0 +1,59 @@
+import { test } from 'node:test';
+import assert from 'node:assert/strict';
+import { getRecord, putRecord } from '../lib/registry.js';
+
+const record = {
+  name: 'lucas',
+  owner: { github: 'zordhalo' },
+  claimedAt: '2026-08-30T19:12:04Z',
+  records: {},
+};
+
+function stubFetch(responses) {
+  const calls = [];
+  const impl = async (url, init) => {
+    calls.push({ url: String(url), init });
+    const next = responses.shift();
+    if (!next) throw new Error(`unexpected fetch: ${url}`);
+    return { ok: next.status < 400, status: next.status, json: async () => next.body ?? {} };
+  };
+  impl.calls = calls;
+  return impl;
+}
+
+test('getRecord returns null for a 404', async () => {
+  const fetchImpl = stubFetch([{ status: 404 }]);
+  assert.equal(await getRecord('nobody', { fetchImpl }), null);
+});
+
+test('getRecord decodes base64 content', async () => {
+  const content = Buffer.from(JSON.stringify(record)).toString('base64');
+  const fetchImpl = stubFetch([{ status: 200, body: { content, encoding: 'base64' } }]);
+  assert.deepEqual(await getRecord('lucas', { fetchImpl }), record);
+});
+
+test('putRecord refuses to overwrite an existing name', async () => {
+  const content = Buffer.from(JSON.stringify(record)).toString('base64');
+  const fetchImpl = stubFetch([{ status: 200, body: { content, encoding: 'base64' } }]);
+  assert.deepEqual(await putRecord(record, { token: 't', fetchImpl }), { ok: false, reason: 'exists' });
+});
+
+test('putRecord reports ratelimited on a 403', async () => {
+  const fetchImpl = stubFetch([{ status: 404 }, { status: 403 }]);
+  assert.deepEqual(await putRecord(record, { token: 't', fetchImpl }), { ok: false, reason: 'ratelimited' });
+});
+
+test('putRecord writes with a bearer token', async () => {
+  const fetchImpl = stubFetch([{ status: 404 }, { status: 201 }]);
+  assert.deepEqual(await putRecord(record, { token: 'secret-token', fetchImpl }), { ok: true });
+  const write = fetchImpl.calls[1];
+  assert.equal(write.init.method, 'PUT');
+  assert.match(write.init.headers.Authorization, /^Bearer /);
+});
+
+test('putRecord rejects a record failing schema validation before any network call', async () => {
+  const fetchImpl = stubFetch([]);
+  const out = await putRecord({ ...record, name: 'BAD' }, { token: 't', fetchImpl });
+  assert.deepEqual(out, { ok: false, reason: 'error' });
+  assert.equal(fetchImpl.calls.length, 0);
+});
