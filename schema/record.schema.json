@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "runs-on.dev registry record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["name", "owner", "claimedAt", "records"],
+  "properties": {
+    "name": { "type": "string", "pattern": "^[a-z0-9]([a-z0-9-]{0,30}[a-z0-9])?$" },
+    "owner": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["github"],
+      "properties": { "github": { "type": "string" } }
+    },
+    "claimedAt": { "type": "string", "format": "date-time" },
+    "records": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "CNAME": { "type": "string" },
+        "A": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+        "TXT": { "type": "array", "items": { "type": "string" }, "minItems": 1 }
+      }
+    }
+  }
+}
