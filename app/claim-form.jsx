@@ -133,6 +133,7 @@ function message(status, name) {
     signin_required: 'Sign in with GitHub first.',
     ineligible_age: 'Your GitHub account must be at least 30 days old.',
     ineligible_repos: 'Your GitHub account needs at least one public repository.',
+    limit_reached: 'You already have a name. One per account for now.',
   };
   return map[status] ?? 'Something went wrong.';
 }
