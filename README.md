@@ -1,15 +1,38 @@
-# runs-on.dev
+<p align="center">
+  <a href="https://runs-on.dev">
+    <img src="https://runs-on.dev/opengraph-image" alt="runs-on.dev" width="820">
+  </a>
+</p>
 
-[![tests](https://github.com/zordhalo/runs-on.dev/actions/workflows/test.yml/badge.svg)](https://github.com/zordhalo/runs-on.dev/actions/workflows/test.yml)
-[![license: MIT](https://img.shields.io/badge/license-MIT-informational)](./LICENSE)
-[![runs-on.dev](https://img.shields.io/badge/site-runs--on.dev-black)](https://runs-on.dev)
+<h1 align="center">runs-on.dev</h1>
 
-```
-$ open https://runs-on.dev
-sign in with GitHub, type: yourname
-```
+<p align="center">
+  Free subdomains for developers. Claim <code>yourname.runs-on.dev</code> in seconds,
+  then point it wherever you like.
+</p>
 
-`domains/yourname.json`, written the moment you claim it:
+<p align="center">
+  <a href="https://runs-on.dev"><b>Claim a name</b></a>
+  &nbsp;·&nbsp;
+  <a href="https://runs-on.dev/docs/quickstart">Quickstart</a>
+  &nbsp;·&nbsp;
+  <a href="https://runs-on.dev/docs/guides">Guides</a>
+  &nbsp;·&nbsp;
+  <a href="https://runs-on.dev/docs/records">Records</a>
+  &nbsp;·&nbsp;
+  <a href="https://runs-on.dev/policy">Policy</a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/zordhalo/runs-on.dev/tree/main/domains"><img alt="names claimed" src="https://img.shields.io/github/directory-file-count/zordhalo/runs-on.dev/domains?type=file&extension=json&label=names%20claimed&color=1b4dff"></a>
+  <a href="https://github.com/zordhalo/runs-on.dev/actions/workflows/test.yml"><img alt="tests" src="https://github.com/zordhalo/runs-on.dev/actions/workflows/test.yml/badge.svg"></a>
+  <a href="./LICENSE"><img alt="license: MIT" src="https://img.shields.io/badge/license-MIT-informational"></a>
+</p>
+
+---
+
+Claiming a name writes one file to this repository. That file is the record. It is the only
+thing that makes the name resolve, and you can read it without asking anyone.
 
 ```json
 {
@@ -20,11 +43,8 @@ sign in with GitHub, type: yourname
 }
 ```
 
-A free subdomain registry. Sign in with GitHub, claim a name, and
-`yourname.runs-on.dev` is live within seconds, no DNS to configure.
-
-98 tests. MIT licensed. One name per GitHub account. A subdomain
-registry, not a TLD.
+There is no hidden database. The registry is this directory, the history is the git log, and
+the rules are in `lib/`.
 
 ## Why this exists
 
