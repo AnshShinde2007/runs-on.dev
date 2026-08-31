@@ -53,6 +53,44 @@
 
 html {
   color-scheme: light dark;
+
+  /* Slim the scrollbar to the hairline weight used elsewhere. `color-scheme` above already
+     makes the bar follow the reader's preference, so this is purely about weight: the
+     default bar is heavy next to this design, and heavier still now that advancelabs.dev
+     frames this page, where a chunky native bar sits inches from the frame border.
+
+     scrollbar-width/color are the standard properties (Firefox, Chromium 121+). The
+     -webkit block covers older Chromium and Safari, which ignore them. currentColor is
+     deliberate: it resolves per scheme, so one rule covers light and dark. */
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in srgb, currentColor 24%, transparent) transparent;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  /* content-box clipping plus a transparent border is what insets the thumb, so the bar
+     reads as a thin line rather than filling the full 10px gutter. */
+  background: color-mix(in srgb, currentColor 20%, transparent);
+  border: 2px solid transparent;
+  background-clip: content-box;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: color-mix(in srgb, currentColor 34%, transparent);
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
 }
 
 body {
