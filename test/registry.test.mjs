@@ -57,3 +57,13 @@ test('putRecord rejects a record failing schema validation before any network ca
   assert.deepEqual(out, { ok: false, reason: 'error' });
   assert.equal(fetchImpl.calls.length, 0);
 });
+
+test('putRecord reports ratelimited when the existence check is rate limited', async () => {
+  const fetchImpl = stubFetch([{ status: 403 }]);
+  assert.deepEqual(await putRecord(record, { token: 't', fetchImpl }), { ok: false, reason: 'ratelimited' });
+});
+
+test('putRecord reports error when the existence check fails otherwise', async () => {
+  const fetchImpl = stubFetch([{ status: 500 }]);
+  assert.deepEqual(await putRecord(record, { token: 't', fetchImpl }), { ok: false, reason: 'error' });
+});
