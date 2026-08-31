@@ -1,8 +1,6 @@
 import { readSession } from '../../../lib/session.js';
 import { evaluateClaim } from '../../../lib/claim.js';
-import { getRecord, putRecord } from '../../../lib/registry.js';
-import { validateName } from '../../../lib/name.js';
-import { isReserved } from '../../../lib/blocklist.js';
+import { putRecord } from '../../../lib/registry.js';
 
 const TOKEN = () => process.env.REGISTRY_TOKEN;
 
@@ -14,11 +12,11 @@ export async function POST(request) {
   const raw = cookie.match(/(?:^|;\s*)session=([^;]+)/)?.[1];
   const session = raw ? readSession(raw, process.env.SESSION_SECRET) : null;
 
-  // Validate before spending a GitHub API call. An unvalidated name would otherwise
-  // reach getRecord and burn quota from the same budget the write path depends on.
-  const worthChecking = validateName(name).ok && !isReserved(name).reserved;
-  const existing = session && worthChecking ? await getRecord(name, { token: TOKEN() }) : null;
-  const decision = evaluateClaim({ name, session, existing });
+  // No pre-flight existence check: putRecord's atomic create already answers
+  // "taken" via its `exists` reason, at the same status/code, for one less
+  // GitHub request. It also degrades safely under rate limiting, unlike a
+  // pre-flight getRecord call which throws on 403/429.
+  const decision = evaluateClaim({ name, session, existing: null });
   if (!decision.ok) {
     return Response.json({ error: decision.code }, { status: decision.status });
   }

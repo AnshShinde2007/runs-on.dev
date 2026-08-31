@@ -3,6 +3,9 @@
 import { useEffect, useRef, useState } from 'react';
 
 const CHECK_DEBOUNCE_MS = 300;
+const MAX_CLAIM_RETRIES = 5;
+const RETRY_BASE_MS = 1000;
+const RETRY_CEILING_MS = 8000;
 
 export default function ClaimForm({ signedIn }) {
   const [name, setName] = useState('');
@@ -37,8 +40,8 @@ export default function ClaimForm({ signedIn }) {
     lastCheckedRef.current = value;
 
     const res = await fetch(`/api/check?name=${encodeURIComponent(value)}`);
-    const body = await res.json();
-    const result = body.available ? 'available' : body.code;
+    const body = res.ok ? await res.json().catch(() => null) : null;
+    const result = body && body.available ? 'available' : (body && body.code) || 'check_failed';
     lastResultRef.current = { value, status: result };
 
     // The input may have changed (or been retyped) while this was in flight —
@@ -47,7 +50,7 @@ export default function ClaimForm({ signedIn }) {
     setStatus(result);
   }
 
-  async function claim() {
+  async function claim(attempt = 0) {
     setStatus('claiming');
     const res = await fetch('/api/claim', {
       method: 'POST',
@@ -56,9 +59,17 @@ export default function ClaimForm({ signedIn }) {
     });
 
     if (res.status === 503) {
-      const { retryInMs } = await res.json();
-      setStatus('busy');
-      setTimeout(claim, retryInMs);
+      if (attempt >= MAX_CLAIM_RETRIES) {
+        setStatus('retry_exhausted');
+        return;
+      }
+      // Exponential backoff with jitter, capped, so a rate-limit storm doesn't
+      // turn every waiting claimant into another request against an
+      // already-exhausted quota.
+      const backoff = Math.min(RETRY_BASE_MS * 2 ** attempt, RETRY_CEILING_MS);
+      const delay = backoff / 2 + Math.random() * (backoff / 2);
+      setStatus('retrying');
+      setTimeout(() => claim(attempt + 1), delay);
       return;
     }
 
@@ -86,7 +97,7 @@ export default function ClaimForm({ signedIn }) {
 
       {signedIn ? (
         <button
-          onClick={claim}
+          onClick={() => claim()}
           disabled={status !== 'available'}
           aria-disabled={status !== 'available'}
           className="border border-(--color-accent) px-4 py-2 text-(--color-accent) disabled:opacity-40"
@@ -114,7 +125,10 @@ function message(status, name) {
     invalid_name: 'That name is not valid.',
     server_error: 'Something broke on our side. Try again.',
     claiming: 'Claiming…',
-    busy: 'Busy right now — holding your claim and retrying.',
+    retrying: 'Busy right now — holding your claim and retrying.',
+    retry_exhausted: 'Still overloaded. Try again in a few minutes.',
+    busy: 'Too busy to check right now. Try again in a moment.',
+    check_failed: 'Could not check that name. Try again.',
     claimed: `Done. ${name}.runs-on.dev is yours.`,
     signin_required: 'Sign in with GitHub first.',
     ineligible_age: 'Your GitHub account must be at least 30 days old.',

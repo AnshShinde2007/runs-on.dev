@@ -17,8 +17,22 @@ export async function POST(request) {
     return new Response('bad signature', { status: 401 });
   }
 
-  const payload = JSON.parse(raw);
-  const touched = (payload.commits ?? []).flatMap((c) => [...c.added, ...c.modified]);
+  if (request.headers.get('x-github-event') !== 'push') {
+    return Response.json({ revalidated: false, ignored: true });
+  }
+
+  let payload;
+  try {
+    payload = JSON.parse(raw);
+  } catch {
+    return new Response('bad payload', { status: 400 });
+  }
+
+  const touched = (payload.commits ?? []).flatMap((c) => [
+    ...(c.added ?? []),
+    ...(c.modified ?? []),
+    ...(c.removed ?? []),
+  ]);
 
   for (const file of touched) {
     const match = file.match(/^domains\/([a-z0-9-]+)\.json$/);

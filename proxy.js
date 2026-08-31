@@ -4,7 +4,7 @@ import { validateName } from './lib/name.js';
 const ROOT = 'runs-on.dev';
 
 export const config = {
-  matcher: ['/((?!api|_next|favicon.ico).*)'],
+  matcher: ['/((?!api|_next|favicon.ico|icon.svg).*)'],
 };
 
 export function proxy(request) {

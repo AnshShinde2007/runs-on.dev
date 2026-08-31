@@ -26,6 +26,7 @@ export async function GET(request) {
   const userRes = await fetch('https://api.github.com/user', {
     headers: { Authorization: `Bearer ${accessToken}`, Accept: 'application/vnd.github+json' },
   });
+  if (!userRes.ok) return new Response('github user lookup failed', { status: 502 });
   const user = await userRes.json();
 
   const session = signSession(
@@ -40,11 +41,10 @@ export async function GET(request) {
     process.env.SESSION_SECRET,
   );
 
-  return new Response(null, {
-    status: 302,
-    headers: {
-      Location: '/?signed-in=1',
-      'Set-Cookie': `session=${session}; Path=/; HttpOnly; Secure; SameSite=Lax; Max-Age=86400`,
-    },
-  });
+  const headersOut = new Headers();
+  headersOut.append('Location', '/?signed-in=1');
+  headersOut.append('Set-Cookie', `session=${session}; Path=/; HttpOnly; Secure; SameSite=Lax; Max-Age=86400`);
+  headersOut.append('Set-Cookie', 'oauth_state=; Path=/; HttpOnly; Secure; SameSite=Lax; Max-Age=0');
+
+  return new Response(null, { status: 302, headers: headersOut });
 }

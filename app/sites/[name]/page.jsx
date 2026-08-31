@@ -1,13 +1,20 @@
 import { notFound } from 'next/navigation';
 import { getRecord } from '../../../lib/registry.js';
 
-export const revalidate = 3600;
+// Record freshness, not the GitHub profile's: a name claimed just now must
+// stop serving a cached 404 within seconds, not up to an hour.
+export const revalidate = 30;
+
+// Wildcard DNS makes every grammar-valid hostname live, so an anonymous curl
+// loop over a few thousand names can exhaust the shared registry quota. A
+// dedicated card-read token keeps that failure mode from taking down claiming.
+const CARD_TOKEN = process.env.CARD_TOKEN ?? process.env.REGISTRY_TOKEN;
 
 async function githubProfile(login) {
   const res = await fetch(`https://api.github.com/users/${login}`, {
     headers: {
       Accept: 'application/vnd.github+json',
-      Authorization: `Bearer ${process.env.REGISTRY_TOKEN}`,
+      Authorization: `Bearer ${CARD_TOKEN}`,
     },
     next: { revalidate: 3600 },
   });
@@ -15,9 +22,14 @@ async function githubProfile(login) {
   return res.json();
 }
 
+async function fetchRecord(name) {
+  const fetchImpl = (url, init) => fetch(url, { ...init, next: { revalidate: 30 } });
+  return getRecord(name, { token: CARD_TOKEN, fetchImpl });
+}
+
 export default async function Site({ params }) {
   const { name } = await params;
-  const record = await getRecord(name, { token: process.env.REGISTRY_TOKEN });
+  const record = await fetchRecord(name);
   if (!record) notFound();
 
   const profile = await githubProfile(record.owner.github);
