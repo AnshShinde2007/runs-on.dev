@@ -191,14 +191,19 @@ Bug fixes, blocklist additions, and doc improvements are welcome. See
 [docs/contributing.md](./docs/contributing.md) for how to add to the
 blocklists, run the tests, and what CI checks.
 
+## License
+
+The code in this repository is [MIT licensed](./LICENSE). The bundled
+profanity blocklist (`data/reserved-words.json`) is seeded from
+[LDNOOBW/List-of-Dirty-Naughty-Obscene-and-Otherwise-Bad-Words](https://github.com/LDNOOBW/List-of-Dirty-Naughty-Obscene-and-Otherwise-Bad-Words)
+(English list) and keeps its own
+[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) license — see
+[data/README.md](./data/README.md).
+
 ## Credits
 
-The profanity blocklist (`data/reserved-words.json`) is seeded from
-[LDNOOBW/List-of-Dirty-Naughty-Obscene-and-Otherwise-Bad-Words](https://github.com/LDNOOBW/List-of-Dirty-Naughty-Obscene-and-Otherwise-Bad-Words)
-(English list), licensed
-[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). The idea of
-giving away free subdomains under one registered domain isn't new; credit
-to [is-a.dev](https://www.is-a.dev) for the prior art.
+The idea of giving away free subdomains under one registered domain isn't
+new; credit to [is-a.dev](https://www.is-a.dev) for the prior art.
 
 ---
 
