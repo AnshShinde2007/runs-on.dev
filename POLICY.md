@@ -16,14 +16,17 @@ circulation.
 
 The following forfeit a name on sight, no warning required:
 
-- **Impersonation** — pretending to be a person, brand, or organization you
+- **Impersonation**: pretending to be a person, brand, or organization you
   are not.
-- **Phishing** — pages designed to steal credentials, payment details, or
+- **Phishing**: pages designed to steal credentials, payment details, or
   other sensitive information.
-- **Malware** — serving or distributing malicious software.
-- **Illegal content** — anything unlawful to host or distribute.
+- **Malware**: serving or distributing malicious software.
+- **Illegal content**: anything unlawful to host or distribute.
 
 If your name is doing any of these, expect it to be pulled without notice.
+A maintainer removes it by deleting its `domains/<name>.json` file in a
+pull request; owners can release a name the same way. See
+[README.md](./README.md#what-ci-enforces) for the mechanics.
 
 ## Who is responsible
 
@@ -35,4 +38,4 @@ happening under the domain, so abuse gets removed.
 ## Reporting abuse
 
 Email **abuse@runs-on.dev** with the subdomain in question and what it is
-doing. Reports are how dormant and abusive names get found — use it.
+doing. Reports are how dormant and abusive names get found. Use it.
