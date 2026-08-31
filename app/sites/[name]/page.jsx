@@ -1,5 +1,6 @@
-import { notFound } from 'next/navigation';
+import { notFound, redirect } from 'next/navigation';
 import { getRecord } from '../../../lib/registry.js';
+import { isValidRedirectUrl } from '../../../lib/schema.js';
 
 // Record freshness, not the GitHub profile's: a name claimed just now must
 // stop serving a cached 404 within seconds, not up to an hour.
@@ -31,6 +32,18 @@ export default async function Site({ params }) {
   const { name } = await params;
   const record = await fetchRecord(name);
   if (!record) notFound();
+
+  const records = record.records ?? {};
+  if (records.URL && Object.keys(records).length === 1) {
+    // Re-validate at render time, not just at CI review time: the record
+    // could have been merged before this rule existed or before it
+    // tightened, and this is an open-redirect surface on a trusted domain.
+    // Plain redirect() (not permanentRedirect) answers with a 307 here,
+    // preserving method and intent and telling browsers not to cache the
+    // redirect permanently, unlike a 301/308.
+    if (!isValidRedirectUrl(records.URL)) notFound();
+    redirect(records.URL);
+  }
 
   const profile = await githubProfile(record.owner.github);
 

@@ -41,7 +41,14 @@ async function existingFor(name) {
     // `name` here can never be '*' or '' — it comes from the ^domains/([a-z0-9-]+)\.json$
     // match below, so the wildcard record can never be selected for deletion. Preserve
     // that invariant if this ever stops deriving the name from the filename.
-    found.push(...body.records.filter((r) => r.name === name));
+    //
+    // Also match single-level nested records (`<label>.<name>`, e.g.
+    // `_atproto.lucas`), so a subdomain that gets removed or renamed is
+    // cleaned up along with the root name instead of orphaned in DNS. The
+    // leading dot in the suffix means this can only match a genuine child of
+    // `name`, never an unrelated record that happens to end with the same
+    // characters.
+    found.push(...body.records.filter((r) => r.name === name || r.name.endsWith(`.${name}`)));
 
     const next = body.pagination?.next;
     if (!next) return found;
@@ -87,9 +94,13 @@ for (const file of changed) {
   await deleteStale(name);
 
   for (const change of desired) {
+    const body = { type: change.type, name: change.name, value: change.value, ttl: 3600 };
+    // Vercel's records API takes MX priority as a separate field, not folded
+    // into `value`.
+    if (change.type === 'MX') body.mxPriority = change.priority;
     const res = await vercel(`/v2/domains/${DOMAIN}/records`, {
       method: 'POST',
-      body: JSON.stringify({ type: change.type, name: change.name, value: change.value, ttl: 3600 }),
+      body: JSON.stringify(body),
     });
     if (!res.ok) {
       console.error(`failed to create ${change.type} ${change.name}: ${res.status}`);
