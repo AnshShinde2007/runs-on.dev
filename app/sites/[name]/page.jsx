@@ -35,31 +35,59 @@ export default async function Site({ params }) {
   const profile = await githubProfile(record.owner.github);
 
   return (
-    <main className="mx-auto max-w-2xl px-6 py-20">
-      <div className="border border-(--color-edge) bg-(--color-panel) p-8">
-        {profile?.avatar_url && (
-          <img
-            src={profile.avatar_url}
-            alt=""
-            width={72}
-            height={72}
-            className="border border-(--color-edge)"
-          />
-        )}
-        <h1 className="mt-6 text-2xl text-(--color-accent)">{name}.runs-on.dev</h1>
-        {profile?.name && <p className="mt-2">{profile.name}</p>}
-        {profile?.bio && <p className="mt-2 text-sm text-(--color-muted)">{profile.bio}</p>}
-        <p className="mt-6 text-sm">
-          claimed by{' '}
-          <a className="text-(--color-accent)" href={`https://github.com/${record.owner.github}`}>
-            @{record.owner.github}
-          </a>
-        </p>
+    <main className="mx-auto max-w-2xl px-6 py-16 sm:py-24">
+      <p className="font-(family-name:--font-mono) text-xs tracking-[0.14em] text-(--color-muted) uppercase">
+        domains/{name}.json
+      </p>
+
+      <div className="mt-4 border border-(--color-rule) bg-(--color-card) p-6 sm:p-8">
+        <div className="flex items-center gap-4">
+          {profile?.avatar_url && (
+            <img
+              src={profile.avatar_url}
+              alt=""
+              width={56}
+              height={56}
+              className="border border-(--color-rule)"
+            />
+          )}
+          <div>
+            <h1 className="font-(family-name:--font-display) text-2xl font-medium tracking-tight text-(--color-ink) sm:text-3xl">
+              {name}.runs-on.dev
+            </h1>
+            {profile?.name && <p className="text-sm text-(--color-muted)">{profile.name}</p>}
+          </div>
+        </div>
+
+        {profile?.bio && <p className="mt-4 text-sm leading-relaxed">{profile.bio}</p>}
+
+        <dl className="mt-6 space-y-1 border-t border-(--color-rule) pt-4 font-(family-name:--font-mono) text-xs sm:text-[13px]">
+          <div className="flex gap-2">
+            <dt className="w-24 shrink-0 text-(--color-muted)">owner</dt>
+            <dd>
+              <a
+                className="text-(--color-signal) underline"
+                href={`https://github.com/${record.owner.github}`}
+              >
+                @{record.owner.github}
+              </a>
+            </dd>
+          </div>
+          {record.claimedAt && (
+            <div className="flex gap-2">
+              <dt className="w-24 shrink-0 text-(--color-muted)">claimedAt</dt>
+              <dd className="text-(--color-ink)">{record.claimedAt}</dd>
+            </div>
+          )}
+        </dl>
       </div>
 
-      <p className="mt-6 border-l-2 border-(--color-edge) pl-4 text-sm text-(--color-muted)">
+      <p className="mt-6 text-sm text-(--color-muted)">
         This name is registered on{' '}
-        <a className="text-(--color-accent)" href="https://runs-on.dev">runs-on.dev</a>. Claim your own.
+        <a className="text-(--color-signal) underline" href="https://runs-on.dev">
+          runs-on.dev
+        </a>
+        . Claim your own.
       </p>
     </main>
   );

@@ -20,7 +20,7 @@ function Inline({ text }) {
     if (part.bold) return <strong key={i}>{part.bold}</strong>;
     if (part.link)
       return (
-        <a key={i} className="text-(--color-accent)" href={resolveHref(part.href)}>
+        <a key={i} className="text-(--color-signal) underline" href={resolveHref(part.href)}>
           {part.link}
         </a>
       );
@@ -33,11 +33,11 @@ export default function Policy() {
 
   return (
     <main className="mx-auto max-w-3xl px-6 py-12">
-      <h1 className="text-2xl font-bold text-(--color-accent)">Policy</h1>
+      <h1 className="font-(family-name:--font-display) text-3xl font-medium tracking-tight text-(--color-ink) sm:text-4xl">Policy</h1>
       <p className="mt-4 text-sm leading-relaxed">
         This page is rendered from{' '}
         <a
-          className="text-(--color-accent)"
+          className="text-(--color-signal) underline"
           href="https://github.com/zordhalo/runs-on.dev/blob/main/POLICY.md"
         >
           POLICY.md

@@ -61,7 +61,7 @@ export default function Faq() {
   return (
     <main className="mx-auto max-w-3xl px-6 py-12">
       <JsonLd data={faqJsonLd} />
-      <h1 className="text-2xl font-bold text-(--color-accent)">FAQ</h1>
+      <h1 className="font-(family-name:--font-display) text-3xl font-medium tracking-tight text-(--color-ink) sm:text-4xl">FAQ</h1>
 
       {faqs.map((f) => (
         <Section title={f.q} key={f.q}>

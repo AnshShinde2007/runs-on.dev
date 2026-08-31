@@ -6,6 +6,7 @@ const CHECK_DEBOUNCE_MS = 300;
 const MAX_CLAIM_RETRIES = 5;
 const RETRY_BASE_MS = 1000;
 const RETRY_CEILING_MS = 8000;
+const FIELD_WIDTH = 13;
 
 export default function ClaimForm({ signedIn }) {
   const [name, setName] = useState('');
@@ -77,39 +78,93 @@ export default function ClaimForm({ signedIn }) {
     setStatus(res.ok ? 'claimed' : body.error);
   }
 
+  const pending = status === 'claiming' || status === 'retrying';
+  const available = status === 'available' || status === 'claimed';
+  const negative = Boolean(status) && !pending && !available;
+  const displayName = name || 'yourname';
+
   return (
-    <div className="space-y-3">
-      <label htmlFor="claim-name" className="block text-sm text-(--color-muted)">
-        Subdomain
+    <div>
+      <label htmlFor="claim-name" className="sr-only">
+        Subdomain name
       </label>
-      <div className="flex items-center border border-(--color-edge) bg-(--color-panel)">
-        <input
-          id="claim-name"
-          value={name}
-          onChange={(e) => onChange(e.target.value.trim().toLowerCase())}
-          placeholder="e.g. lucas"
-          className="flex-1 bg-transparent px-4 py-3 outline-none"
-        />
-        <span className="px-4 text-(--color-muted)">.runs-on.dev</span>
+      <div className="flex flex-wrap items-baseline gap-x-1 gap-y-0 font-(family-name:--font-display) text-[clamp(1.9rem,6vw,3.5rem)] leading-tight font-medium tracking-tight text-(--color-ink)">
+        <span className="inline-flex flex-nowrap items-baseline">
+          <span aria-hidden="true" className="text-(--color-muted)">[</span>
+          <input
+            id="claim-name"
+            value={name}
+            onChange={(e) => onChange(e.target.value.trim().toLowerCase())}
+            placeholder="yourname"
+            autoComplete="off"
+            autoCapitalize="off"
+            spellCheck={false}
+            size={1}
+            style={{ width: `${Math.max(displayName.length, 3)}ch` }}
+            className="border-b-2 border-(--color-signal) bg-transparent px-1 outline-none placeholder:text-(--color-muted)/60"
+          />
+          <span aria-hidden="true" className="text-(--color-muted)">]</span>
+        </span>
+        <span className="text-(--color-muted)">.runs-on.dev</span>
       </div>
 
-      {status && <p className="text-sm text-(--color-accent)">{message(status, name)}</p>}
+      <div
+        key={status ?? 'idle'}
+        className="record-block mt-7 max-w-full overflow-x-auto border-l-2 py-3 pr-4 pl-4 font-(family-name:--font-mono) text-[11px] whitespace-pre sm:max-w-md sm:text-[13px]"
+        style={{ borderColor: negative ? 'var(--color-flag)' : 'var(--color-signal)' }}
+      >
+        <p className="record-field text-(--color-muted)">domains/{displayName}.json</p>
+        <p className="record-field mt-2">{'{'}</p>
+        <Field
+          name={'"name":'}
+          value={`"${displayName}",`}
+          valueClass={negative ? 'text-(--color-muted)' : 'text-(--color-ink)'}
+        />
+        <Field
+          name={'"owner":'}
+          value={`{ "github": "${signedIn ? 'you' : 'you, once you sign in'}" },`}
+        />
+        <Field
+          name={'"claimedAt":'}
+          value={`"${status === 'claimed' ? 'just now' : 'the moment you claim it'}",`}
+        />
+        <Field name={'"records":'} value="{}" />
+        <p className="record-field">{'}'}</p>
+        {status && (
+          <p className="record-field mt-2 text-(--color-muted)">// {message(status, displayName)}</p>
+        )}
+      </div>
 
-      {signedIn ? (
-        <button
-          onClick={() => claim()}
-          disabled={status !== 'available'}
-          aria-disabled={status !== 'available'}
-          className="border border-(--color-accent) px-4 py-2 text-(--color-accent) disabled:opacity-40"
-        >
-          Claim it
-        </button>
-      ) : (
-        <a href="/api/auth/github" className="inline-block border border-(--color-accent) px-4 py-2 text-(--color-accent)">
-          Sign in with GitHub to claim
-        </a>
-      )}
+      <div className="mt-6">
+        {signedIn ? (
+          <button
+            onClick={() => claim()}
+            disabled={status !== 'available'}
+            aria-disabled={status !== 'available'}
+            className="border border-(--color-ink) bg-(--color-ink) px-5 py-2.5 font-(family-name:--font-mono) text-sm text-(--color-paper) transition-opacity disabled:opacity-30"
+          >
+            Claim it
+          </button>
+        ) : (
+          <a
+            href="/api/auth/github"
+            className="inline-block border border-(--color-ink) bg-(--color-ink) px-5 py-2.5 font-(family-name:--font-mono) text-sm text-(--color-paper)"
+          >
+            Sign in with GitHub to claim
+          </a>
+        )}
+      </div>
     </div>
+  );
+}
+
+function Field({ name, value, valueClass = 'text-(--color-ink)' }) {
+  const label = name.padEnd(FIELD_WIDTH, ' ');
+  return (
+    <p className="record-field pl-4 text-(--color-muted)">
+      {label}
+      <span className={valueClass}>{value}</span>
+    </p>
   );
 }
 

@@ -11,29 +11,38 @@ export default function Image() {
           width: '100%',
           height: '100%',
           display: 'flex',
-          alignItems: 'center',
+          flexDirection: 'column',
           justifyContent: 'center',
-          background: '#0b0a12',
+          padding: '100px',
+          background: '#F4F5F3',
         }}
       >
-        <div
+        <span
           style={{
-            display: 'flex',
-            border: '2px solid #2a2440',
-            padding: '48px 96px',
-            background: '#14121f',
+            fontFamily: 'monospace',
+            fontSize: 22,
+            letterSpacing: 4,
+            textTransform: 'uppercase',
+            color: '#5E6668',
           }}
         >
+          A FREE SUBDOMAIN REGISTRY
+        </span>
+        <div style={{ display: 'flex', alignItems: 'baseline', marginTop: 28 }}>
+          <span style={{ fontSize: 84, color: '#5E6668' }}>[</span>
           <span
             style={{
-              fontFamily: 'monospace',
-              fontSize: 64,
-              letterSpacing: 4,
-              color: '#7c5cff',
+              fontSize: 84,
+              fontWeight: 600,
+              color: '#14181B',
+              borderBottom: '4px solid #1B4DFF',
+              padding: '0 12px',
             }}
           >
-            .runs-on.dev
+            yourname
           </span>
+          <span style={{ fontSize: 84, color: '#5E6668' }}>]</span>
+          <span style={{ fontSize: 84, color: '#5E6668' }}>.runs-on.dev</span>
         </div>
       </div>
     ),

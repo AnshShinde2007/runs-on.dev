@@ -35,35 +35,41 @@ export default async function Home() {
   const session = raw ? readSession(raw, process.env.SESSION_SECRET) : null;
 
   return (
-    <main className="mx-auto max-w-3xl px-6 py-12">
+    <main className="mx-auto max-w-3xl px-6 py-14 sm:py-20">
       <JsonLd data={websiteJsonLd} />
 
-      <div className="border border-(--color-edge) bg-(--color-panel) px-6 py-14 text-center">
-        <span className="text-4xl tracking-widest text-(--color-accent)">.runs-on.dev</span>
+      <h1 className="sr-only">runs-on.dev — a free subdomain registry</h1>
+
+      <p className="font-(family-name:--font-mono) text-xs tracking-[0.14em] text-(--color-muted) uppercase">
+        A free subdomain registry
+      </p>
+
+      <div className="mt-6">
+        <ClaimForm signedIn={Boolean(session)} />
       </div>
 
-      <Section title="runs-on.dev">
-        <p className="font-bold">Grab your own free .runs-on.dev subdomain.</p>
+      <Section title="What this is">
+        <p className="text-sm leading-relaxed sm:text-base">
+          Claiming a name writes a JSON file to a public repo. That file is the record: it says
+          the name is yours, and it is the only thing that makes <span className="font-(family-name:--font-mono)">*.runs-on.dev</span> resolve.
+          No hidden database, nothing you can't read yourself.
+        </p>
         <Quote>
-          Claim a name, and it is live in seconds with HTTPS. Point it at your own hosting
-          whenever you like by opening a pull request against the public registry.
+          Live in seconds with HTTPS. Point it at your own hosting whenever you like by opening
+          a pull request against the public registry.
         </Quote>
         <Quote>
           Free forever. No ads, no tracking, no account beyond the GitHub one you already have.
         </Quote>
       </Section>
 
-      <Section title="Claim a subdomain">
-        <ClaimForm signedIn={Boolean(session)} />
-      </Section>
-
       <Section title="Important links">
-        <ul className="list-disc space-y-1 pl-6 text-sm text-(--color-accent)">
-          <li><a href="/docs">Point your name at your own hosting</a></li>
-          <li><a href="/about">About runs-on.dev</a></li>
-          <li><a href="/faq">FAQ</a></li>
-          <li><a href="/policy">Policy</a></li>
-          <li><a href="https://github.com/zordhalo/runs-on.dev">Registry on GitHub</a></li>
+        <ul className="space-y-1.5 text-sm sm:text-base">
+          <li><a className="text-(--color-signal) underline" href="/docs">Point your name at your own hosting</a></li>
+          <li><a className="text-(--color-signal) underline" href="/about">About runs-on.dev</a></li>
+          <li><a className="text-(--color-signal) underline" href="/faq">FAQ</a></li>
+          <li><a className="text-(--color-signal) underline" href="/policy">Policy</a></li>
+          <li><a className="text-(--color-signal) underline" href="https://github.com/zordhalo/runs-on.dev">Registry on GitHub</a></li>
         </ul>
       </Section>
 

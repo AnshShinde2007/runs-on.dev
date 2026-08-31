@@ -1,14 +1,18 @@
 export function Section({ title, children }) {
   return (
-    <section className="mt-10">
-      <h2 className="border-b border-(--color-accent) pb-2 text-lg font-bold text-(--color-accent)">
+    <section className="mt-14 first:mt-0">
+      <h2 className="font-(family-name:--font-mono) text-xs font-medium tracking-[0.14em] text-(--color-muted) uppercase">
         {title}
       </h2>
-      <div className="mt-4 space-y-3">{children}</div>
+      <div className="mt-4 space-y-3 text-(--color-ink)">{children}</div>
     </section>
   );
 }
 
 export function Quote({ children }) {
-  return <p className="border-l-2 border-(--color-edge) pl-4 text-sm leading-relaxed">{children}</p>;
+  return (
+    <p className="border border-(--color-rule) bg-(--color-card) p-4 text-sm leading-relaxed">
+      {children}
+    </p>
+  );
 }

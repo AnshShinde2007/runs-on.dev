@@ -11,12 +11,12 @@ export const metadata = {
 export default function About() {
   return (
     <main className="mx-auto max-w-3xl px-6 py-12">
-      <h1 className="text-2xl font-bold text-(--color-accent)">About</h1>
+      <h1 className="font-(family-name:--font-display) text-3xl font-medium tracking-tight text-(--color-ink) sm:text-4xl">About</h1>
 
       <Section title="What this is">
         <p className="text-sm leading-relaxed">
           runs-on.dev gives away subdomains under one domain that Advance Labs registered. Sign
-          in with GitHub, claim a name like <code className="text-(--color-accent)">you.runs-on.dev</code>, and
+          in with GitHub, claim a name like <code className="border border-(--color-rule) bg-(--color-card) px-1 py-0.5 font-(family-name:--font-mono) text-(--color-ink)">you.runs-on.dev</code>, and
           it's live within seconds. No DNS panel, no yearly renewal on your end.
         </p>
       </Section>
@@ -29,8 +29,8 @@ export default function About() {
           distinctive-looking address for a side project.
         </p>
         <Quote>
-          runs-on.dev gets the same feeling, a name that isn't <code className="text-(--color-accent)">vercel.app</code> or
-          <code className="text-(--color-accent)"> github.io</code>, for the price of one domain: about $10 a year. Every
+          runs-on.dev gets the same feeling, a name that isn't <code className="border border-(--color-rule) bg-(--color-card) px-1 py-0.5 font-(family-name:--font-mono) text-(--color-ink)">vercel.app</code> or
+          <code className="border border-(--color-rule) bg-(--color-card) px-1 py-0.5 font-(family-name:--font-mono) text-(--color-ink)"> github.io</code>, for the price of one domain: about $10 a year. Every
           name you claim lives under runs-on.dev, which Advance Labs registered and answers
           for.
         </Quote>
@@ -42,23 +42,23 @@ export default function About() {
           They make side projects, personal sites, and one-off tools look like they belong to
           someone, without asking anyone to run their own DNS. The idea isn't new, and it
           shouldn't have to be:{' '}
-          <a className="text-(--color-accent)" href="https://www.is-a.dev">is-a.dev</a>,{' '}
-          <a className="text-(--color-accent)" href="https://js.org">js.org</a>, and{' '}
-          <a className="text-(--color-accent)" href="https://eu.org">eu.org</a> all did it first, and
+          <a className="text-(--color-signal) underline" href="https://www.is-a.dev">is-a.dev</a>,{' '}
+          <a className="text-(--color-signal) underline" href="https://js.org">js.org</a>, and{' '}
+          <a className="text-(--color-signal) underline" href="https://eu.org">eu.org</a> all did it first, and
           runs-on.dev exists because that pattern is worth having more than once.
         </p>
       </Section>
 
       <Section title="Who runs it">
         <p className="text-sm leading-relaxed">
-          <a className="text-(--color-accent)" href="https://advancelabs.dev">Advance Labs</a> is the registrant
+          <a className="text-(--color-signal) underline" href="https://advancelabs.dev">Advance Labs</a> is the registrant
           of runs-on.dev and the party responsible for what runs under it. Advance Labs builds
           and ships its own software products; this registry is one of them, operated the same
           way it operates everything else: in the open, with the source and the rules on
-          GitHub. See the <a className="text-(--color-accent)" href="/policy">policy</a> for what that
+          GitHub. See the <a className="text-(--color-signal) underline" href="/policy">policy</a> for what that
           responsibility actually covers, and Advance Labs's own guide on{' '}
           <a
-            className="text-(--color-accent)"
+            className="text-(--color-signal) underline"
             href="https://advancelabs.dev/guides/custom-domain-ending-without-icann"
           >
             picking a custom domain ending without going through ICANN
@@ -70,7 +70,7 @@ export default function About() {
       <Section title="The source">
         <p className="text-sm leading-relaxed">
           Every claim, every hosting record, and every rule CI enforces lives in the public
-          repo: <a className="text-(--color-accent)" href="https://github.com/zordhalo/runs-on.dev">github.com/zordhalo/runs-on.dev</a>.
+          repo: <a className="text-(--color-signal) underline" href="https://github.com/zordhalo/runs-on.dev">github.com/zordhalo/runs-on.dev</a>.
           Nothing about how a name gets claimed or reclaimed happens outside git history.
         </p>
       </Section>
