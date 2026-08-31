@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 
 const CHECK_DEBOUNCE_MS = 300;
 const MAX_CLAIM_RETRIES = 5;
@@ -11,10 +11,14 @@ const FIELD_WIDTH = 13;
 export default function ClaimForm({ signedIn }) {
   const [name, setName] = useState('');
   const [status, setStatus] = useState(null);
+  const [inputWidth, setInputWidth] = useState(null);
+  const [animKey, setAnimKey] = useState(0);
   const nameRef = useRef('');
   const debounceRef = useRef(null);
   const lastCheckedRef = useRef('');
   const lastResultRef = useRef({ value: '', status: null });
+  const mirrorRef = useRef(null);
+  const lastAnimatedRef = useRef('');
 
   useEffect(() => () => clearTimeout(debounceRef.current), []);
 
@@ -82,14 +86,42 @@ export default function ClaimForm({ signedIn }) {
   const available = status === 'available' || status === 'claimed';
   const negative = Boolean(status) && !pending && !available;
   const displayName = name || 'yourname';
+  // Long names (the schema allows up to 32 chars) would otherwise blow the
+  // claim line past the viewport at full size — scale it down past a normal
+  // first-name length instead of letting it force page-level horizontal
+  // scroll. Short names are unaffected (scale never exceeds 1).
+  const heroScale = Math.min(1, 10 / displayName.length);
+
+  // Mirror span holds the same text at the same font metrics so the input
+  // (and its underline) can be sized to exactly what's on screen, instead of
+  // an approximate ch-based guess — that approximation is what let the
+  // bracket gap open up and the underline overhang past it.
+  useLayoutEffect(() => {
+    if (mirrorRef.current) setInputWidth(mirrorRef.current.offsetWidth);
+  }, [displayName]);
+
+  // Replay the record's stagger only when a genuinely different name (or a
+  // real claimed transition) settles — not on every debounced re-check while
+  // the visitor is still mid-keystroke on the same name.
+  useEffect(() => {
+    if (pending) return;
+    const signature = status === 'claimed' ? `${displayName}:claimed` : displayName;
+    if (lastAnimatedRef.current !== signature) {
+      lastAnimatedRef.current = signature;
+      setAnimKey((k) => k + 1);
+    }
+  }, [pending, status, displayName]);
 
   return (
     <div>
       <label htmlFor="claim-name" className="sr-only">
         Subdomain name
       </label>
-      <div className="flex flex-wrap items-baseline gap-x-1 gap-y-0 font-(family-name:--font-display) text-[clamp(1.9rem,6vw,3.5rem)] leading-tight font-medium tracking-tight text-(--color-ink)">
-        <span className="inline-flex flex-nowrap items-baseline">
+      <div
+        className="flex flex-wrap items-baseline gap-x-2 gap-y-0 font-(family-name:--font-display) leading-none font-medium tracking-tight text-(--color-ink)"
+        style={{ fontSize: `calc(clamp(2.25rem, 7vw, 4.5rem) * ${heroScale})` }}
+      >
+        <span className="relative inline-flex flex-nowrap items-baseline">
           <span aria-hidden="true" className="text-(--color-muted)">[</span>
           <input
             id="claim-name"
@@ -100,17 +132,24 @@ export default function ClaimForm({ signedIn }) {
             autoCapitalize="off"
             spellCheck={false}
             size={1}
-            style={{ width: `${Math.max(displayName.length, 3)}ch` }}
-            className="border-b-2 border-(--color-signal) bg-transparent px-1 outline-none placeholder:text-(--color-muted)/60"
+            style={{ width: inputWidth ? `${inputWidth}px` : undefined }}
+            className="border-b-2 border-(--color-signal) bg-transparent outline-none placeholder:text-(--color-muted)/60"
           />
+          <span
+            ref={mirrorRef}
+            aria-hidden="true"
+            className="pointer-events-none absolute top-0 left-0 -z-10 whitespace-pre opacity-0"
+          >
+            {displayName}
+          </span>
           <span aria-hidden="true" className="text-(--color-muted)">]</span>
         </span>
         <span className="text-(--color-muted)">.runs-on.dev</span>
       </div>
 
       <div
-        key={status ?? 'idle'}
-        className="record-block mt-7 max-w-full overflow-x-auto border-l-2 py-3 pr-4 pl-4 font-(family-name:--font-mono) text-[11px] whitespace-pre sm:max-w-md sm:text-[13px]"
+        key={animKey}
+        className="record-block mt-4 max-w-full overflow-x-auto border-l-2 py-3 pr-4 pl-4 font-(family-name:--font-mono) text-[11px] whitespace-pre sm:max-w-md sm:text-[13px]"
         style={{ borderColor: negative ? 'var(--color-flag)' : 'var(--color-signal)' }}
       >
         <p className="record-field text-(--color-muted)">domains/{displayName}.json</p>
@@ -135,13 +174,18 @@ export default function ClaimForm({ signedIn }) {
         )}
       </div>
 
-      <div className="mt-6">
+      <div className="mt-5">
         {signedIn ? (
           <button
             onClick={() => claim()}
             disabled={status !== 'available'}
             aria-disabled={status !== 'available'}
-            className="border border-(--color-ink) bg-(--color-ink) px-5 py-2.5 font-(family-name:--font-mono) text-sm text-(--color-paper) transition-opacity disabled:opacity-30"
+            className="border px-5 py-2.5 font-(family-name:--font-mono) text-sm transition-colors disabled:cursor-not-allowed"
+            style={
+              status === 'available'
+                ? { borderColor: 'var(--color-signal)', background: 'var(--color-signal)', color: 'var(--color-paper)' }
+                : { borderColor: 'var(--color-ink)', background: 'var(--color-ink)', color: 'var(--color-paper)', opacity: 0.3 }
+            }
           >
             Claim it
           </button>

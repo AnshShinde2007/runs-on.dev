@@ -1,5 +1,4 @@
 import JsonLd from '../components/JsonLd.jsx';
-import { Section } from '../components/Section.jsx';
 
 export const metadata = {
   title: 'FAQ',
@@ -57,6 +56,25 @@ const faqJsonLd = {
   })),
 };
 
+function slugify(q) {
+  return q.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+}
+
+function FaqEntry({ q, a }) {
+  return (
+    <div className="mt-6 border-l-2 border-(--color-rule) py-1 pl-4 first:mt-10">
+      <p className="font-(family-name:--font-mono) text-[11px] text-(--color-muted) sm:text-xs">
+        faq/{slugify(q)}.json
+      </p>
+      <h2 className="mt-1.5 font-(family-name:--font-mono) text-xs sm:text-[13px]">
+        <span className="text-(--color-muted)">&quot;q&quot;:</span>{' '}
+        <span className="text-(--color-ink)">&quot;{q}&quot;</span>
+      </h2>
+      <p className="mt-2 text-sm leading-relaxed sm:text-base">{a}</p>
+    </div>
+  );
+}
+
 export default function Faq() {
   return (
     <main className="mx-auto max-w-3xl px-6 py-12">
@@ -64,9 +82,7 @@ export default function Faq() {
       <h1 className="font-(family-name:--font-display) text-3xl font-medium tracking-tight text-(--color-ink) sm:text-4xl">FAQ</h1>
 
       {faqs.map((f) => (
-        <Section title={f.q} key={f.q}>
-          <p className="text-sm leading-relaxed">{f.a}</p>
-        </Section>
+        <FaqEntry q={f.q} a={f.a} key={f.q} />
       ))}
     </main>
   );

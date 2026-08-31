@@ -35,7 +35,7 @@ export default async function Home() {
   const session = raw ? readSession(raw, process.env.SESSION_SECRET) : null;
 
   return (
-    <main className="mx-auto max-w-3xl px-6 py-14 sm:py-20">
+    <main className="mx-auto max-w-4xl px-6 py-14 sm:py-20">
       <JsonLd data={websiteJsonLd} />
 
       <h1 className="sr-only">runs-on.dev — a free subdomain registry</h1>
@@ -44,7 +44,7 @@ export default async function Home() {
         A free subdomain registry
       </p>
 
-      <div className="mt-6">
+      <div className="mt-3">
         <ClaimForm signedIn={Boolean(session)} />
       </div>
 
@@ -54,13 +54,20 @@ export default async function Home() {
           the name is yours, and it is the only thing that makes <span className="font-(family-name:--font-mono)">*.runs-on.dev</span> resolve.
           No hidden database, nothing you can't read yourself.
         </p>
-        <Quote>
-          Live in seconds with HTTPS. Point it at your own hosting whenever you like by opening
-          a pull request against the public registry.
-        </Quote>
-        <Quote>
-          Free forever. No ads, no tracking, no account beyond the GitHub one you already have.
-        </Quote>
+        <dl className="space-y-1.5 font-(family-name:--font-mono) text-xs sm:text-[13px]">
+          <div>
+            <dt className="inline text-(--color-muted) uppercase tracking-[0.1em]">live —</dt>{' '}
+            <dd className="inline text-(--color-ink)">
+              seconds, with HTTPS, and your own hosting whenever you like via pull request.
+            </dd>
+          </div>
+          <div>
+            <dt className="inline text-(--color-muted) uppercase tracking-[0.1em]">free —</dt>{' '}
+            <dd className="inline text-(--color-ink)">
+              forever. No ads, no tracking, no account beyond the GitHub one you already have.
+            </dd>
+          </div>
+        </dl>
       </Section>
 
       <Section title="Important links">
