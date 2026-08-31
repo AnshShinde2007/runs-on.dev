@@ -25,24 +25,30 @@
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --paper: #101314;
-    --card: #171b1c;
-    --rule: #2b3133;
-    --ink: #ecefec;
-    --muted: #9aa3a5;
-    --signal: #6f92ff;
-    --flag: #ff6b60;
+    /* Warm dark ground on purpose: a document under low light, not a
+       near-black terminal. Same hue relationships as the light theme
+       (blue signal, red flag), just carried by a warm brown-black instead
+       of the cooler near-black we replaced (#101314) — that cool near-black
+       plus light text plus a blue accent was reading as the dark-terminal
+       look this redesign was hired to move away from. */
+    --paper: #18140f;
+    --card: #211c15;
+    --rule: #3c3428;
+    --ink: #efe7d9;
+    --muted: #a89c89;
+    --signal: #8399ff;
+    --flag: #d97757;
   }
 }
 
 :root[data-theme="dark"] {
-  --paper: #101314;
-  --card: #171b1c;
-  --rule: #2b3133;
-  --ink: #ecefec;
-  --muted: #9aa3a5;
-  --signal: #6f92ff;
-  --flag: #ff6b60;
+  --paper: #18140f;
+  --card: #211c15;
+  --rule: #3c3428;
+  --ink: #efe7d9;
+  --muted: #a89c89;
+  --signal: #8399ff;
+  --flag: #d97757;
 }
 
 html {
@@ -68,6 +74,14 @@ a {
 :focus-visible {
   outline: 2px solid var(--signal);
   outline-offset: 2px;
+}
+
+/* The claim-line input sits flush against the "[" "]" wordmark glyphs, with
+   no room for an outset box ring — it would draw across the brackets. Focus
+   is indicated by thickening its own underline instead (see claim-form.jsx),
+   so the box ring is suppressed here specifically, not removed globally. */
+#claim-name:focus-visible {
+  outline: none;
 }
 
 @media (prefers-reduced-motion: reduce) {

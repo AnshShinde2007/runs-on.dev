@@ -133,7 +133,7 @@ export default function ClaimForm({ signedIn }) {
             spellCheck={false}
             size={1}
             style={{ width: inputWidth ? `${inputWidth}px` : undefined }}
-            className="border-b-2 border-(--color-signal) bg-transparent outline-none placeholder:text-(--color-muted)/60"
+            className="border-b-2 border-(--color-signal) bg-transparent outline-none placeholder:text-(--color-muted)/60 focus-visible:border-b-4"
           />
           <span
             ref={mirrorRef}
