@@ -14,14 +14,24 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 2
+          fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
       - id: changed
         run: |
+          # Diff the whole push range, not HEAD^..HEAD. Actions fires one push event per
+          # push, not per commit, so a rebase-merge or a batch of merges lands several
+          # commits at once and HEAD^..HEAD would silently skip every domains/ file touched
+          # by any but the last — a merged PR that never reaches DNS, with no error at all.
+          BEFORE='${{ github.event.before }}'
+          if [ -z "$BEFORE" ] || [ "$BEFORE" = "0000000000000000000000000000000000000000" ]; then
+            RANGE=$(git rev-list --max-parents=0 HEAD | tail -1)
+          else
+            RANGE="$BEFORE"
+          fi
           echo 'files<<EOF' >> $GITHUB_OUTPUT
-          git diff --name-only HEAD^ HEAD -- domains/ >> $GITHUB_OUTPUT
+          git diff --name-only "$RANGE" '${{ github.event.after }}' -- domains/ >> $GITHUB_OUTPUT
           echo 'EOF' >> $GITHUB_OUTPUT
       - run: node scripts/sync-dns.mjs
         env:

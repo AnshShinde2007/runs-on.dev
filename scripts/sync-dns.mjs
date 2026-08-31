@@ -23,13 +23,30 @@ const vercel = (path, init = {}) =>
   });
 
 async function existingFor(name) {
-  const res = await vercel(`/v4/domains/${DOMAIN}/records?limit=100`);
-  if (!res.ok) {
-    console.error(`sync-dns: failed to list records for ${DOMAIN}: ${res.status} ${res.statusText}`);
-    process.exit(1);
+  // Page through every record. A single limit=100 call silently misses a name's records
+  // once the zone grows past one page: the delete loop then removes nothing while the
+  // create loop still runs, leaving duplicate and orphaned records instead of a clean
+  // replace, with no error to explain the wrong DNS.
+  const found = [];
+  let cursor = '';
+
+  for (;;) {
+    const res = await vercel(`/v4/domains/${DOMAIN}/records?limit=100${cursor}`);
+    if (!res.ok) {
+      console.error(`sync-dns: failed to list records for ${DOMAIN}: ${res.status} ${res.statusText}`);
+      process.exit(1);
+    }
+
+    const body = await res.json();
+    // `name` here can never be '*' or '' — it comes from the ^domains/([a-z0-9-]+)\.json$
+    // match below, so the wildcard record can never be selected for deletion. Preserve
+    // that invariant if this ever stops deriving the name from the filename.
+    found.push(...body.records.filter((r) => r.name === name));
+
+    const next = body.pagination?.next;
+    if (!next) return found;
+    cursor = `&until=${next}`;
   }
-  const { records } = await res.json();
-  return records.filter((r) => r.name === name);
 }
 
 for (const file of changed) {
