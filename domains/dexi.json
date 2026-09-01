@@ -4,5 +4,6 @@
     "github": "Zyaxxy"
   },
   "claimedAt": "2026-09-01T08:25:47.460Z",
-  "records": {}
+  "records": { "CNAME": "cname.vercel-dns.com" }
+
 }
