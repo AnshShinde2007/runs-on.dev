@@ -27,6 +27,36 @@ wildcard DNS record, so there's nothing to provision. You get a profile
 card built from your GitHub account until you point the name at your own
 hosting (see the main [README](../README.md#point-it-at-your-own-hosting)).
 
+## Claiming by pull request
+
+The site is the quick path; a pull request does the same thing by hand.
+Add `domains/<name>.json` naming yourself as owner and open a PR:
+
+```json
+{
+  "name": "yourname",
+  "owner": { "github": "your-github-login" },
+  "claimedAt": "2026-01-01T00:00:00.000Z",
+  "records": {}
+}
+```
+
+You can set `records` in the same PR rather than claiming empty and
+pointing the name in a second one.
+
+`validateChangeset` (`lib/pr.js`) holds this to the same gates
+`evaluateClaim` applies on the site, in the same order: the record must
+name its own author as owner, the name must not be reserved, `claimedAt`
+may not be in the future, the account must be 30 days old with a public
+repository, and it must not already hold a name. Eligibility is read from
+`GET /users/<login>` and the owned-name count from `domains/` at the base
+commit; if either lookup fails, the check fails with it rather than
+guessing.
+
+The one thing the site gives you that a PR cannot is the atomic create.
+Two PRs claiming the same name will both pass CI, and the second to merge
+produces a conflict rather than a clean `409 taken`.
+
 ## Eligibility
 
 Claiming requires, checked by `lib/eligibility.js`:
@@ -59,6 +89,13 @@ per-account index file, `owners/<login>.json`, read with `getOwnerIndex`
 and written with `putOwnerIndex` (both in `lib/owners.js`). A successful
 claim appends the new name to that account's index right after the record
 itself is written.
+
+That index is a cache, not the registry — `domains/` is. A name claimed by
+pull request never runs `putOwnerIndex`, so the index would undercount and
+hand the account a second name; `scripts/sync-owners.mjs` therefore
+rebuilds `owners/` from `domains/` after every merge that touches a record
+(`.github/workflows/sync-owners.yml`), and CI counts owned names by
+scanning `domains/` directly rather than trusting the index.
 
 This closes the same land-grab door the eligibility rules open partway:
 even a 30-day-old account with a real repo could otherwise sweep a long

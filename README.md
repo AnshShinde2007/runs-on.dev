@@ -154,9 +154,11 @@ PR yourself before opening it:
 - Renaming a record is refused outright. Claim a new name instead.
 - `owner` and `claimedAt` are immutable once set; only the recorded owner
   may edit or remove a record.
-- New names are claimed on the site, never by pull request; that's the
-  only path that checks account age, public-repo count, and the
-  one-name-per-account limit.
+- New names may be claimed either on the site or by pull request. Both
+  paths apply the same gates: the record must name its own author as
+  owner, the name must not be reserved, the account must be at least 30
+  days old with one public repository, and it must not already hold a
+  name.
 - An owner may delete their own record by pull request; a maintainer can
   do the same under [POLICY.md](./POLICY.md).
 

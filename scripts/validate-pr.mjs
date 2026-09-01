@@ -32,6 +32,49 @@ async function readAt(path, ref) {
   return JSON.parse(Buffer.from(body.content, 'base64').toString('utf8'));
 }
 
+// Eligibility is read from the PR author's public GitHub profile, the same two
+// fields the session carries into evaluateClaim on the website. Throwing rather
+// than returning null on a transport failure matters: validateChangeset treats a
+// throw as "could not check" and fails the PR closed.
+async function getUser(login) {
+  const res = await api(`/users/${encodeURIComponent(login)}`);
+  if (!res.ok) throw new Error(`GET /users/${login} -> ${res.status}`);
+  const u = await res.json();
+  return { created_at: u.created_at, public_repos: u.public_repos };
+}
+
+// Counted from domains/ itself rather than the owners/ index, because domains/
+// is the registry — the index is derived data rebuilt after merge by
+// sync-owners, and a stale or missing index must never read as "owns nothing"
+// and hand out a second name.
+async function countOwnedNames(login) {
+  const res = await api(`/repos/${REPO}/contents/domains?ref=${BASE_SHA}`);
+  if (!res.ok) throw new Error(`GET domains/ -> ${res.status}`);
+  const entries = await res.json();
+  const records = entries.filter((e) => e.type === 'file' && e.name.endsWith('.json'));
+
+  const target = login.toLowerCase();
+  let owned = 0;
+
+  // Modest concurrency: enough to keep a few hundred records quick, low enough
+  // not to trip secondary rate limits on a shared Actions IP.
+  const BATCH = 10;
+  for (let i = 0; i < records.length; i += BATCH) {
+    const slice = records.slice(i, i + BATCH);
+    const parsed = await Promise.all(slice.map(async (entry) => {
+      const r = await api(`/repos/${REPO}/contents/domains/${entry.name}?ref=${BASE_SHA}`);
+      if (!r.ok) throw new Error(`GET domains/${entry.name} -> ${r.status}`);
+      const body = await r.json();
+      return JSON.parse(Buffer.from(body.content, 'base64').toString('utf8'));
+    }));
+    for (const rec of parsed) {
+      if (String(rec?.owner?.github ?? '').toLowerCase() === target) owned += 1;
+    }
+  }
+
+  return owned;
+}
+
 const prRes = await api(`/repos/${REPO}/pulls/${PR}`);
 if (!prRes.ok) {
   console.error(`validate-pr: failed to fetch PR #${PR} from ${REPO}: ${prRes.status} ${prRes.statusText}`);
@@ -55,6 +98,8 @@ const result = await validateChangeset({
   prAuthor: user.login,
   readFile: (p) => readAt(p, HEAD_SHA),
   readBase: (p) => readAt(p, BASE_SHA),
+  getUser,
+  countOwnedNames,
 });
 
 if (!result.ok) {
