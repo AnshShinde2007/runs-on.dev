@@ -10,6 +10,10 @@ on:
   push:
     branches: [main]
     paths: ['domains/**']
+  # The rebuild is idempotent, so a manual run is a safe way to prove the
+  # workflow works without waiting for a claim to land, and to repair the index
+  # by hand if a run is ever missed.
+  workflow_dispatch:
 
 permissions:
   contents: write
