@@ -36,6 +36,7 @@ function buildLlmsTxt() {
       '- Quickstart: https://runs-on.dev/docs/quickstart',
       '- Record reference: https://runs-on.dev/docs/records',
       '- Guides: https://runs-on.dev/docs/guides',
+      '- SEO on a name: https://runs-on.dev/docs/seo',
       '- About: https://runs-on.dev/about',
       '- FAQ: https://runs-on.dev/faq',
       '- Policy: https://runs-on.dev/policy',

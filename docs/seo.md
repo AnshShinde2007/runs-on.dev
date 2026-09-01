@@ -6,7 +6,8 @@ reputation. Nothing about sitting under `runs-on.dev` helps or hurts you;
 the name has to earn its own links like any other host.
 
 That cuts both ways, and which way depends entirely on which record type
-you use.
+you use. The same material renders on the site at
+[`/docs/seo`](https://runs-on.dev/docs/seo).
 
 ## Redirect names cannot rank
 
@@ -127,10 +128,10 @@ would otherwise have to redirect your way out of.
 ## The profile card is not an SEO surface
 
 A claimed name with no records is served a profile card off the wildcard.
-Those pages exist so a name resolves to something rather than nothing;
-they are not built to rank, and every one of them currently inherits the
-registry's own title and description. Point the name at real hosting if
-you want a page that competes in search.
+Each card carries its own title, description and canonical, so it can be
+indexed as its own page, but it is still one short page about a name.
+Point the name at real hosting if you want something that competes in
+search.
 
 ## One limitation worth knowing
 
