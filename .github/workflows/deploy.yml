@@ -1,0 +1,36 @@
+name: deploy
+
+# Vercel's own Git integration is switched off in vercel.json. It used to open a
+# deployment for every pull request, and because the preview environment carries
+# real secrets (REGISTRY_TOKEN among them) Vercel rightly refused to build a fork
+# without authorization — leaving a permanent red "Authorization required to
+# deploy" on every contributor's PR. Turning fork protection off instead would
+# have handed arbitrary PR code the token that writes domains/, so deployment
+# moved here, where only main can trigger it.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: deploy-production
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      VERCEL_ORG_ID: ${{ vars.VERCEL_ORG_ID }}
+      VERCEL_PROJECT_ID: ${{ vars.VERCEL_PROJECT_ID }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm ci
+      - run: npx vercel pull --yes --environment=production --token='${{ secrets.VERCEL_TOKEN }}'
+      - run: npx vercel build --prod --token='${{ secrets.VERCEL_TOKEN }}'
+      - run: npx vercel deploy --prebuilt --prod --token='${{ secrets.VERCEL_TOKEN }}'
