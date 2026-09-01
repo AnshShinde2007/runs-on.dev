@@ -45,10 +45,43 @@ test('putRecord reports ratelimited on a 403', async () => {
 
 test('putRecord writes with a bearer token', async () => {
   const fetchImpl = stubFetch([{ status: 404 }, { status: 201 }]);
-  assert.deepEqual(await putRecord(record, { token: 'secret-token', fetchImpl }), { ok: true });
+  assert.deepEqual(await putRecord(record, { token: 'secret-token', fetchImpl }), {
+    ok: true,
+    commit: null,
+  });
   const write = fetchImpl.calls[1];
   assert.equal(write.init.method, 'PUT');
   assert.match(write.init.headers.Authorization, /^Bearer /);
+});
+
+test('putRecord surfaces the commit sha of the write', async () => {
+  const fetchImpl = stubFetch([
+    { status: 404 },
+    { status: 201, body: { commit: { sha: 'a1b2c3d4e5f6' } } },
+  ]);
+  assert.deepEqual(await putRecord(record, { token: 't', fetchImpl }), {
+    ok: true,
+    commit: 'a1b2c3d4e5f6',
+  });
+});
+
+test('putRecord still succeeds when the write response body is unreadable', async () => {
+  // The commit landed; a body we cannot parse is a cosmetic loss, not a
+  // failed claim.
+  const fetchImpl = async () => ({
+    ok: true,
+    status: 201,
+    json: async () => {
+      throw new Error('unparseable');
+    },
+  });
+  const first = stubFetch([{ status: 404 }]);
+  let call = 0;
+  const combined = async (url, init) => (call++ === 0 ? first(url, init) : fetchImpl());
+  assert.deepEqual(await putRecord(record, { token: 't', fetchImpl: combined }), {
+    ok: true,
+    commit: null,
+  });
 });
 
 test('putRecord rejects a record failing schema validation before any network call', async () => {

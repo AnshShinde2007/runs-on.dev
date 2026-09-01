@@ -67,7 +67,7 @@ export async function POST(request) {
       // Never fail the request over an index bookkeeping problem.
       console.warn(`owner index write threw for ${session.login}: ${err.message}`);
     }
-    return Response.json({ claimed: name });
+    return Response.json({ claimed: name, commit: result.commit ?? null });
   }
 
   if (result.reason === 'exists') {
