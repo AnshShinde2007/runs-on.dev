@@ -101,6 +101,11 @@ in [docs/guides.md](./docs/guides.md). The same walkthroughs render on the
 site at `/docs/guides/<provider>` with more detail per provider; the
 markdown file is the compact version for reading here.
 
+Once a name serves your own site, [docs/seo.md](./docs/seo.md) covers what
+changes when that site lives on a subdomain: `robots.txt` and sitemaps are
+per host rather than per domain, redirect names cannot rank, and a name
+needs its own Search Console property.
+
 <details>
 <summary>Two worked examples</summary>
 
