@@ -31,17 +31,39 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - run: node scripts/sync-owners.mjs
-      - name: Commit the rebuilt index
+      - name: Rebuild the index and commit it
         run: |
-          if [ -z "$(git status --porcelain owners/)" ]; then
-            echo "owners/ already matches domains/, nothing to commit."
-            exit 0
-          fi
           git config user.name  'github-actions[bot]'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
-          git add owners/
-          git commit -m 'index: rebuild owners from domains'
-          # This push only touches owners/, and the trigger above is scoped to
-          # domains/**, so it cannot retrigger this workflow.
-          git push
+
+          # /api/claim writes the record and the owner index as two separate
+          # commits. The first one triggers this workflow, so the checkout above
+          # can land in the gap between them -- main then moves under us and the
+          # push is rejected as non-fast-forward. Retrying is safe because the
+          # rebuild is a pure function of domains/: reset onto whatever main
+          # became, rebuild against that tree, and if the API's own index commit
+          # already did the work there is simply nothing left to commit.
+          attempt_sync() {
+            node scripts/sync-owners.mjs
+            if [ -z "$(git status --porcelain owners/)" ]; then
+              echo "owners/ already matches domains/, nothing to commit."
+              return 0
+            fi
+            git add owners/
+            git commit -m 'index: rebuild owners from domains'
+            # This push only touches owners/, and the trigger above is scoped to
+            # domains/**, so it cannot retrigger this workflow.
+            git push
+          }
+
+          for attempt in 1 2 3; do
+            if attempt_sync; then
+              exit 0
+            fi
+            echo "::warning::push rejected on attempt $attempt; refreshing main and rebuilding"
+            git fetch origin main
+            git reset --hard origin/main
+          done
+
+          echo "::error::could not sync owners/ after 3 attempts"
+          exit 1
