@@ -27,6 +27,7 @@
 </p>
 
 <p align="center">
+  <a href="https://github.com/zordhalo/runs-on.dev/stargazers"><img alt="stars" src="https://img.shields.io/github/stars/zordhalo/runs-on.dev?label=stars&color=1b4dff"></a>
   <a href="https://github.com/zordhalo/runs-on.dev/tree/main/domains"><img alt="names claimed" src="https://img.shields.io/github/directory-file-count/zordhalo/runs-on.dev/domains?type=file&extension=json&label=names%20claimed&color=1b4dff"></a>
   <a href="https://github.com/zordhalo/runs-on.dev/actions/workflows/test.yml"><img alt="tests" src="https://github.com/zordhalo/runs-on.dev/actions/workflows/test.yml/badge.svg"></a>
   <a href="./LICENSE"><img alt="license: MIT" src="https://img.shields.io/badge/license-MIT-informational"></a>
@@ -220,6 +221,12 @@ validation, schema checks, the blocklist, the record UI, works over plain
 [.env.example](./.env.example) for every variable the app reads.
 
 </details>
+
+## Star the registry
+
+Every name claimed here is one commit in this repo, authored under the
+claimant's own GitHub account. If you have a name, you're already in the log —
+a star keeps the registry easy for the next person to find.
 
 ## Contributing
 
