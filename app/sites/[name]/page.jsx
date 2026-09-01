@@ -2,6 +2,7 @@ import { notFound, redirect } from 'next/navigation';
 import { getRecord } from '../../../lib/registry.js';
 import { isValidRedirectUrl } from '../../../lib/schema.js';
 import { cardMetadata } from '../../../lib/metadata.js';
+import { REPO_URL } from '../../../lib/repo.js';
 
 // Record freshness, not the GitHub profile's: a name claimed just now must
 // stop serving a cached 404 within seconds, not up to an hour.
@@ -117,6 +118,27 @@ export default async function Site({ params }) {
           runs-on.dev
         </a>
         . Claim your own.
+      </p>
+
+      <p className="mt-2 font-(family-name:--font-mono) text-xs text-(--color-muted)">
+        The record above is{' '}
+        <a
+          className="text-(--color-signal) underline"
+          href={`${REPO_URL}/blob/main/domains/${name}.json`}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          domains/{name}.json
+        </a>
+        , in a public repo you can read without asking anyone.{' '}
+        <a
+          className="text-(--color-signal) underline"
+          href={REPO_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          ★ Star the registry
+        </a>
       </p>
     </main>
   );

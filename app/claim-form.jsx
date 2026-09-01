@@ -3,6 +3,7 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 
 import { canAttemptClaim } from '../lib/claim.js';
+import { REPO_URL, commitUrl, shortSha } from '../lib/repo.js';
 
 const CHECK_DEBOUNCE_MS = 300;
 const MAX_CLAIM_RETRIES = 5;
@@ -13,6 +14,7 @@ const FIELD_WIDTH = 13;
 export default function ClaimForm({ signedIn }) {
   const [name, setName] = useState('');
   const [status, setStatus] = useState(null);
+  const [commit, setCommit] = useState(null);
   const [inputWidth, setInputWidth] = useState(null);
   const [animKey, setAnimKey] = useState(0);
   const nameRef = useRef('');
@@ -81,6 +83,7 @@ export default function ClaimForm({ signedIn }) {
     }
 
     const body = await res.json();
+    if (res.ok) setCommit(body.commit ?? null);
     setStatus(res.ok ? 'claimed' : body.error);
   }
 
@@ -186,7 +189,9 @@ export default function ClaimForm({ signedIn }) {
       </div>
 
       <div className="mt-5">
-        {signedIn ? (
+        {status === 'claimed' ? (
+          <Claimed name={displayName} commit={commit} />
+        ) : signedIn ? (
           <button
             onClick={() => claim()}
             disabled={!claimable}
@@ -208,6 +213,50 @@ export default function ClaimForm({ signedIn }) {
             Sign in with GitHub to claim
           </a>
         )}
+      </div>
+    </div>
+  );
+}
+
+// Shown in place of the (now disabled) claim button once a name lands. Leads
+// with the visitor's own artifact -- their claim is a real commit, authored
+// under their name, in a log anyone can read -- and only then asks for the
+// star. The commit sha is best-effort: if the write succeeded but the response
+// body could not be read, fall back to the record file, which always exists.
+function Claimed({ name, commit }) {
+  const sha = shortSha(commit);
+  const receipt = commitUrl(commit) ?? `${REPO_URL}/blob/main/domains/${name}.json`;
+
+  return (
+    <div>
+      <p className="font-(family-name:--font-mono) text-[13px] text-(--color-muted)">
+        {'// '}
+        <a className="text-(--color-signal) underline" href={receipt} target="_blank" rel="noopener noreferrer">
+          {sha ? `commit ${sha}` : `domains/${name}.json`}
+        </a>
+        {sha ? ' — your name is in the log now' : ' — your record is in the registry now'}
+      </p>
+
+      <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-3">
+        <a
+          href={REPO_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block border px-5 py-2.5 font-(family-name:--font-mono) text-sm transition-opacity hover:opacity-90"
+          style={{
+            borderColor: 'var(--color-signal)',
+            background: 'var(--color-signal)',
+            color: 'var(--color-paper)',
+          }}
+        >
+          ★ Star the registry
+        </a>
+        <a
+          className="font-(family-name:--font-mono) text-sm text-(--color-signal) underline"
+          href={`/sites/${name}`}
+        >
+          your page →
+        </a>
       </div>
     </div>
   );
