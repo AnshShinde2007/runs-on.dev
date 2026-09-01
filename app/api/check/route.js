@@ -13,6 +13,11 @@ export async function GET(request) {
   try {
     existing = await getRecord(name, { token: process.env.REGISTRY_TOKEN });
   } catch (err) {
+    // Log before collapsing the failure into a code. Without this the only
+    // trace a broken registry read leaves is "check_failed" on the visitor's
+    // screen -- the server logs stay silent and there is nothing to debug
+    // from, which is how a bad REGISTRY_TOKEN can look like a UI bug.
+    console.error(`check ${name} failed: status=${err.status ?? 'none'} ${err.message}`);
     const code = err.status === 403 || err.status === 429 ? 'busy' : 'check_failed';
     return Response.json({ available: false, code });
   }

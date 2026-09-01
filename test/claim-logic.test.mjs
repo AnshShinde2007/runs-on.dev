@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { evaluateClaim } from '../lib/claim.js';
+import { canAttemptClaim, evaluateClaim } from '../lib/claim.js';
 
 const now = new Date('2026-08-30T00:00:00Z');
 const session = {
@@ -69,4 +69,43 @@ test('checks the limit before the existing/taken check', () => {
   const existing = { name: 'lucas', owner: { github: 'someone' } };
   const out = evaluateClaim({ name: 'lucas', session, existing, now, ownedCount: 1 });
   assert.deepEqual(out, { ok: false, status: 403, code: 'limit_reached' });
+});
+
+// canAttemptClaim gates the "Claim it" button. The availability check is
+// advisory — /api/claim's atomic create is the authority — so a check that
+// could not run must leave the button live rather than stranding the visitor.
+test('allows an attempt when the check could not run', () => {
+  for (const status of ['check_failed', 'busy', 'server_error', 'retry_exhausted', null]) {
+    assert.equal(canAttemptClaim({ name: 'lucas', status }), true, `status ${status}`);
+  }
+});
+
+test('allows an attempt on a name the check said was available', () => {
+  assert.equal(canAttemptClaim({ name: 'lucas', status: 'available' }), true);
+});
+
+test('refuses an attempt the server already settled as a no', () => {
+  for (const status of [
+    'taken',
+    'reserved',
+    'claimed',
+    'limit_reached',
+    'signin_required',
+    'ineligible_age',
+    'ineligible_repos',
+  ]) {
+    assert.equal(canAttemptClaim({ name: 'lucas', status }), false, `status ${status}`);
+  }
+});
+
+test('refuses an attempt while one is already in flight', () => {
+  assert.equal(canAttemptClaim({ name: 'lucas', status: 'claiming' }), false);
+  assert.equal(canAttemptClaim({ name: 'lucas', status: 'retrying' }), false);
+});
+
+test('refuses an attempt on a name that fails the grammar', () => {
+  assert.equal(canAttemptClaim({ name: 'a', status: null }), false);
+  assert.equal(canAttemptClaim({ name: '-nope', status: null }), false);
+  assert.equal(canAttemptClaim({ name: 'lucas', status: 'invalid_length' }), false);
+  assert.equal(canAttemptClaim({ name: 'Lucas!', status: 'check_failed' }), false);
 });

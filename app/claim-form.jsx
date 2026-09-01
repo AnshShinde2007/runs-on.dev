@@ -2,6 +2,8 @@
 
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 
+import { canAttemptClaim } from '../lib/claim.js';
+
 const CHECK_DEBOUNCE_MS = 300;
 const MAX_CLAIM_RETRIES = 5;
 const RETRY_BASE_MS = 1000;
@@ -84,7 +86,14 @@ export default function ClaimForm({ signedIn }) {
 
   const pending = status === 'claiming' || status === 'retrying';
   const available = status === 'available' || status === 'claimed';
-  const negative = Boolean(status) && !pending && !available;
+  // Not the same question as `available`: this asks whether the claim is
+  // worth attempting, which stays true when the check itself failed.
+  const claimable = canAttemptClaim({ name, status });
+  // A check that could not run is unknown, not a refusal -- painting the
+  // record red while the copy says "try claiming it anyway" tells the
+  // visitor two different things.
+  const unknown = status === 'check_failed' || status === 'busy';
+  const negative = Boolean(status) && !pending && !available && !unknown;
   const displayName = name || 'yourname';
   // Long names (the schema allows up to 32 chars) would otherwise blow the
   // claim line past the viewport at full size — scale it down past a normal
@@ -180,11 +189,11 @@ export default function ClaimForm({ signedIn }) {
         {signedIn ? (
           <button
             onClick={() => claim()}
-            disabled={status !== 'available'}
-            aria-disabled={status !== 'available'}
+            disabled={!claimable}
+            aria-disabled={!claimable}
             className="border px-5 py-2.5 font-(family-name:--font-mono) text-sm transition-colors disabled:cursor-not-allowed"
             style={
-              status === 'available'
+              claimable
                 ? { borderColor: 'var(--color-signal)', background: 'var(--color-signal)', color: 'var(--color-paper)' }
                 : { borderColor: 'var(--color-ink)', background: 'var(--color-ink)', color: 'var(--color-paper)', opacity: 0.3 }
             }
@@ -228,8 +237,8 @@ function message(status, name) {
     claiming: 'Claiming…',
     retrying: 'Busy right now — holding your claim and retrying.',
     retry_exhausted: 'Still overloaded. Try again in a few minutes.',
-    busy: 'Too busy to check right now. Try again in a moment.',
-    check_failed: 'Could not check that name. Try again.',
+    busy: 'Too busy to check right now — claiming it still works.',
+    check_failed: 'Could not check that name — try claiming it anyway.',
     claimed: `Done. ${name}.runs-on.dev is yours.`,
     signin_required: 'Sign in with GitHub first.',
     ineligible_age: 'Your GitHub account must be at least 30 days old.',
