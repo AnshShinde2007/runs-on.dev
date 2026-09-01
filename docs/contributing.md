@@ -74,11 +74,22 @@ Three workflows, all under `.github/workflows/`:
 - **Editing a record** is allowed only for its recorded owner, and
   `owner`/`claimedAt` can never change by pull request, even for the
   owner, only set once at claim time.
-- **Creating a record** is refused unconditionally: `validateChangeset`
-  has no branch that approves a brand-new file. New names go through
-  `POST /api/claim` instead, which is the only path that checks account
-  age, public-repo count, and the per-account claim limit, so a pull
-  request can never bypass eligibility to originate a name.
+- **Creating a record** is allowed, and is held to exactly the gates
+  `POST /api/claim` applies through `evaluateClaim`, in the same order:
+  the record must name its own author as `owner.github` (compared
+  case-insensitively, since GitHub logins are unique that way), the name
+  must not be reserved, `claimedAt` may not be in the future, the account
+  must pass `lib/eligibility.js` (30 days old, one public repository), and
+  it must not already own a name. A pull request is a second front door
+  onto the same registry, so any gate it checked less strictly would
+  simply become the way around that gate.
+- **Both claim lookups fail closed.** Eligibility comes from
+  `GET /users/<login>` and the owned-name count from scanning `domains/`
+  at the base commit; if either cannot be read, `validateChangeset`
+  reports "could not check" and the PR fails. A rate-limited check must
+  never read as "eligible" or "owns nothing", because load is exactly when
+  a land grab happens — the same reasoning `POST /api/claim` uses when it
+  answers busy rather than letting an uncounted claim through.
 - The record itself must still pass `lib/schema.js`'s `validateRecord` and
   `lib/name.js`'s `validateName`.
 
