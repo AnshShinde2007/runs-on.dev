@@ -1,6 +1,7 @@
 import { notFound, redirect } from 'next/navigation';
 import { getRecord } from '../../../lib/registry.js';
 import { isValidRedirectUrl } from '../../../lib/schema.js';
+import { cardMetadata } from '../../../lib/metadata.js';
 
 // Record freshness, not the GitHub profile's: a name claimed just now must
 // stop serving a cached 404 within seconds, not up to an hour.
@@ -26,6 +27,21 @@ async function githubProfile(login) {
 async function fetchRecord(name) {
   const fetchImpl = (url, init) => fetch(url, { ...init, next: { revalidate: 30 } });
   return getRecord(name, { token: CARD_TOKEN, fetchImpl });
+}
+
+// Both this and the page below read the record and the GitHub profile. Next
+// memoises identical fetches across generateMetadata and the render for one
+// request, and both calls go through the same helpers with the same options,
+// so a card still costs one registry read and one profile read, not two of
+// each. That matters here specifically: these reads come out of CARD_TOKEN's
+// hourly quota, which the wildcard makes trivially easy to exhaust.
+export async function generateMetadata({ params }) {
+  const { name } = await params;
+  const record = await fetchRecord(name);
+  if (!record) return { title: { absolute: 'Not found' }, robots: { index: false } };
+
+  const profile = await githubProfile(record.owner.github);
+  return cardMetadata({ name, record, profile });
 }
 
 export default async function Site({ params }) {
