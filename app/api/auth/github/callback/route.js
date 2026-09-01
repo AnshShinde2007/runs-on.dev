@@ -1,4 +1,4 @@
-import { signSession } from '../../../../../lib/session.js';
+import { SESSION_TTL_MS, signSession } from '../../../../../lib/session.js';
 
 export async function GET(request) {
   const url = new URL(request.url);
@@ -43,7 +43,13 @@ export async function GET(request) {
 
   const headersOut = new Headers();
   headersOut.append('Location', '/?signed-in=1');
-  headersOut.append('Set-Cookie', `session=${session}; Path=/; HttpOnly; Secure; SameSite=Lax; Max-Age=86400`);
+  // Max-Age from the same constant the payload's exp uses, so the browser
+  // stops sending the cookie exactly when the server stops honouring it.
+  const maxAge = Math.floor(SESSION_TTL_MS / 1000);
+  headersOut.append(
+    'Set-Cookie',
+    `session=${session}; Path=/; HttpOnly; Secure; SameSite=Lax; Max-Age=${maxAge}`,
+  );
   headersOut.append('Set-Cookie', 'oauth_state=; Path=/; HttpOnly; Secure; SameSite=Lax; Max-Age=0');
 
   return new Response(null, { status: 302, headers: headersOut });
