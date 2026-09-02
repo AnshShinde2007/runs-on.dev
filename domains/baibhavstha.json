@@ -4,7 +4,9 @@
     "github": "blazeyy-exe"
   },
   "claimedAt": "2026-09-02T11:11:57.925Z",
-  "records": {},
+  "records": {
+    "CNAME": "956168a33e5bc41e.vercel-dns-017.com"
+  },
   "subdomains": {
     "_vercel": {
       "TXT": [
