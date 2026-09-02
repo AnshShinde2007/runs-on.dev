@@ -12,6 +12,9 @@
       "TXT": [
         "vc-domain-verify=disiplin.runs-on.dev,f4b6520f2f39e16a9ff2"
       ]
+    },
+    "disiplin": {
+      "CNAME": "9aac58aaf6c30f98.vercel-dns-017.com"
     }
   }
 }
