@@ -4,5 +4,12 @@
     "github": "Sagexd08"
   },
   "claimedAt": "2026-09-02T18:16:41.934Z",
-  "records": {}
+  "records": {},
+  "subdomains": {
+    "_vercel": {
+      "TXT": [
+        "vc-domain-verify=brier.runs-on.dev,2570b7dc1e1755a3f9aa"
+      ]
+    }
+  }
 }
