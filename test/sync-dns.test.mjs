@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { planDnsChanges } from '../lib/dns.js';
+import { planDnsChanges, listPath, createPath, removePath } from '../lib/dns.js';
 
 const base = { name: 'lucas', owner: { github: 'zordhalo' }, claimedAt: '2026-08-30T00:00:00Z' };
 
@@ -67,4 +67,24 @@ test('plans both root and nested subdomain records together', () => {
       { type: 'TXT', name: '_discord.lucas', value: 'verify=abc' },
     ],
   );
+});
+
+// The Vercel DNS endpoint paths. These lived as inline template strings in
+// scripts/sync-dns.mjs, where nothing could assert them: the delete path was
+// missing its {domain} segment, so every delete 404'd from the day it was
+// written and the sync only stayed green while no name had records to replace.
+test('listPath asks for the domain\'s records, a page at a time', () => {
+  assert.equal(listPath('runs-on.dev'), '/v4/domains/runs-on.dev/records?limit=100');
+  assert.equal(
+    listPath('runs-on.dev', 'abc123'),
+    '/v4/domains/runs-on.dev/records?limit=100&until=abc123',
+  );
+});
+
+test('createPath posts under the domain', () => {
+  assert.equal(createPath('runs-on.dev'), '/v2/domains/runs-on.dev/records');
+});
+
+test('removePath includes the domain, not just the record id', () => {
+  assert.equal(removePath('runs-on.dev', 'rec_abc'), '/v2/domains/runs-on.dev/records/rec_abc');
 });

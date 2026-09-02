@@ -1,5 +1,5 @@
 import { readFile } from 'node:fs/promises';
-import { planDnsChanges } from '../lib/dns.js';
+import { planDnsChanges, listPath, createPath, removePath } from '../lib/dns.js';
 
 const DOMAIN = 'runs-on.dev';
 const TOKEN = process.env.VERCEL_TOKEN;
@@ -31,7 +31,7 @@ async function existingFor(name) {
   let cursor = '';
 
   for (;;) {
-    const res = await vercel(`/v4/domains/${DOMAIN}/records?limit=100${cursor}`);
+    const res = await vercel(listPath(DOMAIN, cursor));
     if (!res.ok) {
       console.error(`sync-dns: failed to list records for ${DOMAIN}: ${res.status} ${res.statusText}`);
       process.exit(1);
@@ -52,13 +52,13 @@ async function existingFor(name) {
 
     const next = body.pagination?.next;
     if (!next) return found;
-    cursor = `&until=${next}`;
+    cursor = next;
   }
 }
 
 async function deleteStale(name) {
   for (const stale of await existingFor(name)) {
-    const res = await vercel(`/v2/domains/records/${stale.id}`, { method: 'DELETE' });
+    const res = await vercel(removePath(DOMAIN, stale.id), { method: 'DELETE' });
     // A rejected delete must stop the sync here: continuing on to create the new
     // records would leave the stale ones live alongside them, with a green
     // workflow log claiming everything is in sync.
@@ -98,7 +98,7 @@ for (const file of changed) {
     // Vercel's records API takes MX priority as a separate field, not folded
     // into `value`.
     if (change.type === 'MX') body.mxPriority = change.priority;
-    const res = await vercel(`/v2/domains/${DOMAIN}/records`, {
+    const res = await vercel(createPath(DOMAIN), {
       method: 'POST',
       body: JSON.stringify(body),
     });
