@@ -4,5 +4,12 @@
     "github": "blazeyy-exe"
   },
   "claimedAt": "2026-09-02T11:11:57.925Z",
-  "records": {}
+  "records": {},
+  "subdomains": {
+    "_vercel": {
+      "TXT": [
+        "vc-domain-verify=baibhavstha.runs-on.dev,73789739e08ba5745348"
+      ]
+    }
+  }
 }
