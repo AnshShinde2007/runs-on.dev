@@ -5,11 +5,8 @@
   },
   "claimedAt": "2026-09-02T17:52:14.646Z",
   "records": {
-    "CNAME": "c6ffdd03-95b7-49ed-a35c-87a2041c93ad.acmedns.infinityfree.net"
-  },
-  "subdomains": {
-    "99582704ebd10948ad767de6a28c91ac": {
-      "CNAME": "ns1.byet.org"
-    }
+    "A": [
+      "185.27.134.131"
+    ]
   }
 }
