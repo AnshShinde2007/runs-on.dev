@@ -6,12 +6,5 @@
   "claimedAt": "2026-09-02T14:43:57.906Z",
   "records": {
     "URL": "https://pahimnaklenn.runs-on.dev"
-  },
-  "subdomains": {
-    "_vercel": {
-      "TXT": [
-        "https://sanguiris.github.io/Pahimna/HOME.html"
-      ]
-    }
   }
 }
