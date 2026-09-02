@@ -4,5 +4,7 @@
     "github": "CheikhNaro"
   },
   "claimedAt": "2026-09-02T09:13:41.186Z",
-  "records": {}
+  "records": {
+    "CNAME": "cname.vercel-dns.com"
+  }
 }
