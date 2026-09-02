@@ -10,6 +10,9 @@
       "TXT": [
         "vc-domain-verify=brier.runs-on.dev,2570b7dc1e1755a3f9aa"
       ]
+    },
+    "brier": {
+      "CNAME": "5e4c74fc42c5e824.vercel-dns-016.com"
     }
   }
 }
