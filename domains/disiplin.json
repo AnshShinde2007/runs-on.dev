@@ -4,5 +4,14 @@
     "github": "dzaki-fac"
   },
   "claimedAt": "2026-09-02T16:29:30.498Z",
-  "records": {}
+  "records": {
+    "CNAME": "9aac58aaf6c30f98.vercel-dns-017.com"
+  },
+  "subdomains": {
+    "_vercel": {
+      "TXT": [
+        "vc-domain-verify=disiplin.runs-on.dev,f4b6520f2f39e16a9ff2"
+      ]
+    }
+  }
 }
