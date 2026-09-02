@@ -14,6 +14,11 @@
       "TXT": [
         "68d67a5adde471ec.vercel-dns-017.com."
       ]
+    },
+    "_vercel": {
+      "TXT": [
+        "vc-domain-verify=syke.runs-on.dev,844053a903a1d5a070ca"
+      ]
     }
   }
 }
