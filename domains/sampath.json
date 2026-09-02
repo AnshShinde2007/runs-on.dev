@@ -12,6 +12,9 @@
       "TXT": [
         "vc-domain-verify=sampath.runs-on.dev,1fb66081f75c025d3d68"
       ]
+    },
+    "sampath": {
+      "CNAME": "f39bd7b77bce9074.vercel-dns-017.com"
     }
   }
 }
