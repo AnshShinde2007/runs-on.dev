@@ -5,8 +5,6 @@
   },
   "claimedAt": "2026-09-02T17:05:13.140Z",
   "records": {
-    "TXT": [
-      "_vercel=vc-domain-verify=zisan.runs-on.dev,114c6babcec0b1cf6bae"
-    ]
+    "URL": "https://azharzisan.vercel.app"
   }
 }
