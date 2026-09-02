@@ -5,6 +5,9 @@
   },
   "claimedAt": "2026-09-02T07:37:53.424Z",
   "records": {
-    "CNAME": "landingpagealif.netlify.app"
+    "TXT": [
+      "subdomain-owner-verification",
+      "11567c9a7129b7b57ba5562d5517fc7a"
+    ]
   }
 }
