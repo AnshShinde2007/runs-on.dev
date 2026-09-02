@@ -4,5 +4,7 @@
     "github": "frestmybest"
   },
   "claimedAt": "2026-09-02T23:54:30.877Z",
-  "records": {}
+  "records": {
+    "CNAME": "joetoro.pages.dev"
+  }
 }
