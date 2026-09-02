@@ -4,7 +4,9 @@
     "github": "vsniranjan"
   },
   "claimedAt": "2026-09-02T14:05:35.478Z",
-  "records": {},
+  "records": {
+    "CNAME": "aa636657fdb31ad6.vercel-dns-017.com"
+  },
   "subdomains": {
     "_vercel": {
       "TXT": [
