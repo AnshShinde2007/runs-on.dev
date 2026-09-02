@@ -5,8 +5,6 @@
   },
   "claimedAt": "2026-09-02T17:05:13.140Z",
   "records": {
-    "TXT": [
-      "vc-domain-verify=zisan.runs-on.dev,114c6babcec0b1cf6bae"
-    ]
+    "CNAME": "692ed09cc7c7d0f8.vercel-dns-017.com"
   }
 }
