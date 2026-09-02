@@ -4,5 +4,7 @@
     "github": "amalsebs"
   },
   "claimedAt": "2026-09-02T14:38:23.235Z",
-  "records": {}
+  "records": {
+    "CNAME": "amalsebs.github.io"
+  }
 }
