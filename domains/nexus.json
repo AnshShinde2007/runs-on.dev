@@ -4,5 +4,7 @@
     "github": "RiteshRanjanRR09"
   },
   "claimedAt": "2026-09-02T18:33:14.504Z",
-  "records": {}
+  "records": {
+    "CNAME": "nexus-vitc.vercel.app"
+  }
 }
