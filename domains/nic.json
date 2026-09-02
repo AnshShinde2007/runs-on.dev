@@ -4,5 +4,7 @@
     "github": "Nicrom098195"
   },
   "claimedAt": "2026-09-02T17:52:14.646Z",
-  "records": {}
+  "records": {
+    "CNAME": "ns1.byet.org"
+  }
 }
