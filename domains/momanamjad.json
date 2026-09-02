@@ -4,7 +4,12 @@
     "github": "momanamjad"
   },
   "claimedAt": "2026-09-02T08:58:56.675Z",
-  "records": {
-    "CNAME": "de2c52e0178d8069.vercel-dns-017.com"
+  "records": {},
+  "subdomains": {
+    "_vercel": {
+      "TXT": [
+        "vc-domain-verify=momanamjad.runs-on.dev,b5a5391aa9d705069a5a"
+      ]
+    }
   }
 }
