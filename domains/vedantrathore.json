@@ -4,5 +4,12 @@
     "github": "Vedantrathore18"
   },
   "claimedAt": "2026-09-02T16:54:53.297Z",
-  "records": {}
+  "records": {},
+  "subdomains": {
+    "_vercel": {
+      "TXT": [
+        "vc-domain-verify=vedantrathore.runs-on.dev,87350b2afc80e7703dd9"
+      ]
+    }
+  }
 }
