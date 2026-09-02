@@ -40,6 +40,13 @@ export const metadata = {
     title: 'runs-on.dev — free subdomains',
     description: 'Claim your own name.runs-on.dev in seconds. Free, forever.',
   },
+  // Bing Webmaster Tools ownership. Not a secret -- a verification token is
+  // only meaningful when it is publicly readable in the head of the site it
+  // vouches for. Google needs no equivalent here: that property is verified
+  // against DNS for the whole domain, which also covers claimed subdomains.
+  verification: {
+    other: { 'msvalidate.01': 'DE16AF61E473E1FDA073BB3E8BBCF342' },
+  },
 };
 
 export default function RootLayout({ children }) {
