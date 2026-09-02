@@ -4,9 +4,27 @@ on:
   push:
     branches: [main]
     paths: ['domains/**']
+  # A push only ever syncs the names that push touched, so a run that fails
+  # leaves those names stale with no way back: re-running it checks out the
+  # original commit, which is the code that just failed. This is the repair
+  # path. Names are required rather than defaulting to "all" -- deleteStale
+  # runs before the creates, so a full resync would drop every name's DNS for
+  # the length of the run.
+  workflow_dispatch:
+    inputs:
+      names:
+        description: 'Names to re-sync, space or comma separated (e.g. "laurentmaxhuni dexi")'
+        required: true
+        type: string
 
 permissions:
   contents: read
+
+# A manual repair run and an automatic push run touching the same name would
+# race: both list the zone, then both delete what the other just created.
+concurrency:
+  group: sync-dns
+  cancel-in-progress: false
 
 jobs:
   sync:
@@ -19,7 +37,45 @@ jobs:
         with:
           node-version: '22'
       - id: changed
+        env:
+          # Via the environment, never interpolated into the script body: a
+          # `${{ ... }}` expansion inside `run:` is substituted before bash sees
+          # it, so a crafted dispatch input would be executed rather than read.
+          DISPATCH_NAMES: ${{ inputs.names }}
         run: |
+          if [ "${{ github.event_name }}" = 'workflow_dispatch' ]; then
+            if [ -z "$DISPATCH_NAMES" ]; then
+              echo '::error::names input is required'
+              exit 1
+            fi
+
+            # Word-splitting the input is wanted; globbing it is not. Left
+            # unquoted without this, a dispatch of `*` expands against the
+            # checkout into `app lib data docs test ...` -- all shaped like
+            # claimable names, none of them files under domains/, so
+            # sync-dns.mjs would take its "record removed" branch and delete
+            # the DNS of whoever owns those names.
+            set -f
+            NAMES=$(printf '%s' "$DISPATCH_NAMES" | tr ',' ' ')
+
+            # Validate before emitting anything. sync-dns.mjs silently skips a
+            # path that misses its ^domains/([a-z0-9-]+)\.json$ guard, so a typo
+            # -- "Dexi", "dexi.json" -- would otherwise produce a green run that
+            # synced nothing and looked like a repair.
+            for name in $NAMES; do
+              case "$name" in
+                *[!a-z0-9-]*) echo "::error::not a claimable name: $name"; exit 1 ;;
+              esac
+            done
+
+            echo 'files<<EOF' >> $GITHUB_OUTPUT
+            for name in $NAMES; do
+              echo "domains/$name.json" >> $GITHUB_OUTPUT
+            done
+            echo 'EOF' >> $GITHUB_OUTPUT
+            exit 0
+          fi
+
           # Diff the whole push range, not HEAD^..HEAD. Actions fires one push event per
           # push, not per commit, so a rebase-merge or a batch of merges lands several
           # commits at once and HEAD^..HEAD would silently skip every domains/ file touched
