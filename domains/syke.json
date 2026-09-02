@@ -10,7 +10,7 @@
     ]
   },
   "subdomains": {
-    "cname": {
+    "syke": {
       "TXT": [
         "68d67a5adde471ec.vercel-dns-017.com."
       ]
