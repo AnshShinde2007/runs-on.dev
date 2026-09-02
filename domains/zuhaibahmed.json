@@ -4,7 +4,12 @@
     "github": "zuhaibahmed7"
   },
   "claimedAt": "2026-09-02T16:34:34.139Z",
-  "records": {
-    "URL": "https://zuhaibahmed.vercel.app/"
+  "records": {},
+  "subdomains": {
+    "_vercel": {
+      "TXT": [
+        "vc-domain-verify=runs-on.dev,ba1fafe55a20d2d7166d"
+      ]
+    }
   }
 }
