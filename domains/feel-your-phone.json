@@ -6,12 +6,5 @@
   "claimedAt": "2026-09-02T06:58:27.199Z",
   "records": {
     "CNAME": "cname.vercel-dns.com"
-  },
-  "subdomains": {
-    "_vercel": {
-      "TXT": [
-        "vc-domain-verify=feel-your-phone.runs-on.dev,88d3f44e97f159b6d82d"
-      ]
-    }
   }
 }
