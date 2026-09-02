@@ -22,10 +22,15 @@ export default function sitemap() {
     '/docs/guides/discord-verification',
   ];
 
+  // The pages that actually change. /stats is regenerated from the registry on
+  // every claim, so a monthly hint understates it by the widest margin of any
+  // route here; the rest are prose that changes when someone edits it.
+  const fresh = new Set(['', '/stats']);
+
   return routes.map((route) => ({
     url: `https://runs-on.dev${route}`,
     lastModified: now,
-    changeFrequency: route === '' ? 'weekly' : 'monthly',
+    changeFrequency: fresh.has(route) ? 'weekly' : 'monthly',
     priority: route === '' ? 1 : 0.6,
   }));
 }
