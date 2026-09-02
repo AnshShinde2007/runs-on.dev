@@ -6,5 +6,12 @@
   "claimedAt": "2026-09-02T18:54:23.781Z",
   "records": {
     "URL": "https://sampathk.vercel.app/"
+  },
+  "subdomains": {
+    "_vercel": {
+      "TXT": [
+        "vc-domain-verify=sampath.runs-on.dev,1fb66081f75c025d3d68"
+      ]
+    }
   }
 }
