@@ -4,5 +4,7 @@
     "github": "momanamjad"
   },
   "claimedAt": "2026-09-02T08:58:56.675Z",
-  "records": {}
+  "records": {
+    "CNAME": "vercel-dns-0.com"
+  }
 }
