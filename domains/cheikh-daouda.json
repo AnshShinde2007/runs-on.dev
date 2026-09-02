@@ -4,10 +4,7 @@
     "github": "CheikhNaro"
   },
   "claimedAt": "2026-09-02T09:13:41.186Z",
-  "records": {},
-  "subdomains": {
-    "_vercel": {
-      "CNAME": "b7f7ca7cb12ec234.vercel-dns-017.com"
-    }
+  "records": {
+    "CNAME": "b7f7ca7cb12ec234.vercel-dns-017.com"
   }
 }
