@@ -4,5 +4,7 @@
     "github": "delta-ordinus"
   },
   "claimedAt": "2026-09-03T01:58:39.444Z",
-  "records": {}
+  "records": {
+    "CNAME": "www.resume-portfolio-green.vercel.app"
+  }
 }
