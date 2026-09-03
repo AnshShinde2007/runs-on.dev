@@ -4,5 +4,9 @@
     "github": "aneeshsolanki22-hue"
   },
   "claimedAt": "2026-09-03T04:32:30.380Z",
-  "records": {}
+  "records": {
+    "TXT": [
+      "vc-domain-verify=toukir.runs-on.dev,244dc53480f9851b2a04"
+    ]
+  }
 }
