@@ -6,5 +6,10 @@
   "claimedAt": "2026-09-03T02:52:31.704Z",
   "records": {
     "CNAME": "runs-on-domain.pages.dev"
+  },
+  "subdomains": {
+    "ameyar": {
+      "CNAME": "runs-on-domain.pages.dev"
+    }
   }
 }
