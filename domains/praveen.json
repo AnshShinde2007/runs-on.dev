@@ -4,5 +4,12 @@
     "github": "praveen-tek"
   },
   "claimedAt": "2026-09-02T15:13:23.709Z",
-  "records": {}
+  "records": {},
+  "subdomains": {
+    "_vercel": {
+      "TXT": [
+        "vc-domain-verify=gttp.praveen.runs-on.dev,133c52529f049fe910ff"
+      ]
+    }
+  }
 }
