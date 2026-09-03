@@ -10,6 +10,9 @@
       "TXT": [
         "vc-domain-verify=gttp.praveen.runs-on.dev,133c52529f049fe910ff"
       ]
+    },
+    "gttp": {
+      "CNAME": "78e23ef109274c62.vercel-dns-017.com"
     }
   }
 }
