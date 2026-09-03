@@ -4,11 +4,7 @@
     "github": "dineshdhayfule"
   },
   "claimedAt": "2026-09-03T03:10:40.169Z",
-  "records": {
-    "TXT": [
-      "vc-domain-verify=dinesh.runs-on.dev,90e094b5747397b08d46"
-    ]
-  },
+  "records": {},
   "subdomains": {
     "_vercel": {
       "TXT": [
