@@ -8,7 +8,7 @@
   "subdomains": {
     "_vercel": {
       "TXT": [
-        "vc-domain-verify=gttp.praveen.runs-on.dev,133c52529f049fe910ff"
+        "vc-domain-verify=runs-on.dev,80fb870cc21a5096d48a"
       ]
     },
     "gttp": {
