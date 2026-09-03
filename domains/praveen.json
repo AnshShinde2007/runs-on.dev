@@ -10,9 +10,6 @@
       "TXT": [
         "vc-domain-verify=runs-on.dev,80fb870cc21a5096d48a"
       ]
-    },
-    "gttp": {
-      "CNAME": "78e23ef109274c62.vercel-dns-017.com"
     }
   }
 }
