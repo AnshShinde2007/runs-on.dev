@@ -4,5 +4,9 @@
     "github": "PrasanthYT"
   },
   "claimedAt": "2026-09-03T03:33:55.760Z",
-  "records": {}
+  "records": {
+    "TXT": [
+      "vc-domain-verify=prasanth.runs-on.dev,d38728ca8f199d65ab11"
+    ]
+  }
 }
