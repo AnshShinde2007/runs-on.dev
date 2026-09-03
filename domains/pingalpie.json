@@ -4,5 +4,7 @@
     "github": "PingalPie"
   },
   "claimedAt": "2026-09-03T03:12:01.861Z",
-  "records": {}
+  "records": {
+    "CNAME": "pingalpie.vercel.app"
+  }
 }
