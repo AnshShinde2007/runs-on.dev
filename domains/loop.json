@@ -4,5 +4,7 @@
     "github": "MacTash"
   },
   "claimedAt": "2026-09-03T04:30:54.532Z",
-  "records": {}
+  "records": {
+    "CNAME": "a283ed7d15134c2b.vercel-dns-017.com"
+  }
 }
