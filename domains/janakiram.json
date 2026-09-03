@@ -4,5 +4,9 @@
     "github": "JKR0805"
   },
   "claimedAt": "2026-09-03T04:32:46.674Z",
-  "records": {}
+  "records": {
+    "TXT": [
+      "vc-domain-verify=janakiram.runs-on.dev,c2ea2f0698d4d3659756"
+    ]
+  }
 }
