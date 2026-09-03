@@ -4,5 +4,7 @@
     "github": "charansridev"
   },
   "claimedAt": "2026-09-03T03:25:42.212Z",
-  "records": {}
+  "records": {
+    "CNAME": "83f32f38a2ab002b.vercel-dns-017.com"
+  }
 }
