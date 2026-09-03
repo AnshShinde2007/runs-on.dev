@@ -4,5 +4,7 @@
     "github": "scapy47"
   },
   "claimedAt": "2026-09-03T03:20:59.705Z",
-  "records": {}
+  "records": {
+    "CNAME": "scapy47.pages.dev"
+  }
 }
