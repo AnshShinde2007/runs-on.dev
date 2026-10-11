@@ -5,9 +5,7 @@
   },
   "claimedAt": "2026-09-02T17:52:14.646Z",
   "records": {
-    "A": [
-      "185.27.134.131"
-    ]
+    "CNAME": "nicrom098195.github.io"
   },
   "subdomains": {
     "_acme-challenge": {
