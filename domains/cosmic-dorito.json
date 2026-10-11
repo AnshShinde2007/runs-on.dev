@@ -13,6 +13,20 @@
     ],
     "TXT": [
       "zoho-verification=zb92284098.zmverify.zoho.in"
+    ],
+    "MX": [
+      {
+        "priority": 10,
+        "value": "mx.zoho.com"
+      },
+      {
+        "priority": 20,
+        "value": "mx2.zoho.com"
+      },
+      {
+        "priority": 50,
+        "value": "mx3.zoho.com"
+      }
     ]
   },
   "country": "IN"
