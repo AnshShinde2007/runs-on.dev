@@ -12,7 +12,8 @@
       "185.199.111.153"
     ],
     "TXT": [
-      "zoho-verification=zb92284098.zmverify.zoho.in"
+      "zoho-verification=zb92284098.zmverify.zoho.in",
+      "v=spf1 include:zoho.in ~all"
     ],
     "MX": [
       {
