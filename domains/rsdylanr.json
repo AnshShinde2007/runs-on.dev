@@ -4,6 +4,8 @@
     "github": "rsdylanr"
   },
   "claimedAt": "2026-10-12T22:36:37.807Z",
-  "records": {},
+  "records": {
+    "CNAME": "rsdylanr.github.io"
+  },
   "country": "US"
 }
