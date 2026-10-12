@@ -4,6 +4,8 @@
     "github": "ankit3129"
   },
   "claimedAt": "2026-10-12T06:22:12.864Z",
-  "records": {},
+  "records": {
+    "CNAME": "ankit3129.github.io"
+  },
   "country": "IN"
 }
