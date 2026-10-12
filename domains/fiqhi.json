@@ -4,6 +4,8 @@
     "github": "Kuusetsu23"
   },
   "claimedAt": "2026-10-12T11:54:56.047Z",
-  "records": {},
+  "records": {
+    "CNAME": "kuusetsu23.github.io"
+  },
   "country": "ID"
 }
