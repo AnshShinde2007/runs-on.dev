@@ -4,6 +4,8 @@
     "github": "Peterxb"
   },
   "claimedAt": "2026-10-12T12:29:20.049Z",
-  "records": {},
+  "records": {
+    "CNAME": "peterxb.github.io"
+  },
   "country": "ZA"
 }
