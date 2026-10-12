@@ -1,0 +1,14 @@
+{
+  "name": "mc",
+  "owner": {
+    "github": "Pinont"
+  },
+  "claimedAt": "2026-10-12T08:19:38.095Z",
+  "records": {},
+  "subdomains": {
+    "play": {
+      "CNAME": "inf-laboratory.play.minekube.net"
+    }
+  },
+  "country": "TH"
+}
