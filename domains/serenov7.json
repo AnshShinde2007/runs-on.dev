@@ -10,5 +10,17 @@
   "country": "IT",
   "profile": {
     "name": "Sereno"
+  },
+  "subdomains": {
+    "arai": {
+      "A": [
+        "80.225.91.167"
+      ]
+    },
+    "tomoko": {
+      "A": [
+        "192.168.1.152"
+      ]
+    }
   }
 }
