@@ -7,5 +7,10 @@
   "records": {
     "CNAME": "cname.vercel-dns.com"
   },
-  "country": "HK"
+  "country": "HK",
+  "subdomains": {
+    "ezraodyn": {
+      "CNAME": "1d427540f7afe5df.vercel-dns-017.com"
+    }
+  }
 }
