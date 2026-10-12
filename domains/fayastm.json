@@ -4,6 +4,8 @@
     "github": "fayastm03"
   },
   "claimedAt": "2026-10-12T09:14:09.048Z",
-  "records": {},
+  "records": {
+    "CNAME": "fayastm.vercel.app"
+  },
   "country": "IN"
 }
