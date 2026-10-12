@@ -11,12 +11,5 @@
   "profile": {
     "name": "Move My Way Admin Dashbord",
     "bio": "Admin Dashboard to Manage the \"Move My Way\" Mobile Application."
-  },
-  "subdomains": {
-    "_vercel": {
-      "TXT": [
-        "dbad6d7820fedbc0.vercel-dns-017.com"
-      ]
-    }
   }
 }
