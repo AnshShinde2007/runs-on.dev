@@ -9,8 +9,10 @@
   },
   "country": "HK",
   "subdomains": {
-    "ezraodyn": {
-      "CNAME": "1d427540f7afe5df.vercel-dns-017.com"
+    "_vercel": {
+      "TXT": [
+        "vc-domain-verify=ezraodyn.runs-on.dev,aa6fd9fefeadc9583545"
+      ]
     }
   }
 }
