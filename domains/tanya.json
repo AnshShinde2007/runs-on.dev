@@ -4,6 +4,8 @@
     "github": "t-nair"
   },
   "claimedAt": "2026-10-12T19:10:37.134Z",
-  "records": {},
+  "records": {
+    "CNAME": "t-nair.github.io"
+  },
   "country": "US"
 }
