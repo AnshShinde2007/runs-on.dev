@@ -13,7 +13,7 @@
     "bio": "Admin Dashboard to Manage the \"Move My Way\" Mobile Application."
   },
   "subdomains": {
-    "movemyway-admin": {
+    "_vercel": {
       "TXT": [
         "dbad6d7820fedbc0.vercel-dns-017.com."
       ]
