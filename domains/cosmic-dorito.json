@@ -33,11 +33,6 @@
       "TXT": [
         "v=DKIM1; k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCIKvzdUAp4Nnh1X8FDHBVB5Cnzhr9urdxnQpADNCH/mAjZaKUP+dT85+vkMfPDyRz18fAdx7cN906Fh1g8gdXVWnwGEmpaTsKosU00vPrJzyTDgy26wn4VO3PHAOOieBghG33QM/uc7PmfgN9VFbx9lZc1gKw7fW8G9WujG0QGEwIDAQAB"
       ]
-    },
-    "_vercel": {
-      "TXT": [
-        "vc-domain-verify=cosmic-dorito.runs-on.dev,9450604dff5c43567ee3"
-      ]
     }
   }
 }

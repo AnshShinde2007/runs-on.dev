@@ -7,12 +7,5 @@
   "records": {
     "CNAME": "ad4ea92dbf7ef906.vercel-dns-017.com"
   },
-  "country": "CO",
-  "subdomains": {
-    "_vercel": {
-      "TXT": [
-        "vc-domain-verify=neurofit7.runs-on.dev,97879a77ebb7287d9742"
-      ]
-    }
-  }
+  "country": "CO"
 }
