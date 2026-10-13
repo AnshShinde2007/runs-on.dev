@@ -5,5 +5,12 @@
   },
   "claimedAt": "2026-10-09T23:52:04.707Z",
   "records": {},
-  "country": "BD"
+  "country": "BD",
+  "subdomains": {
+    "_discord": {
+      "TXT": [
+        "dh=c0ccccb84679b2fa197288a401fab4bac68a3f46"
+      ]
+    }
+  }
 }
