@@ -5,5 +5,12 @@
   },
   "claimedAt": "2026-09-21T10:19:24.028Z",
   "records": {},
-  "country": "ES"
+  "country": "ES",
+  "subdomains": {
+    "_vercel": {
+      "TXT": [
+        "vc-domain-verify=vincenzobalbi.runs-on.dev,b1e049df6e42f69fc0d7"
+      ]
+    }
+  }
 }
