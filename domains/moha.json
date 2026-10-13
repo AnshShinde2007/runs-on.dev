@@ -4,6 +4,8 @@
     "github": "moha-elh"
   },
   "claimedAt": "2026-10-13T19:36:58.513Z",
-  "records": {},
+  "records": {
+    "CNAME": "cname.vercel-dns.com"
+  },
   "country": "MA"
 }
