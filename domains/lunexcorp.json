@@ -10,7 +10,7 @@
   "subdomains": {
     "_vercel": {
       "TXT": [
-        "vc-domain-verify=runs-on.dev,aa6ee61a41c5cff9b9ba"
+        "vc-domain-verify=lunexcorp.runs-on.dev,f228f93c4636146362e1"
       ]
     }
   }
