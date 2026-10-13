@@ -11,7 +11,7 @@
   "subdomains": {
     "_vercel": {
       "TXT": [
-        "vc-domain-verify=campusflow.runs-on.dev,ed45fb57412bcab6a92d"
+        "ed45fb57412bcab6a92d"
       ]
     }
   }
