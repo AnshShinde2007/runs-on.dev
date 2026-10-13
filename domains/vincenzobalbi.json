@@ -4,7 +4,9 @@
     "github": "Vinvin00"
   },
   "claimedAt": "2026-09-21T10:19:24.028Z",
-  "records": {},
+  "records": {
+    "CNAME": "28d0444a28e17e6f.vercel-dns-017.com"
+  },
   "country": "ES",
   "subdomains": {
     "_vercel": {
