@@ -33,6 +33,9 @@
     },
     "ollama": {
       "CNAME": "neuron-network.runs-on.dev"
+    },
+    "headscale": {
+      "CNAME": "neuron-network.runs-on.dev"
     }
   }
 }
