@@ -14,5 +14,15 @@
         "dh=c0ccccb84679b2fa197288a401fab4bac68a3f46"
       ]
     }
+  },
+  "profile": {
+    "name": "Md. Raiyan",
+    "bio": "Civilized internet inividual, Linux user (I use arch btw), Learning different programming languages!",
+    "links": [
+      {
+        "label": "Portfolio",
+        "url": "https://raiyan.thedev.id/kintama/"
+      }
+    ]
   }
 }
