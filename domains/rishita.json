@@ -10,5 +10,12 @@
   "country": "IN",
   "profile": {
     "name": "rishPhoneix"
+  },
+  "subdomains": {
+    "_vercel": {
+      "TXT": [
+        "vc-domain-verify=runs-on.dev,ac92248d544556c63330"
+      ]
+    }
   }
 }
