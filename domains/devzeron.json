@@ -4,6 +4,8 @@
     "github": "ZeronModz"
   },
   "claimedAt": "2026-10-14T21:19:04.243Z",
-  "records": {},
+  "records": {
+    "CNAME": "cname.vercel-dns.com"
+  },
   "country": "BD"
 }
