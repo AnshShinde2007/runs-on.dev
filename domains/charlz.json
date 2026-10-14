@@ -4,6 +4,8 @@
     "github": "charlzthegtagdev"
   },
   "claimedAt": "2026-10-14T18:06:40.462Z",
-  "records": {},
+  "records": {
+    "CNAME": "charlzthegtagdev.github.io"
+  },
   "country": "GB"
 }
