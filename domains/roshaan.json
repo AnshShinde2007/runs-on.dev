@@ -7,5 +7,12 @@
   "records": {
     "URL": "https://roshaan-ali.vercel.app/"
   },
-  "country": "PK"
+  "country": "PK",
+  "subdomains": {
+    "_vercel": {
+      "TXT": [
+        "vc-domain-verify=roshaan.runs-on.dev,21ce5ab3a6c9ccb417a2"
+      ]
+    }
+  }
 }
