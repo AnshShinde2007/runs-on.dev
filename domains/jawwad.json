@@ -4,6 +4,8 @@
     "github": "RA7AN"
   },
   "claimedAt": "2026-09-25T18:06:57.164Z",
-  "records": {},
+  "records": {
+    "CNAME": "0e45a0921b1a157c.vercel-dns-017.com"
+  },
   "country": "SA"
 }
