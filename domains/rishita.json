@@ -4,6 +4,8 @@
     "github": "rishPhoneix"
   },
   "claimedAt": "2026-10-14T20:24:42.896Z",
-  "records": {},
+  "records": {
+    "CNAME": "rishphoneix.github.io"
+  },
   "country": "IN"
 }
