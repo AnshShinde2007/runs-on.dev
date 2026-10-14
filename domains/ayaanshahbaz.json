@@ -7,5 +7,12 @@
   "records": {
     "CNAME": "ayaanshahbaz.vercel.app"
   },
-  "country": "PK"
+  "country": "PK",
+  "subdomains": {
+    "_vercel": {
+      "TXT": [
+        "vc-domain-verify=ayaanshahbaz.runs-on.dev,6cf8216348218fbecfed"
+      ]
+    }
+  }
 }
