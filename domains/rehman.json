@@ -9,5 +9,12 @@
       "vc-domain-verify=rehman.runs-on.dev,6e7b445a167ffe4981c4"
     ]
   },
-  "country": "PK"
+  "country": "PK",
+  "subdomains": {
+    "_vercel": {
+      "TXT": [
+        "vc-domain-verify=rehman.runs-on.dev,6e7b445a167ffe4981c4"
+      ]
+    }
+  }
 }
