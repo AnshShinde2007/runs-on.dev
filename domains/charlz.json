@@ -5,7 +5,24 @@
   },
   "claimedAt": "2026-10-14T18:06:40.462Z",
   "records": {
-    "CNAME": "cced127842354c6c.vercel-dns-017.com"
+    "TXT": [
+      "v=spf1 +include:spf.onlarksuite.com -all",
+      "verification-code-site-App_lark=3lZBwXpgHbGSh6elDqMm"
+    ],
+    "MX": [
+      {
+        "priority": 1,
+        "value": "mx1.larksuite.com"
+      },
+      {
+        "priority": 5,
+        "value": "mx1.larksuite.com"
+      },
+      {
+        "priority": 10,
+        "value": "mx3.larksuite.com"
+      }
+    ]
   },
   "country": "GB",
   "subdomains": {
