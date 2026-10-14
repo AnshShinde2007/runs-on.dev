@@ -6,5 +6,20 @@
   "claimedAt": "2026-09-02T12:25:25.283Z",
   "records": {
     "CNAME": "sumitkumar-17.github.io"
+  },
+  "subdomains": {
+    "_acme-challenge.sandkiln": {
+      "TXT": [
+        "SHg1NtA_7hqf0tooOdTTEcY8teRqQK8bSKopbiJTFiM"
+      ]
+    },
+    "_cf-custom-hostname.sandkiln": {
+      "TXT": [
+        "5b808e2b-ca56-4dc2-9993-a574657e2a7c"
+      ]
+    },
+    "sandkiln": {
+      "CNAME": "cname.mintlify.builders"
+    }
   }
 }
