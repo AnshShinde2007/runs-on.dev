@@ -4,6 +4,10 @@
     "github": "marveldw"
   },
   "claimedAt": "2026-10-14T04:04:00.728Z",
-  "records": {},
+  "records": {
+    "A": [
+      "168.110.196.230"
+    ]
+  },
   "country": "ID"
 }
