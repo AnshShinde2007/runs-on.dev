@@ -5,5 +5,9 @@
   },
   "claimedAt": "2026-10-14T19:08:53.769Z",
   "records": {},
-  "country": "PK"
+  "country": "PK",
+  "profile": {
+    "name": "Muhammad Mateen Sajid",
+    "bio": "I am a Full-Stack Developer & AI Automation Engineer dedicated to delivering resilient, production-grade digital solutions."
+  }
 }
