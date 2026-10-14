@@ -21,7 +21,7 @@
   "subdomains": {
     "_vercel": {
       "TXT": [
-        "vc-domain-verify=apsacs-nmc-bwp.runs-on.dev,c859e520d467cdd95ca0"
+        "vc-domain-verify=apsac-nmc-bwp.runs-on.dev,ebcc09c3d879be4c4599"
       ]
     }
   }
