@@ -4,6 +4,8 @@
     "github": "umesh260805-lab"
   },
   "claimedAt": "2026-10-14T06:09:27.122Z",
-  "records": {},
+  "records": {
+    "CNAME": "umesh260805-lab.github.io"
+  },
   "country": "IN"
 }
