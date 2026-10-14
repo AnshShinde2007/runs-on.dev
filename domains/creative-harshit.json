@@ -7,5 +7,10 @@
   "records": {
     "CNAME": "creative-harshit.dev"
   },
-  "country": "IN"
+  "country": "IN",
+  "subdomains": {
+    "_vercel": {
+      "CNAME": "creative-harshit.dev"
+    }
+  }
 }
