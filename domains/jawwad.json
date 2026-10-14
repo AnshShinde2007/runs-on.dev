@@ -7,5 +7,12 @@
   "records": {
     "CNAME": "0e45a0921b1a157c.vercel-dns-017.com"
   },
-  "country": "SA"
+  "country": "SA",
+  "subdomains": {
+    "_vercel": {
+      "TXT": [
+        "vc-domain-verify=jawwad.runs-on.dev,e3b7a904b93788351c9d"
+      ]
+    }
+  }
 }
