@@ -4,6 +4,10 @@
     "github": "silent-301"
   },
   "claimedAt": "2026-10-14T21:55:05.352Z",
-  "records": {},
+  "records": {
+    "TXT": [
+      "vc-domain-verify=rehman.runs-on.dev,6e7b445a167ffe4981c4"
+    ]
+  },
   "country": "PK"
 }
