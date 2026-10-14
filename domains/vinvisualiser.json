@@ -4,6 +4,15 @@
     "github": "viinniiee"
   },
   "claimedAt": "2026-09-25T10:23:33.303Z",
-  "records": {},
-  "country": "IN"
+  "records": {
+    "CNAME": "2aa791c2bece7ba8.vercel-dns-017.com"
+  },
+  "country": "IN",
+  "subdomains": {
+    "_vercel": {
+      "TXT": [
+        "vc-domain-verify=vinvisualiser.runs-on.dev,37eb5fcda1bbca741150"
+      ]
+    }
+  }
 }
