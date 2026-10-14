@@ -13,7 +13,7 @@
   "subdomains": {
     "_vercel": {
       "TXT": [
-        "vc-domain-verify=rehman.runs-on.dev,6e7b445a167ffe4981c4"
+        "vc-domain-verify=cineflix.runs-on.dev,e588c9b5bc578f87a8df"
       ]
     }
   }
