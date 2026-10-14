@@ -5,9 +5,7 @@
   },
   "claimedAt": "2026-10-14T21:55:05.352Z",
   "records": {
-    "TXT": [
-      "vc-domain-verify=rehman.runs-on.dev,6e7b445a167ffe4981c4"
-    ]
+    "CNAME": "cineflix.runs-on.dev"
   },
   "country": "PK",
   "subdomains": {
