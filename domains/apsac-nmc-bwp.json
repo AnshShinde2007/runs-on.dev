@@ -8,6 +8,12 @@
   "country": "PK",
   "profile": {
     "name": "Muhammad Mateen Sajid",
-    "bio": "I am a Full-Stack Developer & AI Automation Engineer dedicated to delivering resilient, production-grade digital solutions."
+    "bio": "I am a Full-Stack Developer & AI Automation Engineer dedicated to delivering resilient, production-grade digital solutions.",
+    "links": [
+      {
+        "label": "My Portfolio",
+        "url": "https://mmateenn.vercel.app/"
+      }
+    ]
   }
 }
