@@ -4,7 +4,9 @@
     "github": "Bhargi777"
   },
   "claimedAt": "2026-10-15T02:42:53.837Z",
-  "records": {},
+  "records": {
+    "URL": "https://bhargi.vercel.app"
+  },
   "country": "IN",
   "subdomains": {
     "_vercel": {
