@@ -4,6 +4,10 @@
     "github": "elyvate-website"
   },
   "claimedAt": "2026-10-15T17:01:16.532Z",
-  "records": {},
+  "records": {
+    "A": [
+      "76.76.21.21"
+    ]
+  },
   "country": "BD"
 }
