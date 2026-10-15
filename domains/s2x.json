@@ -5,12 +5,5 @@
   },
   "claimedAt": "2026-10-15T18:26:35.942Z",
   "records": {},
-  "country": "AR",
-  "subdomains": {
-    "_vercel": {
-      "TXT": [
-        "vc-domain-verify=runs-on.dev,a09b7a56318b72659539"
-      ]
-    }
-  }
+  "country": "AR"
 }
