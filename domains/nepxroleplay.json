@@ -10,5 +10,12 @@
   "country": "NP",
   "profile": {
     "name": "Tenzeroo"
+  },
+  "subdomains": {
+    "_vercel": {
+      "TXT": [
+        "vc-domain-verify=nepxroleplay.runs-on.dev,cde75afb99884b1a86ef"
+      ]
+    }
   }
 }
