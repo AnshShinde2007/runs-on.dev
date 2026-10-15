@@ -5,5 +5,12 @@
   },
   "claimedAt": "2026-10-15T19:41:19.639Z",
   "records": {},
-  "country": "IN"
+  "country": "IN",
+  "subdomains": {
+    "_vercel": {
+      "TXT": [
+        "vc-domain-verify=yuvraj.runs-on.dev,8515294f49ac8ec529df"
+      ]
+    }
+  }
 }
