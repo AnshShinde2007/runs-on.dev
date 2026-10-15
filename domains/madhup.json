@@ -10,5 +10,12 @@
   "country": "IN",
   "profile": {
     "name": "Madhup"
+  },
+  "subdomains": {
+    "_vercel": {
+      "TXT": [
+        "vc-domain-verify=madhup.runs-on.dev,89e5b9759d4df7dad7bb"
+      ]
+    }
   }
 }
