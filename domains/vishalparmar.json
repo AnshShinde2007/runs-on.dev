@@ -7,5 +7,12 @@
   "records": {
     "CNAME": "80141851fdc8509f.vercel-dns-017.com"
   },
-  "country": "IN"
+  "country": "IN",
+  "subdomains": {
+    "_vercel": {
+      "TXT": [
+        "vc-domain-verify=vishalparmar.runs-on.dev,616da653ba24eac90f53"
+      ]
+    }
+  }
 }
