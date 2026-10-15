@@ -5,9 +5,7 @@
   },
   "claimedAt": "2026-10-15T04:38:03.055Z",
   "records": {
-    "TXT": [
-      "vc-domain-verify=manisaitejabejjala.runs-on.dev,b7f48ba1ebd611415c62"
-    ]
+    "CNAME": "36f700e9d5aae709.vercel-dns-017.com"
   },
   "country": "IN"
 }
