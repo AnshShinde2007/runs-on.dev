@@ -4,7 +4,9 @@
     "github": "suryanarayan1"
   },
   "claimedAt": "2026-10-15T14:16:36.689Z",
-  "records": {},
+  "records": {
+    "CNAME": "cname.vercel-dns.com"
+  },
   "country": "IN",
   "subdomains": {
     "_vercel": {
