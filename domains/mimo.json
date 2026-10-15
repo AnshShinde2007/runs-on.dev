@@ -4,6 +4,8 @@
     "github": "devendrsinghchundawat78-ship-it"
   },
   "claimedAt": "2026-10-15T07:48:46.761Z",
-  "records": {},
+  "records": {
+    "CNAME": "mimo-app-9bl.pages.dev"
+  },
   "country": "US"
 }
