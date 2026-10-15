@@ -13,6 +13,9 @@
       "TXT": [
         "vc-domain-verify=krushang004.runs-on.dev,ed21fd4d31576043dcf8"
       ]
+    },
+    "krushang004": {
+      "CNAME": "4b6c2c88270c9ce1.vercel-dns-017.com"
     }
   }
 }
