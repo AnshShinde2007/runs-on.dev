@@ -4,6 +4,8 @@
     "github": "visheshio"
   },
   "claimedAt": "2026-10-15T06:23:16.409Z",
-  "records": {},
+  "records": {
+    "CNAME": "cname.vercel-dns.com"
+  },
   "country": "IN"
 }
