@@ -4,6 +4,8 @@
     "github": "ammazhussain"
   },
   "claimedAt": "2026-10-15T12:05:43.312Z",
-  "records": {},
+  "records": {
+    "CNAME": "ammaz-portfolio.netlify.app"
+  },
   "country": "PK"
 }
