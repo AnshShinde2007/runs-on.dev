@@ -11,10 +11,8 @@
   },
   "country": "BD",
   "subdomains": {
-    "_vercel": {
-      "TXT": [
-        "vc-domain-verify=elyvateco.runs-on.dev,b23fb92374b63aadb862"
-      ]
+    "elyvateco": {
+      "CNAME": "85a8480914448cf8.vercel-dns-017.com"
     }
   }
 }
