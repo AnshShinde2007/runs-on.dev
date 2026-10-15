@@ -4,6 +4,8 @@
     "github": "abhi-1288"
   },
   "claimedAt": "2026-10-15T04:53:29.857Z",
-  "records": {},
+  "records": {
+    "CNAME": "cc20fda304e31869.vercel-dns-017.com"
+  },
   "country": "IN"
 }
