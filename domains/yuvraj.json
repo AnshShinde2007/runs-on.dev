@@ -14,5 +14,14 @@
         "vc-domain-verify=yuvraj.runs-on.dev,8515294f49ac8ec529df"
       ]
     }
+  },
+  "profile": {
+    "name": "chopra-yuvraj",
+    "links": [
+      {
+        "label": "My Portfolio",
+        "url": "https://yuvraj.runs-on.dev/"
+      }
+    ]
   }
 }
