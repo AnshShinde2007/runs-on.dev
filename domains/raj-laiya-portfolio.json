@@ -7,5 +7,12 @@
   "records": {
     "CNAME": "cname.vercel-dns.com"
   },
-  "country": "IN"
+  "country": "IN",
+  "subdomains": {
+    "_vercel": {
+      "TXT": [
+        "vc-domain-verify=raj-laiya-portfolio.runs-on.dev,d4638c680276ca79e3dc"
+      ]
+    }
+  }
 }
