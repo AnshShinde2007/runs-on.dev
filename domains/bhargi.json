@@ -7,12 +7,5 @@
   "records": {
     "URL": "https://bhargi.vercel.app"
   },
-  "country": "IN",
-  "subdomains": {
-    "_vercel": {
-      "TXT": [
-        "vc-domain-verify=bhargi.runs-on.dev,9c28e3befb84a66394e5"
-      ]
-    }
-  }
+  "country": "IN"
 }
