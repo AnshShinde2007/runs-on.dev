@@ -4,6 +4,8 @@
     "github": "YatishGoyal"
   },
   "claimedAt": "2026-10-15T06:59:03.301Z",
-  "records": {},
+  "records": {
+    "CNAME": "yatishgoyal.github.io"
+  },
   "country": "IN"
 }
