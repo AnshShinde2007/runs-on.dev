@@ -7,5 +7,10 @@
   "records": {
     "CNAME": "likhora-ai.onrender.com"
   },
-  "country": "IN"
+  "country": "IN",
+  "subdomains": {
+    "info": {
+      "CNAME": "likhora.onrender.com"
+    }
+  }
 }
