@@ -7,5 +7,12 @@
   "records": {
     "URL": "https://udaan-road-to-future-web.vercel.app/"
   },
-  "country": "IN"
+  "country": "IN",
+  "subdomains": {
+    "_vercel": {
+      "TXT": [
+        "vc-domain-verify=udaantechsolutions.runs-on.dev,9a852a1efed94625c2ae"
+      ]
+    }
+  }
 }
