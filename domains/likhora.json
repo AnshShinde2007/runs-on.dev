@@ -24,7 +24,7 @@
   },
   "country": "IN",
   "subdomains": {
-    "app": {
+    "info": {
       "CNAME": "likhora.onrender.com"
     }
   }
