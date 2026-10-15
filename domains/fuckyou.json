@@ -4,6 +4,10 @@
     "github": "frank-labs"
   },
   "claimedAt": "2026-10-15T20:40:59.255Z",
-  "records": {},
+  "records": {
+    "A": [
+      "129.153.95.251"
+    ]
+  },
   "country": "CA"
 }
