@@ -4,6 +4,8 @@
     "github": "veena694"
   },
   "claimedAt": "2026-10-15T12:00:12.299Z",
-  "records": {},
+  "records": {
+    "CNAME": "cname.vercel-dns.com"
+  },
   "country": "IN"
 }
