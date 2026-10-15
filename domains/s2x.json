@@ -7,5 +7,10 @@
   "records": {
     "CNAME": "lunartisticz.github.io"
   },
-  "country": "AR"
+  "country": "AR",
+  "subdomains": {
+    "s2x": {
+      "CNAME": "6442397e008aac3a.vercel-dns-017.com"
+    }
+  }
 }
