@@ -9,7 +9,7 @@
   },
   "country": "GB",
   "subdomains": {
-    "subdomain-owner-verification": {
+    "netlify-challenge": {
       "TXT": [
         "b45fdb24b0f0a62257aa5b6e7647e020"
       ]
