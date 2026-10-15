@@ -13,9 +13,6 @@
       "TXT": [
         "vc-domain-verify=spellquest.runs-on.dev,3d9387e474bcdc14c607"
       ]
-    },
-    "spellquest": {
-      "CNAME": "793e15f3120abc13.vercel-dns-017.com"
     }
   }
 }
