@@ -4,6 +4,8 @@
     "github": "SarthakMawale"
   },
   "claimedAt": "2026-10-15T15:39:10.105Z",
-  "records": {},
+  "records": {
+    "CNAME": "elyvora-development.vercel.app"
+  },
   "country": "IN"
 }
