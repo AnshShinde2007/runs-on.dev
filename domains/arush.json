@@ -4,7 +4,9 @@
     "github": "Arushsh"
   },
   "claimedAt": "2026-10-15T18:40:59.487Z",
-  "records": {},
+  "records": {
+    "CNAME": "76827e9411dcf491.vercel-dns-017.com"
+  },
   "country": "IN",
   "subdomains": {
     "_vercel": {
