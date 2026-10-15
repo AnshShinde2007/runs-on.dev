@@ -7,5 +7,12 @@
   "records": {
     "CNAME": "bc912a43d2569d51.vercel-dns-017.com"
   },
-  "country": "IN"
+  "country": "IN",
+  "subdomains": {
+    "_vercel": {
+      "TXT": [
+        "vc-domain-verify=veena.runs-on.dev,1a1a25a1c819e3ee8226"
+      ]
+    }
+  }
 }
