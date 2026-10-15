@@ -7,12 +7,5 @@
   "records": {
     "CNAME": "35a65ec9-c2f8-4635-afc8-eda7cb1c758e.cfargotunnel.com"
   },
-  "country": "GB",
-  "subdomains": {
-    "netlify-challenge": {
-      "TXT": [
-        "b45fdb24b0f0a62257aa5b6e7647e020"
-      ]
-    }
-  }
+  "country": "GB"
 }
