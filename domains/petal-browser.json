@@ -4,6 +4,8 @@
     "github": "shreyagarwal72"
   },
   "claimedAt": "2026-10-15T04:08:18.447Z",
-  "records": {},
+  "records": {
+    "CNAME": "cname.vercel-dns.com"
+  },
   "country": "IN"
 }
