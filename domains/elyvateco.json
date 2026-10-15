@@ -7,6 +7,9 @@
   "records": {
     "A": [
       "76.76.21.21"
+    ],
+    "TXT": [
+      "vc-domain-verify=elyvateco.runs-on.dev,b23fb92374b63aadb862"
     ]
   },
   "country": "BD",
