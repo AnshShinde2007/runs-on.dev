@@ -7,5 +7,12 @@
   "records": {
     "CNAME": "studypass-9nf.pages.dev"
   },
-  "country": "IN"
+  "country": "IN",
+  "subdomains": {
+    "studypass": {
+      "TXT": [
+        "studypass-9nf.pages.dev"
+      ]
+    }
+  }
 }
