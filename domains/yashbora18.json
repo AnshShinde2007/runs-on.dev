@@ -5,5 +5,19 @@
   },
   "claimedAt": "2026-10-15T03:30:56.794Z",
   "records": {},
-  "country": "IN"
+  "country": "IN",
+  "profile": {
+    "name": "Yash Bora",
+    "bio": "Python Developer | B.Tech CSE Graduate | Building AI apps and full-stack projects | Python, FastAPI, React & SQL",
+    "links": [
+      {
+        "label": "GitHub",
+        "url": "https://github.com/yashbora18"
+      },
+      {
+        "label": "LinkedIn",
+        "url": "https://linkedin.com/in/yash-bora-92b305258"
+      }
+    ]
+  }
 }
