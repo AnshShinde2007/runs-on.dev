@@ -4,6 +4,8 @@
     "github": "Bhargi777"
   },
   "claimedAt": "2026-10-15T04:06:17.619Z",
-  "records": {},
+  "records": {
+    "CNAME": "b16c496528371671.vercel-dns-017.com"
+  },
   "country": "IN"
 }
