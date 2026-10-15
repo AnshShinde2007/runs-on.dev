@@ -27,7 +27,7 @@
   },
   "country": "IT",
   "subdomains": {
-    "api": {
+    "kvapi": {
       "CNAME": "zda5eftivxouzkto.l.tunwg.com"
     }
   }
