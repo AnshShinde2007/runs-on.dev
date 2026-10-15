@@ -10,7 +10,13 @@
   "country": "NP",
   "profile": {
     "name": "Nepx Roleplay",
-    "bio": "We are here to Roleplay!! Stay in your character else Arena is free for all"
+    "bio": "We are here to Roleplay!! Stay in your character else Arena is free for all",
+    "links": [
+      {
+        "label": "Discord Invite Link",
+        "url": "https://discord.com/invite/CEnBu46ZUY"
+      }
+    ]
   },
   "subdomains": {
     "_vercel": {
