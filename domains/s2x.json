@@ -7,12 +7,5 @@
   "records": {
     "CNAME": "lunartisticz.github.io"
   },
-  "country": "AR",
-  "subdomains": {
-    "_vercel": {
-      "TXT": [
-        "vc-domain-verify=runs-on.dev,a09b7a56318b72659539"
-      ]
-    }
-  }
+  "country": "AR"
 }
