@@ -7,5 +7,12 @@
   "records": {
     "CNAME": "ca63623bf02b35cd.vercel-dns-017.com"
   },
-  "country": "IN"
+  "country": "IN",
+  "subdomains": {
+    "_vercel": {
+      "TXT": [
+        "vc-domain-verify=mizan.runs-on.dev,0690d55b8d5c63834d90"
+      ]
+    }
+  }
 }
