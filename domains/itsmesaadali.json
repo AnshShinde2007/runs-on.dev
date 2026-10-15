@@ -4,7 +4,9 @@
     "github": "itsmesaadali"
   },
   "claimedAt": "2026-10-15T07:06:49.447Z",
-  "records": {},
+  "records": {
+    "CNAME": "cname.vercel-dns.com"
+  },
   "country": "PK",
   "subdomains": {
     "payment": {
