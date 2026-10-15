@@ -4,6 +4,8 @@
     "github": "sharikhan-dev"
   },
   "claimedAt": "2026-10-15T16:43:51.485Z",
-  "records": {},
+  "records": {
+    "CNAME": "cname.vercel-dns.com"
+  },
   "country": "IN"
 }
