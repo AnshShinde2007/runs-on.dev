@@ -4,6 +4,13 @@
     "github": "Tilak010"
   },
   "claimedAt": "2026-10-15T13:39:24.460Z",
-  "records": {},
+  "records": {
+    "CNAME": "41e2910f6162616e.vercel-dns-017.com"
+  },
+  "subdomains": {
+    "_vercel": {
+      "TXT": ["vc-domain-verify=tilak.runs-on.dev,e06cf2a0a5e496420106"]
+    }
+  },
   "country": "IN"
 }
