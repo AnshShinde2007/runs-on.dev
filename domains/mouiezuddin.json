@@ -4,6 +4,8 @@
     "github": "Mouiezuddin"
   },
   "claimedAt": "2026-10-15T13:59:26.561Z",
-  "records": {},
+  "records": {
+    "CNAME": "cname.vercel-dns.com"
+  },
   "country": "IN"
 }
