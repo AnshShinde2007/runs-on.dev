@@ -161,11 +161,13 @@ All four are drop-in `records` values, verified against the schema above.
 ### Vercel
 
 ```json
-"records": { "CNAME": "cname.vercel-dns.com" }
+"records": { "CNAME": "<hash>.vercel-dns-017.com" }
 ```
 
-The Vercel dashboard shows this exact value when you add a custom domain to
-a project (Project → Settings → Domains).
+Add the custom domain to the project first (Project → Settings → Domains);
+the dashboard then shows the target to copy. Most projects get one specific
+to them, so use what it shows rather than the placeholder above. Some
+accounts are still given the generic `cname.vercel-dns.com` instead.
 
 ### GitHub Pages
 

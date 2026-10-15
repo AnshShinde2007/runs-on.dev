@@ -39,21 +39,24 @@ few seconds. Full walkthrough: [`/docs/guides/url-redirect`](https://runs-on.dev
 ## Vercel
 
 ```json
-"records": { "CNAME": "cname.vercel-dns.com" }
+"records": { "CNAME": "<hash>.vercel-dns-017.com" }
 ```
 
 Add `you.runs-on.dev` as a custom domain on the Vercel project (Project →
-Settings → Domains), then set the record to whatever target the Domains tab
-shows you. Most projects get `cname.vercel-dns.com`; some accounts get a
-project-specific `<hash>.vercel-dns-017.com` instead. Leave off any trailing
-dot. Once the CNAME syncs, the Domains tab issues its own certificate.
+Settings → Domains) **before** you write the record, then set it to whatever
+target the Domains tab shows you. Most projects get a project-specific
+`<hash>.vercel-dns-017.com`; some accounts get the generic
+`cname.vercel-dns.com` instead. Using the wrong one of the two resolves but
+serves nothing, which is the most common way a claim ends up stuck. Leave off
+any trailing dot. Once the CNAME syncs, the Domains tab issues its own
+certificate.
 
 If Vercel also shows a TXT record starting `vc-domain-verify=`, it goes at
 `_vercel`, one label below your name, not beside the CNAME:
 
 ```json
 {
-  "records": { "CNAME": "cname.vercel-dns.com" },
+  "records": { "CNAME": "<hash>.vercel-dns-017.com" },
   "subdomains": { "_vercel": { "TXT": ["vc-domain-verify=you.runs-on.dev,PASTE-YOUR-TOKEN"] } }
 }
 ```

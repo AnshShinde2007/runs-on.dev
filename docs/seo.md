@@ -35,7 +35,7 @@ Point the name at a host you control and you serve every byte, so every
 ordinary SEO lever is yours:
 
 ```json
-"records": { "CNAME": "cname.vercel-dns.com" }
+"records": { "CNAME": "<hash>.vercel-dns-017.com" }
 ```
 
 Titles, descriptions, structured data, internal links, page speed. The
@@ -97,7 +97,7 @@ DNS, a `TXT` record on your own name works:
 
 ```json
 "records": {
-  "CNAME": "cname.vercel-dns.com",
+  "CNAME": "<hash>.vercel-dns-017.com",
   "TXT": ["google-site-verification=your-token-here"]
 }
 ```

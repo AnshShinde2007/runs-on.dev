@@ -51,7 +51,7 @@ export default function Seo() {
           lever is yours: titles, descriptions, structured data, internal links, page speed. The
           registry is not in the request path at all once DNS resolves.
         </p>
-        <Record path="domains/you.json">{`"records": { "CNAME": "cname.vercel-dns.com" }`}</Record>
+        <Record path="domains/you.json">{`"records": { "CNAME": "<hash>.vercel-dns-017.com" }`}</Record>
         <p className="text-sm leading-relaxed sm:text-base">
           See <a className="text-(--color-signal) underline" href="/docs/guides">the guides</a> for
           the record each provider wants.
@@ -98,7 +98,7 @@ Sitemap: https://you.runs-on.dev/sitemap.xml`}</Code>
           content. To verify by DNS instead, a <C>TXT</C> record on your own name works.
         </p>
         <Record path="domains/you.json">{`"records": {
-  "CNAME": "cname.vercel-dns.com",
+  "CNAME": "<hash>.vercel-dns-017.com",
   "TXT": ["google-site-verification=your-token-here"]
 }`}</Record>
         <p className="text-sm leading-relaxed sm:text-base">

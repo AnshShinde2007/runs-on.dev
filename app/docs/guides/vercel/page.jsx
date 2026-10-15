@@ -16,28 +16,36 @@ export default function VercelGuide() {
       <Lede>you.runs-on.dev serving a Vercel project, over HTTPS, via CNAME.</Lede>
 
       <Section title="The record">
-        <Record path="domains/you.json">{`"records": { "CNAME": "cname.vercel-dns.com" }`}</Record>
+        <Record path="domains/you.json">{`"records": { "CNAME": "<hash>.vercel-dns-017.com" }`}</Record>
         <p className="text-sm leading-relaxed sm:text-base">
-          <C>cname.vercel-dns.com</C> is the target Vercel gives most projects. Some accounts get a
-          project-specific one instead, of the form{' '}
-          <C>&lt;hash&gt;.vercel-dns-017.com</C>. Copy whatever your own Domains tab shows rather
-          than the value above, and leave off any trailing dot: <C>example.com.</C> fails the
-          hostname grammar, <C>example.com</C> passes.
+          That is a shape, not a value to copy. Vercel issues most projects their own target of
+          the form <C>&lt;hash&gt;.vercel-dns-017.com</C>, and shows it in the Domains tab once you
+          have added the name there. Some accounts get the generic{' '}
+          <C>cname.vercel-dns.com</C> instead. Either way the only correct target is the one your
+          own Domains tab shows, so do that step first and paste what it gives you. Leave off any
+          trailing dot: <C>example.com.</C> fails the hostname grammar, <C>example.com</C> passes.
         </p>
+        <Warning>
+          A target belonging to a different project resolves perfectly well and serves nothing,
+          because Vercel never routes the name to you. The record looks correct, the claim looks
+          live, and the daily health check is what eventually notices. Guessing the target is the
+          most common way a Vercel claim ends up stuck.
+        </Warning>
       </Section>
 
       <Section title="Steps">
         <ApplyNote />
 
         <ol className="list-decimal space-y-2 pl-6 text-sm leading-relaxed sm:text-base">
-          <li>Fork <a className="text-(--color-signal) underline" href="https://github.com/zordhalo/runs-on.dev">the registry</a> and edit <C>domains/you.json</C> to the record above.</li>
-          <li>Open a pull request. Once merged, the CNAME is synced to DNS automatically.</li>
           <li>
-            In the Vercel dashboard: your project → Settings → Domains → add{' '}
-            <C>you.runs-on.dev</C>. Vercel then shows you the DNS it wants. Usually that is the
-            CNAME alone. If it also shows a <C>TXT</C> record, read the next section before adding
+            In the Vercel dashboard, first: your project → Settings → Domains → add{' '}
+            <C>you.runs-on.dev</C>. Vercel then shows you the DNS it wants. Usually that is a CNAME
+            alone. If it also shows a <C>TXT</C> record, read the next section before adding
             anything.
           </li>
+          <li>Copy the CNAME target it shows you. That value is what goes in your record.</li>
+          <li>Fork <a className="text-(--color-signal) underline" href="https://github.com/zordhalo/runs-on.dev">the registry</a> and edit <C>domains/you.json</C>, using the target you just copied.</li>
+          <li>Open a pull request. Once merged, the CNAME is synced to DNS automatically.</li>
         </ol>
       </Section>
 
@@ -49,7 +57,7 @@ export default function VercelGuide() {
           <C>subdomains</C> key is for:
         </p>
         <Record path="domains/you.json">{`{
-  "records": { "CNAME": "cname.vercel-dns.com" },
+  "records": { "CNAME": "<hash>.vercel-dns-017.com" },
   "subdomains": {
     "_vercel": {
       "TXT": ["vc-domain-verify=you.runs-on.dev,PASTE-YOUR-TOKEN"]

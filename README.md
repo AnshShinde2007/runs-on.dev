@@ -127,11 +127,12 @@ needs its own Search Console property.
 Vercel, the shortest path from claim to a live custom domain:
 
 ```json
-"records": { "CNAME": "cname.vercel-dns.com" }
+"records": { "CNAME": "<hash>.vercel-dns-017.com" }
 ```
 
-Add `you.runs-on.dev` as a custom domain on the Vercel project; it shows
-you this same CNAME target.
+Add `you.runs-on.dev` as a custom domain on the Vercel project first; the
+Domains tab then shows the CNAME target to use. It is usually specific to
+your project, so copy what it shows rather than the placeholder above.
 
 A Bluesky handle, which needs no hosting at all, just a subdomain entry:
 
