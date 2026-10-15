@@ -5,9 +5,7 @@
   },
   "claimedAt": "2026-10-15T09:24:33.747Z",
   "records": {
-    "TXT": [
-      "vc-domain-verify=murali.runs-on.dev,e2fdb4fb90242b6f61bb"
-    ]
+    "CNAME": "cname.vercel-dns.com"
   },
   "country": "IN"
 }
