@@ -13,6 +13,11 @@
       "TXT": [
         "vc-domain-verify=runs-on.dev,e51d09ded4000e00fcf0"
       ]
+    },
+    "erp": {
+      "TXT": [
+        "c75f068d6a916749.vercel-dns-017.com."
+      ]
     }
   }
 }
