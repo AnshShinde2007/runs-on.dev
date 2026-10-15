@@ -25,5 +25,10 @@
       }
     ]
   },
-  "country": "IT"
+  "country": "IT",
+  "subdomains": {
+    "api": {
+      "CNAME": "7nqhzrsyuuui443o.l.tunwg.com"
+    }
+  }
 }
