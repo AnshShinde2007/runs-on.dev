@@ -4,6 +4,8 @@
     "github": "rajlaiya"
   },
   "claimedAt": "2026-10-15T03:41:36.126Z",
-  "records": {},
+  "records": {
+    "CNAME": "cname.vercel-dns.com"
+  },
   "country": "IN"
 }
