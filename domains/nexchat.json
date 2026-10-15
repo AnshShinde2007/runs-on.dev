@@ -5,7 +5,9 @@
   },
   "claimedAt": "2026-10-15T05:18:48.315Z",
   "records": {
-    "CNAME": "cname.vercel-dns.com"
+    "TXT": [
+      "vc-domain-verify=nexchat.runs-on.dev,ecf08dd86888d974b422"
+    ]
   },
   "country": "IN"
 }
