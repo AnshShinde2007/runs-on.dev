@@ -7,5 +7,12 @@
   "records": {
     "CNAME": "4fbf0dbe6acc2f62.vercel-dns-017.com"
   },
-  "country": "IN"
+  "country": "IN",
+  "subdomains": {
+    "_vercel": {
+      "TXT": [
+        "vc-domain-verify=astroankitaa.runs-on.dev,8ab2db4a7b94793cbbc4"
+      ]
+    }
+  }
 }
