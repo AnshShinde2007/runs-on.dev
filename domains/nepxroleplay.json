@@ -4,7 +4,9 @@
     "github": "tenzero0"
   },
   "claimedAt": "2026-10-15T11:16:06.302Z",
-  "records": {},
+  "records": {
+    "CNAME": "cname.vercel-dns.com"
+  },
   "country": "NP",
   "profile": {
     "name": "Tenzeroo"
