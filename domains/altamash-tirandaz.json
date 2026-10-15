@@ -7,12 +7,5 @@
   "records": {
     "CNAME": "1d4256bc852c4767.vercel-dns-017.com"
   },
-  "country": "IN",
-  "subdomains": {
-    "_vercel": {
-      "TXT": [
-        "vc-domain-verify=altamash-tirandaz.runs-on.dev,410b33d93807c996605c"
-      ]
-    }
-  }
+  "country": "IN"
 }

@@ -7,12 +7,5 @@
   "records": {
     "CNAME": "a8475de4f7a74b5e.vercel-dns-017.com"
   },
-  "country": "IN",
-  "subdomains": {
-    "_vercel": {
-      "TXT": [
-        "vc-domain-verify=santosh.runs-on.dev,db674e89df5e8c1c38b1"
-      ]
-    }
-  }
+  "country": "IN"
 }

@@ -9,11 +9,6 @@
   },
   "country": "IN",
   "subdomains": {
-    "_vercel": {
-      "TXT": [
-        "vc-domain-verify=krushang004.runs-on.dev,0568ec93858fedd2916d"
-      ]
-    },
     "krushang004": {
       "CNAME": "4b6c2c88270c9ce1.vercel-dns-017.com"
     }

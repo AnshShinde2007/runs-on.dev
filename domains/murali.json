@@ -9,11 +9,6 @@
   },
   "country": "IN",
   "subdomains": {
-    "_vercel": {
-      "TXT": [
-        "vc-domain-verify=murali.runs-on.dev,e2fdb4fb90242b6f61bb"
-      ]
-    },
     "murali": {
       "CNAME": "955e0d623bcbda1a.vercel-dns-017.com"
     }
