@@ -5,5 +5,12 @@
   },
   "claimedAt": "2026-10-15T02:42:53.837Z",
   "records": {},
-  "country": "IN"
+  "country": "IN",
+  "subdomains": {
+    "_vercel": {
+      "TXT": [
+        "vc-domain-verify=bhargi.runs-on.dev,9c28e3befb84a66394e5"
+      ]
+    }
+  }
 }
