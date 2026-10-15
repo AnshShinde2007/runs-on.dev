@@ -17,12 +17,5 @@
         "url": "https://mmateenn.vercel.app/"
       }
     ]
-  },
-  "subdomains": {
-    "_vercel": {
-      "TXT": [
-        "vc-domain-verify=apsac-nmc-bwp.runs-on.dev,ebcc09c3d879be4c4599"
-      ]
-    }
   }
 }

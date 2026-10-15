@@ -7,12 +7,5 @@
   "records": {
     "CNAME": "cineflix.runs-on.dev"
   },
-  "country": "PK",
-  "subdomains": {
-    "_vercel": {
-      "TXT": [
-        "vc-domain-verify=cineflix.runs-on.dev,e588c9b5bc578f87a8df"
-      ]
-    }
-  }
+  "country": "PK"
 }

@@ -6,12 +6,5 @@
   "claimedAt": "2026-09-04T19:03:23.719Z",
   "records": {
     "CNAME": "cname.vercel-dns.com"
-  },
-  "subdomains": {
-    "_vercel": {
-      "TXT": [
-        "vc-domain-verify=abhiramv.runs-on.dev,cb3270972a09d63bcca1"
-      ]
-    }
   }
 }

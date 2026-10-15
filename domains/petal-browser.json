@@ -7,12 +7,5 @@
   "records": {
     "CNAME": "f9d113669a7ac432.vercel-dns-017.com"
   },
-  "country": "IN",
-  "subdomains": {
-    "_vercel": {
-      "TXT": [
-        "vc-domain-verify=petal-browser.runs-on.dev,e3baa5b88f5fc52f9bf4"
-      ]
-    }
-  }
+  "country": "IN"
 }

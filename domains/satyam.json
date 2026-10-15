@@ -7,12 +7,5 @@
   "records": {
     "CNAME": "ed1e545e1bc41385.vercel-dns-017.com"
   },
-  "country": "IN",
-  "subdomains": {
-    "_vercel": {
-      "TXT": [
-        "vc-domain-verify=satyam.runs-on.dev,5e34caa2085d9bbf4e2c"
-      ]
-    }
-  }
+  "country": "IN"
 }

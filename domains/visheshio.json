@@ -7,12 +7,5 @@
   "records": {
     "CNAME": "903c4f90367c575a.vercel-dns-017.com"
   },
-  "country": "IN",
-  "subdomains": {
-    "_vercel": {
-      "TXT": [
-        "vc-domain-verify=visheshio.runs-on.dev,4eb746709ae926bb8e18"
-      ]
-    }
-  }
+  "country": "IN"
 }

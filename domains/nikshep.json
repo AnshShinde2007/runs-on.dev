@@ -7,12 +7,5 @@
   "records": {
     "CNAME": "d795414edfb23410.vercel-dns-017.com"
   },
-  "country": "IN",
-  "subdomains": {
-    "_vercel": {
-      "TXT": [
-        "vc-domain-verify=nikshep.runs-on.dev,0c3c0106968d3d508ed4"
-      ]
-    }
-  }
+  "country": "IN"
 }

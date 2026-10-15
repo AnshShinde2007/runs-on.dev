@@ -7,12 +7,5 @@
   "records": {
     "CNAME": "d7cd267ef8ab2cb1.vercel-dns-017.com"
   },
-  "country": "IN",
-  "subdomains": {
-    "_vercel": {
-      "TXT": [
-        "vc-domain-verify=rraviss0108.runs-on.dev,f6a606778b593ef3418b"
-      ]
-    }
-  }
+  "country": "IN"
 }
