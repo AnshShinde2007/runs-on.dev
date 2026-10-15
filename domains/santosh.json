@@ -7,5 +7,12 @@
   "records": {
     "URL": "https://portfolio-puce-beta-55.vercel.app/"
   },
-  "country": "IN"
+  "country": "IN",
+  "subdomains": {
+    "_vercel": {
+      "TXT": [
+        "vc-domain-verify=santosh.runs-on.dev,db674e89df5e8c1c38b1"
+      ]
+    }
+  }
 }
