@@ -4,6 +4,8 @@
     "github": "DavidAroh"
   },
   "claimedAt": "2026-10-15T10:17:46.120Z",
-  "records": {},
+  "records": {
+    "CNAME": "cname.vercel-dns.com"
+  },
   "country": "NG"
 }
