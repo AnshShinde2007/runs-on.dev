@@ -4,6 +4,8 @@
     "github": "NilUwU"
   },
   "claimedAt": "2026-10-15T14:36:15.508Z",
-  "records": {},
+  "records": {
+    "CNAME": "niladriresume.netlify.app"
+  },
   "country": "IN"
 }
