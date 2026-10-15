@@ -5,5 +5,12 @@
   },
   "claimedAt": "2026-10-15T02:15:49.711Z",
   "records": {},
-  "country": "IN"
+  "country": "IN",
+  "subdomains": {
+    "_vercel": {
+      "TXT": [
+        "vc-domain-verify=rraviss0108.runs-on.dev,f6a606778b593ef3418b"
+      ]
+    }
+  }
 }
