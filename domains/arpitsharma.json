@@ -13,6 +13,9 @@
       "TXT": [
         "vc-domain-verify=arpitsharma.runs-on.dev,3b7cfa8c8e10abaf90c1"
       ]
+    },
+    "arpitsharma": {
+      "CNAME": "d0452114b2881a30.vercel-dns-017.com"
     }
   }
 }
