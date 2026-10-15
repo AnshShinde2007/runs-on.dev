@@ -5,7 +5,22 @@
   },
   "claimedAt": "2026-10-15T14:32:38.826Z",
   "records": {
-    "CNAME": "likhora-ai.onrender.com"
+    "A": [
+      "216.24.57.1"
+    ],
+    "TXT": [
+      "v=spf1 include:spf.improvmx.com ~all"
+    ],
+    "MX": [
+      {
+        "priority": 10,
+        "value": "mx1.improvmx.com"
+      },
+      {
+        "priority": 20,
+        "value": "mx2.improvmx.com"
+      }
+    ]
   },
   "country": "IN",
   "subdomains": {
