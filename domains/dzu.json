@@ -7,5 +7,10 @@
   "records": {
     "URL": "https://github.com/Deizuu/"
   },
-  "country": "FR"
+  "country": "FR",
+  "subdomains": {
+    "msg": {
+      "CNAME": "msg.lleyn-coho.ts.net"
+    }
+  }
 }
