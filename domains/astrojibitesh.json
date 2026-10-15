@@ -7,5 +7,12 @@
   "records": {
     "CNAME": "a9f6344b3706c3e1.vercel-dns-017.com"
   },
-  "country": "IN"
+  "country": "IN",
+  "subdomains": {
+    "_vercel": {
+      "TXT": [
+        "vc-domain-verify=astrojibitesh.runs-on.dev,b82d45e676e17f112341"
+      ]
+    }
+  }
 }
