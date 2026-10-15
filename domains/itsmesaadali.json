@@ -5,5 +5,10 @@
   },
   "claimedAt": "2026-10-15T07:06:49.447Z",
   "records": {},
-  "country": "PK"
+  "country": "PK",
+  "subdomains": {
+    "payment": {
+      "CNAME": "0x1saad.github.io"
+    }
+  }
 }
