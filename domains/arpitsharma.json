@@ -7,5 +7,12 @@
   "records": {
     "CNAME": "cname.vercel-dns.com"
   },
-  "country": "IN"
+  "country": "IN",
+  "subdomains": {
+    "_vercel": {
+      "TXT": [
+        "vc-domain-verify=arpitsharma.runs-on.dev,3b7cfa8c8e10abaf90c1"
+      ]
+    }
+  }
 }
