@@ -13,6 +13,9 @@
       "TXT": [
         "vc-domain-verify=iamarnav.runs-on.dev,45539165b43abd39a762"
       ]
+    },
+    "iamarnav": {
+      "CNAME": "8551f1af7b5dafb8.vercel-dns-017.com"
     }
   }
 }
