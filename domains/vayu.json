@@ -11,7 +11,7 @@
   "subdomains": {
     "_vercel": {
       "TXT": [
-        "vc-domain-verify=vayu.runs-on.dev,1c0b5ba84d9437eac3ba"
+        "vc-domain-verify=vayu.runs-on.dev,694aa8e534a9dea2f145"
       ]
     }
   }
