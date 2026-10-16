@@ -4,6 +4,8 @@
     "github": "Geeko001"
   },
   "claimedAt": "2026-10-16T21:29:59.408Z",
-  "records": {},
+  "records": {
+    "CNAME": "geeko001.github.io"
+  },
   "country": "IN"
 }
