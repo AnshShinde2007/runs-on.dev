@@ -22,5 +22,10 @@
       }
     ]
   },
-  "country": "IN"
+  "country": "IN",
+  "subdomains": {
+    "tools": {
+      "CNAME": "likhora-tools.onrender.com"
+    }
+  }
 }
