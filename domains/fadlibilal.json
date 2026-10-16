@@ -5,7 +5,9 @@
   },
   "claimedAt": "2026-10-16T07:08:07.504Z",
   "records": {
-    "CNAME": "e35b366257d3e513.vercel-dns-017.com"
+    "TXT": [
+      "vc-domain-verify=fadlibilal.runs-on.dev,e17f9476d23980d756f2"
+    ]
   },
   "country": "ID"
 }
