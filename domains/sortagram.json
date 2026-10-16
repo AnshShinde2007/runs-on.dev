@@ -7,5 +7,12 @@
   "records": {
     "CNAME": "b1bc7877900e183c.vercel-dns-017.com"
   },
-  "country": "IN"
+  "country": "IN",
+  "subdomains": {
+    "_vercel": {
+      "TXT": [
+        "vc-domain-verify=sortagram.runs-on.dev,2fbf768ad69bc23bd29a"
+      ]
+    }
+  }
 }
