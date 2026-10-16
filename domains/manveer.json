@@ -7,7 +7,7 @@
   "records": {},
   "country": "IN",
   "subdomains": {
-    "_vercel": {
+    "heychat": {
       "TXT": [
         "HeyChat - Fullstack chat application"
       ]
