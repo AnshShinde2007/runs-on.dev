@@ -4,6 +4,10 @@
     "github": "mharoon07"
   },
   "claimedAt": "2026-10-16T05:46:52.972Z",
-  "records": {},
+  "records": {
+    "A": [
+      "169.58.219.38"
+    ]
+  },
   "country": "PK"
 }
