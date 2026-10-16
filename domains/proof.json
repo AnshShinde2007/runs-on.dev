@@ -4,6 +4,10 @@
     "github": "AwesomeSno"
   },
   "claimedAt": "2026-10-16T18:20:35.309Z",
-  "records": {},
+  "records": {
+    "TXT": [
+      "_vercel vc-domain-verify=proof.runs-on.dev,fc833b425fec698298a8"
+    ]
+  },
   "country": "IN"
 }
