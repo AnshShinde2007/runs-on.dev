@@ -7,5 +7,12 @@
   "records": {
     "CNAME": "b5e29f5b305b8ef9.vercel-dns-017.com"
   },
-  "country": "IN"
+  "country": "IN",
+  "subdomains": {
+    "_vercel": {
+      "TXT": [
+        "vc-domain-verify=bhavyaweb.runs-on.dev,82f2c02859f046db9614"
+      ]
+    }
+  }
 }
