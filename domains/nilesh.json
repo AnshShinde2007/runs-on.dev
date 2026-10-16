@@ -4,7 +4,11 @@
     "github": "nilesh-mali-hub"
   },
   "claimedAt": "2026-10-16T18:32:00.301Z",
-  "records": {},
+  "records": {
+    "TXT": [
+      "v=spf1 -all"
+    ]
+  },
   "country": "IN",
   "subdomains": {
     "subdomain-owner-verification": {
