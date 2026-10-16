@@ -5,5 +5,12 @@
   },
   "claimedAt": "2026-10-16T15:37:16.277Z",
   "records": {},
-  "country": "IN"
+  "country": "IN",
+  "subdomains": {
+    "heychat": {
+      "TXT": [
+        "HeyChat - Fullstack chat application"
+      ]
+    }
+  }
 }
