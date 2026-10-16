@@ -5,7 +5,9 @@
   },
   "claimedAt": "2026-09-19T08:15:10.651Z",
   "records": {
-    "CNAME": "0ebaf1312dd50824.vercel-dns-017.com"
+    "TXT": [
+      "vc-domain-verify=suryavamshi.runs-on.dev,6f41984c96d75918f7e3"
+    ]
   },
   "country": "IN"
 }
