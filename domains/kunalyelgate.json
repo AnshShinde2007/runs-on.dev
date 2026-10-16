@@ -4,7 +4,9 @@
     "github": "kunal-yelgate"
   },
   "claimedAt": "2026-10-16T11:20:26.911Z",
-  "records": {},
+  "records": {
+    "CNAME": "kunal-yelgate.github.io"
+  },
   "country": "IN",
   "subdomains": {
     "kunalyelgate": {
