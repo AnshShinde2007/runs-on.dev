@@ -5,9 +5,7 @@
   },
   "claimedAt": "2026-10-16T15:02:49.783Z",
   "records": {
-    "TXT": [
-      "vc-domain-verify=den-syed.runs-on.dev,322a24dcd7445121ac00"
-    ]
+    "CNAME": "e9272c703e1ac970.vercel-dns-017.com"
   },
   "country": "IN"
 }
