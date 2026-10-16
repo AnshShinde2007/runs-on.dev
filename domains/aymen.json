@@ -12,5 +12,12 @@
       "\"vc-domain-verify=aymen.dpdns.org,5d6990c68eccf565340e\""
     ]
   },
-  "country": "MA"
+  "country": "MA",
+  "subdomains": {
+    "_vercel": {
+      "TXT": [
+        "\"vc-domain-verify=aymen.dpdns.org,5d6990c68eccf565340e\""
+      ]
+    }
+  }
 }
