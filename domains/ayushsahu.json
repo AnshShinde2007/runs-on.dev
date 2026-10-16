@@ -4,6 +4,8 @@
     "github": "Ayush2649"
   },
   "claimedAt": "2026-10-16T04:19:46.843Z",
-  "records": {},
+  "records": {
+    "CNAME": "ayush-portfolio-xi-woad.vercel.app"
+  },
   "country": "IN"
 }
