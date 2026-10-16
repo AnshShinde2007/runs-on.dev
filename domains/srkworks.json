@@ -5,12 +5,7 @@
   },
   "claimedAt": "2026-10-15T16:43:51.485Z",
   "records": {
-    "A": [
-      "76.76.21.21"
-    ],
-    "TXT": [
-      "vc-domain-verify=srkworks.runs-on.dev,9e59dc84fecb5e8432ec"
-    ]
+    "URL": "https://srkworks.vercel.app"
   },
   "country": "IN"
 }
