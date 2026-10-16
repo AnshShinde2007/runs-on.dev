@@ -4,6 +4,8 @@
     "github": "Suryavamshi99"
   },
   "claimedAt": "2026-09-19T08:15:10.651Z",
-  "records": {},
+  "records": {
+    "CNAME": "0ebaf1312dd50824.vercel-dns-017.com"
+  },
   "country": "IN"
 }
