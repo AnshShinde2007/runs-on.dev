@@ -4,6 +4,13 @@
     "github": "aymensada"
   },
   "claimedAt": "2026-10-16T19:32:16.409Z",
-  "records": {},
+  "records": {
+    "A": [
+      "76.76.21.21"
+    ],
+    "TXT": [
+      "\"vc-domain-verify=aymen.dpdns.org,5d6990c68eccf565340e\""
+    ]
+  },
   "country": "MA"
 }
