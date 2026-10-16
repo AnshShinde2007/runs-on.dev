@@ -4,6 +4,8 @@
     "github": "Sahil-Hub-Cloud"
   },
   "claimedAt": "2026-10-16T08:38:56.159Z",
-  "records": {},
+  "records": {
+    "CNAME": "sahil-hub-cloud.github.io"
+  },
   "country": "IN"
 }
