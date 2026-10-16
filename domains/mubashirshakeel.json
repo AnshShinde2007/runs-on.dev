@@ -4,6 +4,8 @@
     "github": "mubashirshakeel112"
   },
   "claimedAt": "2026-10-16T15:11:03.853Z",
-  "records": {},
+  "records": {
+    "CNAME": "mubashirshakeel.netlify.app"
+  },
   "country": "PK"
 }
