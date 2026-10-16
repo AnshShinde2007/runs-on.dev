@@ -10,12 +10,5 @@
   "country": "IN",
   "profile": {
     "name": "https://github.com/swayam-rajput"
-  },
-  "subdomains": {
-    "_vercel": {
-      "TXT": [
-        "vc-domain-verify=swayam.runs-on.dev,35b57abda183eecc4117"
-      ]
-    }
   }
 }

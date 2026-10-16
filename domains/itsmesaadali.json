@@ -11,11 +11,6 @@
   "subdomains": {
     "payment": {
       "CNAME": "0x1saad.github.io"
-    },
-    "_vercel": {
-      "TXT": [
-        "vc-domain-verify=itsmesaadali.runs-on.dev,d015c3966e34a01a113b"
-      ]
     }
   },
   "profile": {

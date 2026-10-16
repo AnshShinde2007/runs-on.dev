@@ -9,11 +9,6 @@
   },
   "country": "AR",
   "subdomains": {
-    "_vercel": {
-      "TXT": [
-        "vc-domain-verify=s2x.runs-on.dev,6ede274414a244bf5202"
-      ]
-    },
     "s2x": {
       "CNAME": "6442397e008aac3a.vercel-dns-017.com"
     }

@@ -7,12 +7,5 @@
   "records": {
     "CNAME": "a0ee176e43cf0b5e.vercel-dns-017.com"
   },
-  "country": "IN",
-  "subdomains": {
-    "_vercel": {
-      "TXT": [
-        "vc-domain-verify=vivekkumarverma.runs-on.dev,bc382431cc2445b6b232"
-      ]
-    }
-  }
+  "country": "IN"
 }

@@ -7,13 +7,5 @@
   "records": {
     "CNAME": "fd566ea7f19f41a6.vercel-dns-017.com"
   },
-  "subdomains": {
-    "_vercel": {
-      "TXT": [
-        "vc-domain-verify=nexchat.runs-on.dev,ecf08dd86888d974b422"
-      ]
-    }
-  },
   "country": "IN"
 }
-
