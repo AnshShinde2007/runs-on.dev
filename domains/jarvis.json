@@ -5,7 +5,12 @@
   },
   "claimedAt": "2026-10-16T15:01:27.855Z",
   "records": {
-    "URL": "https://jarvisai-nu-two.vercel.app"
+    "A": [
+      "76.76.21.21"
+    ],
+    "TXT": [
+      "vc-domain-verify=jarvis.runs-on.dev,82c38aa8193cfbb167b3"
+    ]
   },
   "country": "IN"
 }
