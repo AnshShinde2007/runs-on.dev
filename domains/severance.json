@@ -4,6 +4,8 @@
     "github": "DistantPromise"
   },
   "claimedAt": "2026-09-27T15:10:18.460Z",
-  "records": {},
+  "records": {
+    "CNAME": "distantpromise.github.io"
+  },
   "country": "IN"
 }
