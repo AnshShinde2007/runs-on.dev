@@ -5,10 +5,7 @@
   },
   "claimedAt": "2026-10-16T15:01:27.855Z",
   "records": {
-    "TXT": [
-      "Name : _vercel",
-      "Value: vc-domain-verify=runs-on.dev,43fd0f3e6324819452ed"
-    ]
+    "URL": "https://jarvis-two-twany-82.vercel.app"
   },
   "country": "IN"
 }
