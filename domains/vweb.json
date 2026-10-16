@@ -4,6 +4,8 @@
     "github": "visheshjha2"
   },
   "claimedAt": "2026-10-16T09:27:46.734Z",
-  "records": {},
+  "records": {
+    "CNAME": "vwebs.netlify.app"
+  },
   "country": "IN"
 }
