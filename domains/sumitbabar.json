@@ -6,5 +6,12 @@
   "claimedAt": "2026-09-03T01:46:32.471Z",
   "records": {
     "CNAME": "1eccbe03ac039c1e.vercel-dns-017.com"
+  },
+  "subdomains": {
+    "_vercel": {
+      "TXT": [
+        "vc-domain-verify=sumitbabar.runs-on.dev,f67a578e78b8440e6eee"
+      ]
+    }
   }
 }
