@@ -7,5 +7,12 @@
   "records": {
     "CNAME": "ayush-portfolio-xi-woad.vercel.app"
   },
-  "country": "IN"
+  "country": "IN",
+  "subdomains": {
+    "_vercel": {
+      "TXT": [
+        "vc-domain-verify=ayushsahu.runs-on.dev,24f75030f3e43e6e46dc"
+      ]
+    }
+  }
 }
