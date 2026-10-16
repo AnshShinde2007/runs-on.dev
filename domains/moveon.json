@@ -11,11 +11,6 @@
   "subdomains": {
     "moveon": {
       "CNAME": "15d09fd6c6d27acf.vercel-dns-017.com"
-    },
-    "_vercel": {
-      "TXT": [
-        "vc-domain-verify=moveon.runs-on.dev,d1786ed21fccfe6ade91"
-      ]
     }
   }
 }

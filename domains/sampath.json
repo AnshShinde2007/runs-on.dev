@@ -8,11 +8,6 @@
     "CNAME": "f39bd7b77bce9074.vercel-dns-017.com"
   },
   "subdomains": {
-    "_vercel": {
-      "TXT": [
-        "vc-domain-verify=sampath.runs-on.dev,3905311007b8d98abf44"
-      ]
-    },
     "sampath": {
       "CNAME": "f39bd7b77bce9074.vercel-dns.com"
     }
