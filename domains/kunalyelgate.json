@@ -5,5 +5,12 @@
   },
   "claimedAt": "2026-10-16T11:20:26.911Z",
   "records": {},
-  "country": "IN"
+  "country": "IN",
+  "subdomains": {
+    "kunalyelgate": {
+      "TXT": [
+        "vc-domain-verify=kunalyelgate.runs-on.dev,4abae98cd2adba518f17"
+      ]
+    }
+  }
 }
