@@ -5,7 +5,12 @@
   },
   "claimedAt": "2026-10-16T04:30:54.028Z",
   "records": {
-    "CNAME": "yaznhijazi-1d5b8d639ebb922b.vercel-dns-017.com"
+    "A": [
+      "76.76.21.21"
+    ],
+    "TXT": [
+      "vc-domain-verify=yaznhijazi.runs-on.dev,9dcde4a981ce48c171ec"
+    ]
   },
   "country": "JO"
 }
