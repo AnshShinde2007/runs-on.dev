@@ -10,7 +10,7 @@
   "subdomains": {
     "_vercel": {
       "TXT": [
-        "vc-domain-verify=sampath.runs-on.dev,1fb66081f75c025d3d68"
+        "vc-domain-verify=sampath.runs-on.dev,3905311007b8d98abf44"
       ]
     },
     "sampath": {
