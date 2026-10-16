@@ -4,6 +4,8 @@
     "github": "t2ro1904"
   },
   "claimedAt": "2026-10-16T19:07:48.409Z",
-  "records": {},
+  "records": {
+    "CNAME": "my-website-1l11.onrender.com"
+  },
   "country": "VN"
 }
