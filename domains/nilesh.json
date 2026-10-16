@@ -5,5 +5,12 @@
   },
   "claimedAt": "2026-10-16T18:32:00.301Z",
   "records": {},
-  "country": "IN"
+  "country": "IN",
+  "subdomains": {
+    "subdomain-owner-verification": {
+      "TXT": [
+        "28c1eb0a3deb11a788366214d4de09e9"
+      ]
+    }
+  }
 }
