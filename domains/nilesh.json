@@ -5,9 +5,7 @@
   },
   "claimedAt": "2026-10-16T18:32:00.301Z",
   "records": {
-    "TXT": [
-      "v=spf1 -all"
-    ]
+    "URL": "https://nileshmali2026.netlify.app/"
   },
   "country": "IN",
   "subdomains": {
