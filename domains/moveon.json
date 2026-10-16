@@ -4,7 +4,9 @@
     "github": "becoming0pransu-enterprenuer"
   },
   "claimedAt": "2026-10-16T11:19:42.817Z",
-  "records": {},
+  "records": {
+    "CNAME": "15d09fd6c6d27acf.vercel-dns-017.com"
+  },
   "country": "IN",
   "subdomains": {
     "moveon": {
