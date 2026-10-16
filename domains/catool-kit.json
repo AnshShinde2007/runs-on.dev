@@ -4,6 +4,8 @@
     "github": "catool-kit"
   },
   "claimedAt": "2026-10-16T11:06:10.573Z",
-  "records": {},
+  "records": {
+    "CNAME": "balancesheet001.onrender.com"
+  },
   "country": "IN"
 }
