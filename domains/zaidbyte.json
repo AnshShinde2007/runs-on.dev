@@ -4,6 +4,8 @@
     "github": "zaidkadva52-eng"
   },
   "claimedAt": "2026-10-16T17:09:43.883Z",
-  "records": {},
+  "records": {
+    "CNAME": "zaidbox.ai.studio"
+  },
   "country": "IN"
 }
