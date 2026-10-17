@@ -4,6 +4,10 @@
     "github": "tirth1207"
   },
   "claimedAt": "2026-10-17T02:42:13.286Z",
-  "records": {},
+  "records": {
+    "TXT": [
+      "_vercel=vc-domain-verify=veltrixui.runs-on.dev,515a7f43fef6da2942d8"
+    ]
+  },
   "country": "IN"
 }
