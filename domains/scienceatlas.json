@@ -4,7 +4,9 @@
     "github": "ilyMezy"
   },
   "claimedAt": "2026-10-17T13:29:30.447Z",
-  "records": {},
+  "records": {
+    "CNAME": "456da25d5bfcba27.vercel-dns-017.com"
+  },
   "country": "IN",
   "subdomains": {
     "_vercel": {
