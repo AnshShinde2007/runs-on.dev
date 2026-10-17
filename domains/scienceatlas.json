@@ -13,6 +13,19 @@
       "TXT": [
         "vc-domain-verify=scienceatlas.runs-on.dev,3eaa5e922cc9fc05a2cd"
       ]
+    },
+    "resend._domainkey": {
+      "TXT": [
+        "p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDC2n9xidUP3YVdD0fe3nuCVArdAXEtt3RsOWbmAOu6qOF7XB+67Ax7t/TuByWKWsEgUXmE1pDCn0Amdx3er+alZhzINtuN3yd0wvPPacitiy1bQi02AW3vZlVLV1lVVMuOSVj/iObLvWZnJIRbKagiMDsz0rFLarV5Z4rrWtUh0QIDAQAB"
+      ]
+    },
+    "send": {
+      "CNAME": "send.forge.rmta.net"
+    },
+    "_dmarc": {
+      "TXT": [
+        "v=DMARC1; p=none;"
+      ]
     }
   }
 }
