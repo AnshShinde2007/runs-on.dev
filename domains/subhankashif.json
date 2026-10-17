@@ -4,6 +4,8 @@
     "github": "imsnippet"
   },
   "claimedAt": "2026-10-17T16:00:16.322Z",
-  "records": {},
+  "records": {
+    "CNAME": "imsnippet.github.io"
+  },
   "country": "PK"
 }
