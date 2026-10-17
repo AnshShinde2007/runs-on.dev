@@ -7,12 +7,5 @@
   "records": {
     "URL": "https://srkworks.dev-sharikhan.workers.dev/"
   },
-  "country": "IN",
-  "subdomains": {
-    "_vercel": {
-      "TXT": [
-        "vc-domain-verify=srkworks.runs-on.dev,af592337863fd444260b"
-      ]
-    }
-  }
+  "country": "IN"
 }
