@@ -7,5 +7,12 @@
   "records": {
     "CNAME": "17ade30f93359488.vercel-dns-017.com"
   },
-  "country": "MA"
+  "country": "MA",
+  "subdomains": {
+    "_vercel": {
+      "TXT": [
+        "vc-domain-verify=moha.runs-on.dev,1641c8f9189a84422dfc"
+      ]
+    }
+  }
 }
