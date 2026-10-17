@@ -11,5 +11,12 @@
   "profile": {
     "name": "aditrachman",
     "bio": "The fantasy dev"
+  },
+  "subdomains": {
+    "_vercel": {
+      "TXT": [
+        "vc-domain-verify=adit.runs-on.dev,74a27d36e5ac23b7147a"
+      ]
+    }
   }
 }
