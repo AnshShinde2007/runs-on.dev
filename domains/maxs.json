@@ -5,5 +5,13 @@
   },
   "claimedAt": "2026-10-17T22:53:23.353Z",
   "records": {},
-  "country": "BR"
+  "country": "BR",
+  "profile": {
+    "links": [
+      {
+        "label": "my portifolio",
+        "url": "https://maxs.framer.website/"
+      }
+    ]
+  }
 }
