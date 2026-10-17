@@ -8,13 +8,6 @@
     "CNAME": "bcfcfe610cfcfb91.vercel-dns-017.com"
   },
   "country": "IN",
-  "subdomains": {
-    "_vercel": {
-      "TXT": [
-        "vc-domain-verify=proof.runs-on.dev,fc833b425fec698298a8"
-      ]
-    }
-  },
   "profile": {
     "name": "SubAXL"
   }

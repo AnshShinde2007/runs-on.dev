@@ -11,11 +11,6 @@
   "subdomains": {
     "kunalyelgate": {
       "CNAME": "80d35b8e0e2f332c.vercel-dns-017.com"
-    },
-    "_vercel": {
-      "TXT": [
-        "vc-domain-verify=kunalyelgate.runs-on.dev,4abae98cd2adba518f17"
-      ]
     }
   }
 }

@@ -7,12 +7,5 @@
   "records": {
     "CNAME": "cname.vercel-dns.com"
   },
-  "country": "IN",
-  "subdomains": {
-    "_vercel": {
-      "TXT": [
-        "vc-domain-verify=kartefy.runs-on.dev,4959745fccb307562ea4"
-      ]
-    }
-  }
+  "country": "IN"
 }

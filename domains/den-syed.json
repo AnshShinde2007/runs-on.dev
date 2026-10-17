@@ -7,12 +7,5 @@
   "records": {
     "CNAME": "e9272c703e1ac970.vercel-dns-017.com"
   },
-  "country": "IN",
-  "subdomains": {
-    "_vercel": {
-      "TXT": [
-        "vc-domain-verify=den-syed.runs-on.dev,322a24dcd7445121ac00"
-      ]
-    }
-  }
+  "country": "IN"
 }

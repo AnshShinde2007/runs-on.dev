@@ -7,12 +7,5 @@
   "records": {
     "CNAME": "6dca484ae10bcca9.vercel-dns-017.com"
   },
-  "country": "IN",
-  "subdomains": {
-    "_vercel": {
-      "TXT": [
-        "vc-domain-verify=veltrixui.runs-on.dev,515a7f43fef6da2942d8"
-      ]
-    }
-  }
+  "country": "IN"
 }

@@ -7,12 +7,5 @@
   "records": {
     "CNAME": "b264f9c1bac19086.vercel-dns-017.com"
   },
-  "country": "IN",
-  "subdomains": {
-    "_vercel": {
-      "TXT": [
-        "vc-domain-verify=kartiklangwan.runs-on.dev,62475d15c3ba349a186f"
-      ]
-    }
-  }
+  "country": "IN"
 }

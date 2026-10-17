@@ -7,12 +7,5 @@
   "records": {
     "CNAME": "ba18f9f9cd272e02.vercel-dns-017.com"
   },
-  "country": "PK",
-  "subdomains": {
-    "_vercel": {
-      "TXT": [
-        "vc-domain-verify=rayyanhassan.runs-on.dev,46501900a7817886cfcf"
-      ]
-    }
-  }
+  "country": "PK"
 }
