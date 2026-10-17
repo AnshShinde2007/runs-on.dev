@@ -5,5 +5,12 @@
   },
   "claimedAt": "2026-10-17T13:29:30.447Z",
   "records": {},
-  "country": "IN"
+  "country": "IN",
+  "subdomains": {
+    "_vercel": {
+      "TXT": [
+        "vc-domain-verify=scienceatlas.runs-on.dev,3eaa5e922cc9fc05a2cd"
+      ]
+    }
+  }
 }
