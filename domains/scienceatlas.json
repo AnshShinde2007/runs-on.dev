@@ -7,5 +7,12 @@
   "records": {
     "CNAME": "456da25d5bfcba27.vercel-dns-017.com"
   },
-  "country": "IN"
+  "country": "IN",
+  "subdomains": {
+    "_vercel": {
+      "TXT": [
+        "vc-domain-verify=scienceatlas.runs-on.dev,3eaa5e922cc9fc05a2cd"
+      ]
+    }
+  }
 }
