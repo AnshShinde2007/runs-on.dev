@@ -5,9 +5,7 @@
   },
   "claimedAt": "2026-10-17T02:42:13.286Z",
   "records": {
-    "TXT": [
-      "_vercel=vc-domain-verify=veltrixui.runs-on.dev,515a7f43fef6da2942d8"
-    ]
+    "CNAME": "6dca484ae10bcca9.vercel-dns-017.com"
   },
   "country": "IN"
 }
