@@ -4,7 +4,9 @@
     "github": "aditrachman"
   },
   "claimedAt": "2026-10-17T04:59:35.491Z",
-  "records": {},
+  "records": {
+    "CNAME": "032f4684ab435d28.vercel-dns-017.com"
+  },
   "country": "ID",
   "profile": {
     "name": "aditrachman",
