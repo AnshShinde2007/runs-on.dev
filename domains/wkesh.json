@@ -7,5 +7,9 @@
   "records": {
     "CNAME": "cloudflare-edge-app.pages.dev"
   },
-  "country": "IN"
+  "country": "IN",
+  "profile": {
+    "name": "mukesh",
+    "bio": "gonna get job lmao"
+  }
 }
