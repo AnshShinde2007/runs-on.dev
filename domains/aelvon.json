@@ -4,6 +4,8 @@
     "github": "XypherCore"
   },
   "claimedAt": "2026-10-17T06:31:59.864Z",
-  "records": {},
+  "records": {
+    "CNAME": "aelvon.vercel.app"
+  },
   "country": "IN"
 }
