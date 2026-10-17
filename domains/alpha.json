@@ -4,6 +4,8 @@
     "github": "ItzFallenMe"
   },
   "claimedAt": "2026-10-17T02:43:59.628Z",
-  "records": {},
+  "records": {
+    "CNAME": "bc05b956cbb7743e.vercel-dns-017.com"
+  },
   "country": "IN"
 }
