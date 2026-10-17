@@ -26,6 +26,9 @@
       "TXT": [
         "v=DMARC1; p=none;"
       ]
+    },
+    "rsend": {
+      "CNAME": "rsend-apne1.forge.rmta.net"
     }
   }
 }
