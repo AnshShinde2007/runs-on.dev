@@ -7,5 +7,12 @@
   "records": {
     "CNAME": "cb20c39ea7987269.vercel-dns-017.com"
   },
-  "country": "PK"
+  "country": "PK",
+  "subdomains": {
+    "_vercel": {
+      "TXT": [
+        "vc-domain-verify=dex.runs-on.dev,9df889efa21bf5820262"
+      ]
+    }
+  }
 }
