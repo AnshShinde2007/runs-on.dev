@@ -11,6 +11,11 @@
   "subdomains": {
     "s2x": {
       "CNAME": "6442397e008aac3a.vercel-dns-017.com"
+    },
+    "_discord": {
+      "TXT": [
+        "dh=fc7630ac61e2dbdaaf9434b30f1946e0480f44fb"
+      ]
     }
   }
 }
