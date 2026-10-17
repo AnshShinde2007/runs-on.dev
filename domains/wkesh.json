@@ -4,7 +4,9 @@
     "github": "z1bfrr"
   },
   "claimedAt": "2026-10-17T15:13:27.612Z",
-  "records": {},
+  "records": {
+    "CNAME": "cloudflare-edge-app.pages.dev"
+  },
   "country": "IN",
   "profile": {
     "name": "mukesh",
