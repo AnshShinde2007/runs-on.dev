@@ -7,5 +7,12 @@
   "records": {
     "CNAME": "0ebaf1312dd50824.vercel-dns-017.com"
   },
-  "country": "IN"
+  "country": "IN",
+  "subdomains": {
+    "_vercel": {
+      "TXT": [
+        "vc-domain-verify=suryavamshi.runs-on.dev,bef31fb8d74a778e3c62"
+      ]
+    }
+  }
 }
