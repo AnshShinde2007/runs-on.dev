@@ -4,6 +4,8 @@
     "github": "Yiamin24"
   },
   "claimedAt": "2026-10-17T01:31:28.050Z",
-  "records": {},
+  "records": {
+    "CNAME": "f68d4eeec158ab41.vercel-dns-017.com"
+  },
   "country": "IN"
 }
