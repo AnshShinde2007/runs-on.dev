@@ -16,7 +16,7 @@
   "subdomains": {
     "_vercel": {
       "TXT": [
-        "\"vc-domain-verify=aymen.dpdns.org,5d6990c68eccf565340e\""
+        "vc-domain-verify=aymen.runs-on.dev,f7e3f7ff04b07fdc6401"
       ]
     }
   }
