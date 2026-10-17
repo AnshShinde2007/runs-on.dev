@@ -10,7 +10,7 @@
   "subdomains": {
     "_vercel": {
       "TXT": [
-        "vc-domain-verify=rehaan-ahmad.runs-on.dev,f8fd4dd8fed965602f8"
+        "vc-domain-verify=rehaan-ahmad.runs-on.dev,f8fd48dd8fed965602f8"
       ]
     }
   }
