@@ -4,7 +4,9 @@
     "github": "SangameshAthani"
   },
   "claimedAt": "2026-10-18T15:53:30.145Z",
-  "records": {},
+  "records": {
+    "CNAME": "sangameshathani6.netlify.app"
+  },
   "country": "IN",
   "subdomains": {
     "6fe408f1945ca7fd5f6dbddb75a25d4f": {
