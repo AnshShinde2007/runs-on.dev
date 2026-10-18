@@ -16,5 +16,12 @@
         "url": "https://github.com/parthkhatke"
       }
     ]
+  },
+  "subdomains": {
+    "_vercel": {
+      "TXT": [
+        "subdomain added"
+      ]
+    }
   }
 }
