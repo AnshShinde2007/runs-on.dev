@@ -20,7 +20,7 @@
   "subdomains": {
     "_vercel": {
       "TXT": [
-        "subdomain added for new dns"
+        "vc-domain-verify=parth-khatke.runs-on.dev,44af410c4ec11073acde"
       ]
     }
   }
