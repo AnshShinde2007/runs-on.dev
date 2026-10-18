@@ -4,6 +4,8 @@
     "github": "kirtan9226"
   },
   "claimedAt": "2026-10-18T16:51:16.599Z",
-  "records": {},
+  "records": {
+    "CNAME": "92b9ce3b00241556.vercel-dns-017.com"
+  },
   "country": "IN"
 }
