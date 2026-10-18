@@ -4,6 +4,20 @@
     "github": "huaxiao3"
   },
   "claimedAt": "2026-10-18T04:59:09.258Z",
-  "records": {},
+  "records": {
+    "TXT": [
+      "forward-email=airi@ik.me"
+    ],
+    "MX": [
+      {
+        "priority": 0,
+        "value": "mx1.forwardemail.net"
+      },
+      {
+        "priority": 0,
+        "value": "mx2.forwardemail.net"
+      }
+    ]
+  },
   "country": "US"
 }
