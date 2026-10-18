@@ -4,6 +4,8 @@
     "github": "HeinKoZin"
   },
   "claimedAt": "2026-10-18T19:33:00.449Z",
-  "records": {},
+  "records": {
+    "CNAME": "heinkozin.github.io"
+  },
   "country": "SG"
 }
