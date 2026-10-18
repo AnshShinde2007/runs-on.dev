@@ -4,6 +4,8 @@
     "github": "davydashiel"
   },
   "claimedAt": "2026-10-17T18:21:10.315Z",
-  "records": {},
+  "records": {
+    "CNAME": "davydashiel.github.io"
+  },
   "country": "IN"
 }
