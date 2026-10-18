@@ -4,6 +4,8 @@
     "github": "digitalprcreator-art"
   },
   "claimedAt": "2026-10-18T05:26:52.635Z",
-  "records": {},
+  "records": {
+    "CNAME": "quill-labs-in.pages.dev"
+  },
   "country": "IN"
 }
