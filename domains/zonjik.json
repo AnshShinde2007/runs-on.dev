@@ -9,8 +9,8 @@
   },
   "country": "FR",
   "subdomains": {
-    "aplikuj": {
-      "CNAME": "aplikuj-zonjik.freehosting.dev"
+    "5e3256b0747cbd07399c60a733031e18": {
+      "CNAME": "ns1.byet.org"
     }
   }
 }
