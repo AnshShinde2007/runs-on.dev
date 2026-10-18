@@ -7,5 +7,12 @@
   "records": {
     "CNAME": "97ae6c64cbfd58a5.vercel-dns-017.com"
   },
-  "country": "PK"
+  "country": "PK",
+  "subdomains": {
+    "_vercel": {
+      "TXT": [
+        "vc-domain-verify=shayan-aamir.runs-on.dev,2d2760ecb99c1af25898"
+      ]
+    }
+  }
 }
