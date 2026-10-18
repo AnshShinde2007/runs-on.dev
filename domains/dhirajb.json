@@ -7,5 +7,12 @@
   "records": {
     "CNAME": "4bde585a1659c8a7.vercel-dns-017.com"
   },
-  "country": "IN"
+  "country": "IN",
+  "subdomains": {
+    "_vercel": {
+      "TXT": [
+        "vc-domain-verify=dhirajb.runs-on.dev,b3207332f659dbfb9ac8"
+      ]
+    }
+  }
 }
