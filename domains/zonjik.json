@@ -11,6 +11,9 @@
   "subdomains": {
     "5e3256b0747cbd07399c60a733031e18": {
       "CNAME": "ns1.byet.org"
+    },
+    "www": {
+      "CNAME": "zonjik-runs-on.dev"
     }
   }
 }
