@@ -4,6 +4,8 @@
     "github": "cybercrisostomo"
   },
   "claimedAt": "2026-10-18T03:42:39.127Z",
-  "records": {},
+  "records": {
+    "CNAME": "nico-ai-assistant.onrender.com"
+  },
   "country": "PH"
 }
