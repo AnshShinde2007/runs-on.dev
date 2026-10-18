@@ -13,6 +13,11 @@
       "TXT": [
         "subdomain-owner-verification"
       ]
+    },
+    "_netlify": {
+      "TXT": [
+        "6fe408f1945ca7fd5f6dbddb75a25d4f"
+      ]
     }
   }
 }
