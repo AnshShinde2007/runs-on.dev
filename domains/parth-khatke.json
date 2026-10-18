@@ -20,7 +20,7 @@
   "subdomains": {
     "_vercel": {
       "TXT": [
-        "subdomain added"
+        "subdomain added for new dns"
       ]
     }
   }
