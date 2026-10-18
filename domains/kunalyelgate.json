@@ -9,8 +9,10 @@
   },
   "country": "IN",
   "subdomains": {
-    "kunalyelgate": {
-      "CNAME": "80d35b8e0e2f332c.vercel-dns-017.com"
+    "_vercel": {
+      "TXT": [
+        "vc-domain-verify=kunalyelgate.runs-on.dev,0a9adfbb00dd45a7ea68"
+      ]
     }
   }
 }
