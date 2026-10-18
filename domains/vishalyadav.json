@@ -7,5 +7,12 @@
   "records": {
     "CNAME": "vishalyadav0987.github.io"
   },
-  "country": "IN"
+  "country": "IN",
+  "subdomains": {
+    "_vercel": {
+      "TXT": [
+        "vc-domain-verify=vishalyadav.runs-on.dev,bcac224e3445e39001da"
+      ]
+    }
+  }
 }
