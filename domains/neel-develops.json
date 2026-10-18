@@ -7,5 +7,12 @@
   "records": {
     "CNAME": "9440061ab955762e.vercel-dns-017.com"
   },
-  "country": "IN"
+  "country": "IN",
+  "subdomains": {
+    "_vercel": {
+      "TXT": [
+        "vc-domain-verify=neel-develops.runs-on.dev,e57ce20db372b99b2d91"
+      ]
+    }
+  }
 }
