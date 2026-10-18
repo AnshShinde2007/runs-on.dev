@@ -14,5 +14,12 @@
         "url": "https://github.com/Zaletic"
       }
     ]
+  },
+  "subdomains": {
+    "_vercel": {
+      "TXT": [
+        "vc-domain-verify=akshatt.runs-on.dev,1429ac8f4165a05c33bb"
+      ]
+    }
   }
 }
