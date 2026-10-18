@@ -5,7 +5,9 @@
   },
   "claimedAt": "2026-10-18T14:21:34.090Z",
   "records": {
-    "URL": "https://zonjik.freehosting.dev"
+    "A": [
+      "185.27.134.223"
+    ]
   },
   "country": "FR",
   "subdomains": {
