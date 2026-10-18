@@ -4,6 +4,8 @@
     "github": "buildbyquill"
   },
   "claimedAt": "2026-10-18T05:48:10.179Z",
-  "records": {},
+  "records": {
+    "CNAME": "quill-labs.pages.dev"
+  },
   "country": "IN"
 }
