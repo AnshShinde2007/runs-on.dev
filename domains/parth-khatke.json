@@ -16,12 +16,5 @@
         "url": "https://github.com/parthkhatke"
       }
     ]
-  },
-  "subdomains": {
-    "_vercel": {
-      "TXT": [
-        "vc-domain-verify=parth-khatke.runs-on.dev,44af410c4ec11073acde"
-      ]
-    }
   }
 }

@@ -7,12 +7,5 @@
   "records": {
     "CNAME": "0a98bf9910c27d40.vercel-dns-017.com"
   },
-  "country": "MA",
-  "subdomains": {
-    "_vercel": {
-      "TXT": [
-        "vc-domain-verify=aymen.runs-on.dev,f7e3f7ff04b07fdc6401"
-      ]
-    }
-  }
+  "country": "MA"
 }
