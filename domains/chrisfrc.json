@@ -9,5 +9,10 @@
       "144.2.126.247"
     ]
   },
-  "country": "CH"
+  "country": "CH",
+  "subdomains": {
+    "trilium": {
+      "CNAME": "chrisfrc.runs-on.devchrisfrc.runs-on.dev"
+    }
+  }
 }
