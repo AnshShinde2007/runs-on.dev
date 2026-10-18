@@ -12,7 +12,7 @@
   "country": "CH",
   "subdomains": {
     "trilium": {
-      "CNAME": "runs-on.dev"
+      "CNAME": "chrisfrc.runs-on.dev"
     }
   }
 }
