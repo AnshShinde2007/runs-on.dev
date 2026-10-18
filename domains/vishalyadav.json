@@ -10,9 +10,7 @@
   "country": "IN",
   "subdomains": {
     "_vercel": {
-      "TXT": [
-        "vc-domain-verify=vishalyadav.runs-on.dev,bcac224e3445e39001da"
-      ]
+      "CNAME": "b71a7fb84cadd361.vercel-dns-017.com"
     }
   }
 }
