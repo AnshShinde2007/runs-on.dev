@@ -4,6 +4,8 @@
     "github": "kavyaar07"
   },
   "claimedAt": "2026-10-18T20:37:07.800Z",
-  "records": {},
+  "records": {
+    "CNAME": "1efc306a1cb79413.vercel-dns-017.com"
+  },
   "country": "IN"
 }
