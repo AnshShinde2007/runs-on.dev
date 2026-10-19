@@ -10,6 +10,12 @@
   "country": "KW",
   "profile": {
     "name": "Os.sharaf",
-    "bio": "Github.ai"
+    "bio": "Os.sharaf.ai",
+    "links": [
+      {
+        "label": "Os.sharaf",
+        "url": "https://os.sharaf.ai"
+      }
+    ]
   }
 }
