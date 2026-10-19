@@ -4,6 +4,8 @@
     "github": "Vortex-16"
   },
   "claimedAt": "2026-10-19T09:32:22.279Z",
-  "records": {},
+  "records": {
+    "CNAME": "vikash-fairy.netlify.app"
+  },
   "country": "IN"
 }
