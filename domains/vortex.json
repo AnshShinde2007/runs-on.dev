@@ -7,5 +7,12 @@
   "records": {
     "CNAME": "vikash-fairy.netlify.app"
   },
-  "country": "IN"
+  "country": "IN",
+  "subdomains": {
+    "subdomain-owner-verification": {
+      "TXT": [
+        "668d82b446e2838aedf355835989a649"
+      ]
+    }
+  }
 }
