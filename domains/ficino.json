@@ -7,5 +7,12 @@
   "records": {
     "CNAME": "67e1f36935527c31.vercel-dns-017.com"
   },
-  "country": "PK"
+  "country": "PK",
+  "subdomains": {
+    "_vercel": {
+      "TXT": [
+        "vc-domain-verify=ficino.runs-on.dev,7c87ceab5d772c12bde5"
+      ]
+    }
+  }
 }
