@@ -4,7 +4,9 @@
     "github": "parth04102002"
   },
   "claimedAt": "2026-10-19T13:07:03.574Z",
-  "records": {},
+  "records": {
+    "CNAME": "600054662495b6dd.vercel-dns-017.com"
+  },
   "country": "IN",
   "subdomains": {
     "_vercel": {
