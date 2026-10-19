@@ -5,12 +5,7 @@
   },
   "claimedAt": "2026-10-19T17:06:04.661Z",
   "records": {
-    "A": [
-      "81.93.21.28"
-    ],
-    "TXT": [
-      "v=oss8 -all"
-    ]
+    "URL": "https://os.sharaf.ai"
   },
   "country": "KW",
   "profile": {
