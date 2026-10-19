@@ -4,6 +4,8 @@
     "github": "samradh1718"
   },
   "claimedAt": "2026-10-19T09:16:19.030Z",
-  "records": {},
+  "records": {
+    "CNAME": "07e36752e2bd4b19.vercel-dns-017.com"
+  },
   "country": "IN"
 }
