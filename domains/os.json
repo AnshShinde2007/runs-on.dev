@@ -7,5 +7,10 @@
   "records": {
     "CNAME": "os.sharaf.app"
   },
-  "country": "KW"
+  "country": "KW",
+  "subdomains": {
+    "_versel": {
+      "CNAME": "os.sharaf.app"
+    }
+  }
 }
