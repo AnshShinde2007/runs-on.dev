@@ -5,9 +5,7 @@
   },
   "claimedAt": "2026-10-19T05:23:32.236Z",
   "records": {
-    "TXT": [
-      "vc-domain-verify=tervorius.runs-on.dev,139c592995f328423c82"
-    ]
+    "CNAME": "e997bd0a4c67760e.vercel-dns-017.com"
   },
   "country": "IN"
 }
