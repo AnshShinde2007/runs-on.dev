@@ -9,7 +9,7 @@
   },
   "country": "KW",
   "subdomains": {
-    "_versel": {
+    "_github.io": {
       "CNAME": "os.sharaf.app"
     }
   }
