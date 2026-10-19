@@ -4,6 +4,8 @@
     "github": "Anasa5"
   },
   "claimedAt": "2026-10-19T05:23:32.236Z",
-  "records": {},
+  "records": {
+    "CNAME": "e997bd0a4c67760e.vercel-dns-017.com"
+  },
   "country": "IN"
 }
