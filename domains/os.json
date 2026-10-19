@@ -5,5 +5,9 @@
   },
   "claimedAt": "2026-10-19T17:06:04.661Z",
   "records": {},
-  "country": "KW"
+  "country": "KW",
+  "profile": {
+    "name": "Os.sharaf",
+    "bio": "Github.ai"
+  }
 }
