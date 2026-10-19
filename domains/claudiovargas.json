@@ -5,6 +5,10 @@
   },
   "claimedAt": "2026-09-25T22:18:36.682Z",
   "records": {
+    "A": [
+      "162.159.143.30",
+      "172.66.3.26"
+    ],
     "TXT": [
       "zoho-verification=zb79582425.zmverify.zoho.com",
       "v=spf1 include:zohomail.com ~all"
