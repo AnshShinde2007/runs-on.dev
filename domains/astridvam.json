@@ -7,5 +7,10 @@
   "records": {
     "CNAME": "xbaurora.pages.dev"
   },
-  "country": "MX"
+  "country": "MX",
+  "subdomains": {
+    "astridvam": {
+      "CNAME": "xbaurora.pages.dev"
+    }
+  }
 }
