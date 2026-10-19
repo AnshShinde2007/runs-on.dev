@@ -5,7 +5,9 @@
   },
   "claimedAt": "2026-10-18T21:21:24.313Z",
   "records": {
-    "URL": "https://dancing-gaufre-083eba.netlify.app"
+    "A": [
+      "75.2.60.5"
+    ]
   },
   "country": "IN"
 }
