@@ -7,5 +7,12 @@
   "records": {
     "CNAME": "e997bd0a4c67760e.vercel-dns-017.com"
   },
-  "country": "IN"
+  "country": "IN",
+  "subdomains": {
+    "_vercel": {
+      "TXT": [
+        "vc-domain-verify=tervorius.runs-on.dev,139c592995f328423c82"
+      ]
+    }
+  }
 }
