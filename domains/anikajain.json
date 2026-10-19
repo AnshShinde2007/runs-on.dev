@@ -7,12 +7,5 @@
   "records": {
     "CNAME": "328c2879b75a93fd.vercel-dns-017.com"
   },
-  "country": "IN",
-  "subdomains": {
-    "_vercel": {
-      "TXT": [
-        "vc-domain-verify=anikajain.runs-on.dev,d518cec17d9e85e0a4f9"
-      ]
-    }
-  }
+  "country": "IN"
 }

@@ -7,12 +7,5 @@
   "records": {
     "CNAME": "7c1ba9fd4cf2065f.vercel-dns-017.com"
   },
-  "country": "IN",
-  "subdomains": {
-    "_vercel": {
-      "TXT": [
-        "vc-domain-verify=vedangtiwari.runs-on.dev,8bd06d6620fe7510c939"
-      ]
-    }
-  }
+  "country": "IN"
 }

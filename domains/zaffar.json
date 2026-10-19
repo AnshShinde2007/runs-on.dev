@@ -7,12 +7,5 @@
   "records": {
     "CNAME": "abb402f3014494d3.vercel-dns-017.com"
   },
-  "country": "IN",
-  "subdomains": {
-    "_vercel": {
-      "TXT": [
-        "vc-domain-verify=zaffar.runs-on.dev,c00815f544ed779843a9"
-      ]
-    }
-  }
+  "country": "IN"
 }

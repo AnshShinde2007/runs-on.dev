@@ -7,12 +7,5 @@
   "records": {
     "CNAME": "92b9ce3b00241556.vercel-dns-017.com"
   },
-  "country": "IN",
-  "subdomains": {
-    "_vercel": {
-      "TXT": [
-        "vc-domain-verify=nexus-ai.runs-on.dev,daab274ae6b2228d2733"
-      ]
-    }
-  }
+  "country": "IN"
 }

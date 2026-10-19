@@ -7,12 +7,5 @@
   "records": {
     "CNAME": "600054662495b6dd.vercel-dns-017.com"
   },
-  "country": "IN",
-  "subdomains": {
-    "_vercel": {
-      "TXT": [
-        "vc-domain-verify=parthparmar.runs-on.dev,79892f069201258789b4"
-      ]
-    }
-  }
+  "country": "IN"
 }

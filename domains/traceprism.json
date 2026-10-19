@@ -7,12 +7,5 @@
   "records": {
     "CNAME": "6e9add744c6351de.vercel-dns-017.com"
   },
-  "country": "PK",
-  "subdomains": {
-    "_vercel": {
-      "TXT": [
-        "vc-domain-verify=traceprism.runs-on.dev,d5a9b029aef5cd4039f5"
-      ]
-    }
-  }
+  "country": "PK"
 }
