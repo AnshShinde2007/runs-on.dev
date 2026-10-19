@@ -4,6 +4,10 @@
     "github": "Babznxbz"
   },
   "claimedAt": "2026-10-19T06:41:30.139Z",
-  "records": {},
+  "records": {
+    "A": [
+      "147.93.96.2"
+    ]
+  },
   "country": "IN"
 }
