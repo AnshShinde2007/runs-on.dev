@@ -9,5 +9,12 @@
       "vc-domain-verify=aaryush-exe.runs-on.dev,b5c412ceecc9f2412dd5"
     ]
   },
-  "country": "IN"
+  "country": "IN",
+  "subdomains": {
+    "_vercel": {
+      "TXT": [
+        "vc-domain-verify=aaryush-exe.runs-on.dev,b5c412ceecc9f2412dd5"
+      ]
+    }
+  }
 }
