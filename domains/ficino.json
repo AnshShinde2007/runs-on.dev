@@ -11,7 +11,7 @@
   "subdomains": {
     "_vercel": {
       "TXT": [
-        "vc-domain-verify=ficino.runs-on.dev,7c87ceab5d772c12bde5"
+        "vc-domain-verify=ficino.runs-on.dev,b0bead6d7ac4349f6ae3"
       ]
     }
   }
