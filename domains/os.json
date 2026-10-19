@@ -9,8 +9,10 @@
   },
   "country": "KW",
   "subdomains": {
-    "_github.io": {
-      "CNAME": "os.sharaf.app"
+    "_github": {
+      "TXT": [
+        "os.runs-on.dev"
+      ]
     }
   }
 }
