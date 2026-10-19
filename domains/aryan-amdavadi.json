@@ -4,7 +4,9 @@
     "github": "aryan-amdavadi"
   },
   "claimedAt": "2026-10-19T04:33:59.785Z",
-  "records": {},
+  "records": {
+    "CNAME": "de61e9273c1a0eab.vercel-dns-017.com"
+  },
   "country": "IN",
   "profile": {
     "name": "aryan-amdavadi"
