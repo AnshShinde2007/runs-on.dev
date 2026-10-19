@@ -7,5 +7,12 @@
   "records": {
     "CNAME": "7982b6a18a28bd1d.vercel-dns-017.com"
   },
-  "country": "IN"
+  "country": "IN",
+  "subdomains": {
+    "_vercel": {
+      "TXT": [
+        "vc-domain-verify=nikhilairsang.runs-on.dev,724a9a9678d5285a695e"
+      ]
+    }
+  }
 }
