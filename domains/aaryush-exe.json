@@ -4,6 +4,10 @@
     "github": "aaryush-exe"
   },
   "claimedAt": "2026-10-19T19:43:03.717Z",
-  "records": {},
+  "records": {
+    "TXT": [
+      "vc-domain-verify=aaryush-exe.runs-on.dev,b5c412ceecc9f2412dd5"
+    ]
+  },
   "country": "IN"
 }
