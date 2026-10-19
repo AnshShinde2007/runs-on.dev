@@ -5,7 +5,9 @@
   },
   "claimedAt": "2026-10-19T08:42:50.664Z",
   "records": {
-    "CNAME": "xbaurora.pages.dev"
+    "TXT": [
+      "dh=747090b7737cb93d930367d4d74d5578f40c97f9"
+    ]
   },
   "country": "MX",
   "subdomains": {
