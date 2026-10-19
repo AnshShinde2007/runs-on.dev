@@ -10,5 +10,12 @@
   "country": "IN",
   "profile": {
     "name": "aryan-amdavadi"
+  },
+  "subdomains": {
+    "_vercel": {
+      "TXT": [
+        "vc-domain-verify=aryan-amdavadi.runs-on.dev,f6d608c100b044708da7"
+      ]
+    }
   }
 }
