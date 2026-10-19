@@ -4,6 +4,8 @@
     "github": "Nikhil414"
   },
   "claimedAt": "2026-10-16T20:31:45.300Z",
-  "records": {},
+  "records": {
+    "CNAME": "7982b6a18a28bd1d.vercel-dns-017.com"
+  },
   "country": "IN"
 }
