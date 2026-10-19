@@ -4,6 +4,8 @@
     "github": "Darshan-A-S"
   },
   "claimedAt": "2026-09-17T08:37:52.077Z",
-  "records": {},
+  "records": {
+    "CNAME": "f471abc0692a2ce3.vercel-dns-017.com"
+  },
   "country": "IN"
 }
