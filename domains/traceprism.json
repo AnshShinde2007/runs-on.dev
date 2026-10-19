@@ -5,5 +5,12 @@
   },
   "claimedAt": "2026-10-19T12:40:08.492Z",
   "records": {},
-  "country": "PK"
+  "country": "PK",
+  "subdomains": {
+    "_vercel": {
+      "TXT": [
+        "vc-domain-verify=runs-on.dev,50157813f7bd82f9bb7d"
+      ]
+    }
+  }
 }
