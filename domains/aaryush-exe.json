@@ -5,9 +5,7 @@
   },
   "claimedAt": "2026-10-19T19:43:03.717Z",
   "records": {
-    "TXT": [
-      "vc-domain-verify=aaryush-exe.runs-on.dev,b5c412ceecc9f2412dd5"
-    ]
+    "CNAME": "4cd28806d3e6cd45.vercel-dns-017.com"
   },
   "country": "IN",
   "subdomains": {
