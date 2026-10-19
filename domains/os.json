@@ -4,7 +4,14 @@
     "github": "OsQ8"
   },
   "claimedAt": "2026-10-19T17:06:04.661Z",
-  "records": {},
+  "records": {
+    "A": [
+      "81.93.21.28"
+    ],
+    "TXT": [
+      "v=oss8 -all"
+    ]
+  },
   "country": "KW",
   "profile": {
     "name": "Os.sharaf",
