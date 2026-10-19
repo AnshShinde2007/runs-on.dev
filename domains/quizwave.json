@@ -4,6 +4,8 @@
     "github": "685ks"
   },
   "claimedAt": "2026-10-19T23:16:41.320Z",
-  "records": {},
+  "records": {
+    "CNAME": "685ks.github.io"
+  },
   "country": "CH"
 }
