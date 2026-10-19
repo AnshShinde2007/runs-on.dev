@@ -4,6 +4,8 @@
     "github": "RXxsk"
   },
   "claimedAt": "2026-10-19T08:42:50.664Z",
-  "records": {},
+  "records": {
+    "CNAME": "xbaurora.pages.dev"
+  },
   "country": "MX"
 }
