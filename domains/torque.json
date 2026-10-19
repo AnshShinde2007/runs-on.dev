@@ -7,12 +7,5 @@
   "records": {
     "CNAME": "dev-tracker-0a97.onrender.com"
   },
-  "country": "IN",
-  "subdomains": {
-    "_vercel": {
-      "TXT": [
-        "vc-domain-verify=torque.runs-on.dev,e3f004fc13095b171df2"
-      ]
-    }
-  }
+  "country": "IN"
 }
