@@ -4,7 +4,9 @@
     "github": "Umaima-Manzoor"
   },
   "claimedAt": "2026-10-19T12:40:08.492Z",
-  "records": {},
+  "records": {
+    "CNAME": "6e9add744c6351de.vercel-dns-017.com"
+  },
   "country": "PK",
   "subdomains": {
     "_vercel": {
