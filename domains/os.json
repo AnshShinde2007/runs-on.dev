@@ -4,6 +4,8 @@
     "github": "OsQ8"
   },
   "claimedAt": "2026-10-19T19:18:50.078Z",
-  "records": {},
+  "records": {
+    "CNAME": "os.sharaf.ai"
+  },
   "country": "KW"
 }
