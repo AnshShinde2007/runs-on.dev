@@ -4,6 +4,8 @@
     "github": "Zaffar0561"
   },
   "claimedAt": "2026-10-19T06:18:38.350Z",
-  "records": {},
+  "records": {
+    "CNAME": "zaffar-portfolio.vercel.app"
+  },
   "country": "IN"
 }
