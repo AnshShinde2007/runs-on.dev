@@ -28,7 +28,7 @@
   "subdomains": {
     "_dmarc": {
       "TXT": [
-        "v=DMARC1; p=none"
+        "v=DMARC1; p=none; rua=mailto:contacto@claudiovargas.runs-on.dev"
       ]
     },
     "zmail._domainkey": {
