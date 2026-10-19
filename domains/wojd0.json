@@ -4,6 +4,10 @@
     "github": "wojd0"
   },
   "claimedAt": "2026-10-19T15:59:54.851Z",
-  "records": {},
+  "records": {
+    "A": [
+      "158.101.181.9"
+    ]
+  },
   "country": "PL"
 }
