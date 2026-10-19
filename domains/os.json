@@ -17,10 +17,5 @@
         "url": "https://os.sharaf.ai"
       }
     ]
-  },
-  "subdomains": {
-    "_kwt": {
-      "CNAME": "os.sharaf.ai"
-    }
   }
 }
