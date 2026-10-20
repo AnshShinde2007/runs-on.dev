@@ -4,6 +4,8 @@
     "github": "saksham665"
   },
   "claimedAt": "2026-10-20T09:52:12.558Z",
-  "records": {},
+  "records": {
+    "CNAME": "3eaa1d77ff6729ac.vercel-dns-017.com"
+  },
   "country": "IN"
 }
