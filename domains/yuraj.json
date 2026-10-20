@@ -7,7 +7,7 @@
   "records": {},
   "country": "NP",
   "subdomains": {
-    "_vercel": {
+    "yuraj": {
       "CNAME": "d42b55e5ecddeadb.vercel-dns-017.com"
     }
   }
