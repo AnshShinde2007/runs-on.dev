@@ -9,6 +9,11 @@
   "subdomains": {
     "bio-astrid": {
       "CNAME": "bio-astrid.pages.dev"
+    },
+    "_discord": {
+      "TXT": [
+        "dh=522ef1c3d4c966595fcfccc5bb7f5bd71d7af078"
+      ]
     }
   }
 }
