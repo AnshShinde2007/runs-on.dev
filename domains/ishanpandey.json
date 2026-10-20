@@ -4,6 +4,8 @@
     "github": "pandey-ishan"
   },
   "claimedAt": "2026-10-16T19:30:53.916Z",
-  "records": {},
+  "records": {
+    "CNAME": "5df8fd1aee4c8034.vercel-dns-017.com"
+  },
   "country": "SG"
 }
