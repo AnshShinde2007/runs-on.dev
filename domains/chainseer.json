@@ -4,6 +4,8 @@
     "github": "creative-roger"
   },
   "claimedAt": "2026-10-20T11:02:28.381Z",
-  "records": {},
+  "records": {
+    "CNAME": "04daa28bf19923ea.vercel-dns-017.com"
+  },
   "country": "KE"
 }
