@@ -7,5 +7,12 @@
   "records": {
     "CNAME": "e490e9f956afa85c.vercel-dns-017.com"
   },
-  "country": "IN"
+  "country": "IN",
+  "subdomains": {
+    "_vercel": {
+      "TXT": [
+        "vc-domain-verify=vineet.runs-on.dev,291b855488b38331eba1"
+      ]
+    }
+  }
 }
