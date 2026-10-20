@@ -7,5 +7,12 @@
   "records": {
     "CNAME": "04daa28bf19923ea.vercel-dns-017.com"
   },
-  "country": "KE"
+  "country": "KE",
+  "subdomains": {
+    "_vercel": {
+      "TXT": [
+        "vc-domain-verify=chainseer.runs-on.dev,341dc773a3cf527a8249"
+      ]
+    }
+  }
 }
