@@ -5,9 +5,7 @@
   },
   "claimedAt": "2026-10-20T18:14:49.648Z",
   "records": {
-    "TXT": [
-      "vc-domain-verify=pehnoai.runs-on.dev,328f20c656826bd7cf12"
-    ]
+    "CNAME": "97416c5edc5ad53c.vercel-dns-017.com"
   },
   "country": "IN"
 }
