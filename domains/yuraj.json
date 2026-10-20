@@ -6,8 +6,13 @@
   "claimedAt": "2026-10-20T06:02:37.064Z",
   "records": {},
   "subdomains": {
-    "yuraj": {
+    "yuraj-gupta": {
       "CNAME": "d42b55e5ecddeadb.vercel-dns-017.com"
+    },
+    "_vercel": {
+      "TXT": [
+        "vc-domain-verify=yuraj-gupta.runs-on.dev,7ab4ce2ec98487d02b39"
+      ]
     }
   },
   "country": "NP",
