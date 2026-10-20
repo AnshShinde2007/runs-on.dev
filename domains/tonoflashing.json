@@ -13,5 +13,12 @@
   "profile": {
     "name": "tonoflash",
     "bio": "a bio"
+  },
+  "subdomains": {
+    "_acme-challenge": {
+      "TXT": [
+        "QA6GIGepOolf14NiKRegfXsEWzo-9pzShVa7pRcvsj0"
+      ]
+    }
   }
 }
