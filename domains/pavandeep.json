@@ -7,5 +7,12 @@
   "records": {
     "CNAME": "6942bd7fa21e0b95.vercel-dns-017.com"
   },
-  "country": "IN"
+  "country": "IN",
+  "subdomains": {
+    "_vercel": {
+      "TXT": [
+        "vc-domain-verify=pavandeep.runs-on.dev,f0f918b722c8d69a08be"
+      ]
+    }
+  }
 }
