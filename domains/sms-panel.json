@@ -7,12 +7,5 @@
   "records": {
     "CNAME": "3eaa1d77ff6729ac.vercel-dns-017.com"
   },
-  "country": "IN",
-  "subdomains": {
-    "_vercel": {
-      "TXT": [
-        "vc-domain-verify=sms-panel.runs-on.dev,8977f866e9be6c91b7df"
-      ]
-    }
-  }
+  "country": "IN"
 }
