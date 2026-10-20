@@ -8,9 +8,7 @@
   "country": "NP",
   "subdomains": {
     "_vercel": {
-      "TXT": [
-        "vc-domain-verify=yuraj.runs-on.dev,4c5ee3f468838b226d0a"
-      ]
+      "CNAME": "d42b55e5ecddeadb.vercel-dns-017.com"
     }
   }
 }
