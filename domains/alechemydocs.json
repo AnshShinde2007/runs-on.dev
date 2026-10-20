@@ -5,5 +5,10 @@
   },
   "claimedAt": "2026-10-20T10:18:13.336Z",
   "records": {},
-  "country": "IN"
+  "country": "IN",
+  "subdomains": {
+    "alechemydocs": {
+      "CNAME": "da4cb79196ba9a36.vercel-dns-017.com"
+    }
+  }
 }
