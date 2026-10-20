@@ -4,6 +4,10 @@
     "github": "manianrezaei"
   },
   "claimedAt": "2026-10-20T22:10:00.200Z",
-  "records": {},
+  "records": {
+    "A": [
+      "45.195.200.236"
+    ]
+  },
   "country": "IR"
 }
