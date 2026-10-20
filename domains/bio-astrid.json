@@ -4,7 +4,9 @@
     "github": "pagadbner"
   },
   "claimedAt": "2026-10-20T00:01:37.109Z",
-  "records": {},
+  "records": {
+    "CNAME": "bio-astrid.pages.dev"
+  },
   "country": "MX",
   "subdomains": {
     "bio-astrid": {
