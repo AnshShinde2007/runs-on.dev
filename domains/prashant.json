@@ -5,7 +5,9 @@
   },
   "claimedAt": "2026-09-30T03:46:06.115Z",
   "records": {
-    "CNAME": "7b4e707d2667fb5f.vercel-dns-017.com"
+    "TXT": [
+      "google-site-verification=QTvXGtQbOz9UtWHq8706iI3Slchhy4kxy76LkwxzsRA"
+    ]
   },
   "country": "IN",
   "subdomains": {
