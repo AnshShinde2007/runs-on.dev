@@ -7,12 +7,5 @@
   "records": {
     "CNAME": "prashantearn8-sys.github.io"
   },
-  "country": "IN",
-  "subdomains": {
-    "_vercel": {
-      "TXT": [
-        "vc-domain-verify=monotranscoder.runs-on.dev,6ea6149800f5f74287b6"
-      ]
-    }
-  }
+  "country": "IN"
 }
