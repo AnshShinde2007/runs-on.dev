@@ -10,5 +10,15 @@
       "CNAME": "d42b55e5ecddeadb.vercel-dns-017.com"
     }
   },
-  "country": "NP"
+  "country": "NP",
+  "profile": {
+    "name": "gupta-yuraj",
+    "bio": "building things nobody asked for.",
+    "links": [
+      {
+        "label": "My Portfolio",
+        "url": "https://yuraj.runs-on.dev/"
+      }
+    ]
+  }
 }
