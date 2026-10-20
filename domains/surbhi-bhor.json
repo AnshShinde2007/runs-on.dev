@@ -7,12 +7,5 @@
   "records": {
     "CNAME": "2df4af719ab02658.vercel-dns-017.com"
   },
-  "country": "IN",
-  "subdomains": {
-    "_vercel": {
-      "TXT": [
-        "vc-domain-verify=surbhi-bhor.runs-on.dev,a4055b861ae79ac9961f"
-      ]
-    }
-  }
+  "country": "IN"
 }

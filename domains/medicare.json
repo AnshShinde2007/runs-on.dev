@@ -7,12 +7,5 @@
   "records": {
     "CNAME": "28c3948e08dd699a.vercel-dns-017.com"
   },
-  "country": "PK",
-  "subdomains": {
-    "_vercel": {
-      "TXT": [
-        "vc-domain-verify=medicare.runs-on.dev,ff626f1bda0549afd797"
-      ]
-    }
-  }
+  "country": "PK"
 }

@@ -7,12 +7,5 @@
   "records": {
     "CNAME": "06005e128334d016.vercel-dns-017.com"
   },
-  "country": "IN",
-  "subdomains": {
-    "_vercel": {
-      "TXT": [
-        "vc-domain-verify=samskar.runs-on.dev,956d1f5b15c729445653"
-      ]
-    }
-  }
+  "country": "IN"
 }

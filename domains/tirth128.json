@@ -7,12 +7,5 @@
   "records": {
     "CNAME": "bcda3be545d63111.vercel-dns-017.com"
   },
-  "country": "CA",
-  "subdomains": {
-    "_vercel": {
-      "TXT": [
-        "vc-domain-verify=tirth128.runs-on.dev,0e55733866d913d73809"
-      ]
-    }
-  }
+  "country": "CA"
 }
