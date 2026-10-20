@@ -9,16 +9,16 @@
       "216.24.57.1"
     ],
     "TXT": [
-      "v=spf1 include:spf.improvmx.com ~all"
+      "forward-email=likhora.ai@gmail.com"
     ],
     "MX": [
       {
-        "priority": 10,
-        "value": "mx1.improvmx.com"
+        "priority": 0,
+        "value": "mx1.forwardemail.net"
       },
       {
-        "priority": 20,
-        "value": "mx2.improvmx.com"
+        "priority": 0,
+        "value": "mx2.forwardemail.net"
       }
     ]
   },
