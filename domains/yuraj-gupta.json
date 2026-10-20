@@ -1,0 +1,14 @@
+{
+  "name": "yuraj-gupta",
+  "owner": {
+    "github": "gupta-yuraj"
+  },
+  "claimedAt": "2026-10-20T05:58:32.992Z",
+  "records": {},
+  "subdomains": {
+    "gupta": {
+      "CNAME": "d42b55e5ecddeadb.vercel-dns-017.com"
+    }
+  },
+  "country": "NP"
+}
