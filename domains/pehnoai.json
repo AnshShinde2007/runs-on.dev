@@ -4,6 +4,10 @@
     "github": "SaiRev0"
   },
   "claimedAt": "2026-10-20T18:14:49.648Z",
-  "records": {},
+  "records": {
+    "TXT": [
+      "_vercel=vc-domain-verify=pehnoai.runs-on.dev,328f20c656826bd7cf12"
+    ]
+  },
   "country": "IN"
 }
