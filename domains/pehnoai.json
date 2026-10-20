@@ -6,7 +6,7 @@
   "claimedAt": "2026-10-20T18:14:49.648Z",
   "records": {
     "TXT": [
-      "_vercel=vc-domain-verify=pehnoai.runs-on.dev,328f20c656826bd7cf12"
+      "vc-domain-verify=pehnoai.runs-on.dev,328f20c656826bd7cf12"
     ]
   },
   "country": "IN"
