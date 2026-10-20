@@ -5,5 +5,12 @@
   },
   "claimedAt": "2026-10-19T14:02:23.010Z",
   "records": {},
-  "country": "NP"
+  "country": "NP",
+  "subdomains": {
+    "yuraj": {
+      "TXT": [
+        "vc-domain-verify=yuraj.runs-on.dev,4c5ee3f468838b226d0a"
+      ]
+    }
+  }
 }
