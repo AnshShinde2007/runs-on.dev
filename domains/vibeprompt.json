@@ -4,6 +4,8 @@
     "github": "VXOdc"
   },
   "claimedAt": "2026-10-21T07:03:49.004Z",
-  "records": {},
+  "records": {
+    "CNAME": "e0c4d7462b23a72e.vercel-dns-017.com"
+  },
   "country": "US"
 }
