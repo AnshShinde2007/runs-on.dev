@@ -4,9 +4,7 @@
     "github": "sourava-coder"
   },
   "claimedAt": "2026-10-21T10:15:03.175Z",
-  "records": {
-    "CNAME": "124d02c8d4994993.vercel-dns-017.com"
-  },
+  "records": {},
   "country": "IN",
   "subdomains": {
     "_vercel": {
