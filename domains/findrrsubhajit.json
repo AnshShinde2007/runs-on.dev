@@ -7,5 +7,12 @@
   "records": {
     "CNAME": "cc4b196add56d2f1.vercel-dns-017.com"
   },
-  "country": "IN"
+  "country": "IN",
+  "subdomains": {
+    "_vercel": {
+      "TXT": [
+        "vc-domain-verify=findrrsubhajit.runs-on.dev,1873fa22b874f6abbd22"
+      ]
+    }
+  }
 }
