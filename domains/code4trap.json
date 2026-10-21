@@ -4,6 +4,8 @@
     "github": "CODE4TRAP"
   },
   "claimedAt": "2026-10-21T06:51:08.231Z",
-  "records": {},
+  "records": {
+    "CNAME": "b4f1c63c84838e92.vercel-dns-017.com"
+  },
   "country": "IN"
 }
