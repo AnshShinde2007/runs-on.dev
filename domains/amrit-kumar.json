@@ -7,12 +7,5 @@
   "records": {
     "CNAME": "e1318ec4e5c78c73.vercel-dns-017.com"
   },
-  "country": "IN",
-  "subdomains": {
-    "_vercel": {
-      "TXT": [
-        "vc-domain-verify=amrit-kumar.runs-on.dev,a737424dea84ef1cbe64"
-      ]
-    }
-  }
+  "country": "IN"
 }

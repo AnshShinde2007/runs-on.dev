@@ -7,12 +7,5 @@
   "records": {
     "CNAME": "3372cdc6f8a410db.vercel-dns-017.com"
   },
-  "country": "BD",
-  "subdomains": {
-    "_vercel": {
-      "TXT": [
-        "vc-domain-verify=bdtoolhub.runs-on.dev,8dce1bcad54ba505abdd"
-      ]
-    }
-  }
+  "country": "BD"
 }

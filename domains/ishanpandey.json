@@ -7,12 +7,5 @@
   "records": {
     "CNAME": "5df8fd1aee4c8034.vercel-dns-017.com"
   },
-  "country": "SG",
-  "subdomains": {
-    "_vercel": {
-      "TXT": [
-        "vc-domain-verify=ishanpandey.runs-on.dev,20846000b2a9c71041d0"
-      ]
-    }
-  }
+  "country": "SG"
 }

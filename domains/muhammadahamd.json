@@ -7,12 +7,5 @@
   "records": {
     "CNAME": "0b78a2564870deb9.vercel-dns-017.com"
   },
-  "country": "PK",
-  "subdomains": {
-    "_vercel": {
-      "TXT": [
-        "vc-domain-verify=muhammadahamd.runs-on.dev,cba9a487450743793c94"
-      ]
-    }
-  }
+  "country": "PK"
 }
