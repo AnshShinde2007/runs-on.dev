@@ -4,6 +4,8 @@
     "github": "kauaawhite"
   },
   "claimedAt": "2026-10-21T11:03:39.087Z",
-  "records": {},
+  "records": {
+    "CNAME": "family-map-api-6g41.onrender.com"
+  },
   "country": "US"
 }
