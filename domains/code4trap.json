@@ -11,7 +11,7 @@
   "subdomains": {
     "_vercel": {
       "TXT": [
-        "vc-domain-verify=code4trap.runs-on.dev,50878e6eac0084fa1931b"
+        "vc-domain-verify=code4trap.runs-on.dev,508786eac0084fa1931b"
       ]
     }
   }
