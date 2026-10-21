@@ -9,7 +9,7 @@
   },
   "country": "BD",
   "subdomains": {
-    "_vercel": {
+    "vercel": {
       "TXT": [
         "vc-domain-verify=bdtoolhub.runs-on.dev,8dce1bcad54ba505abdd"
       ]
