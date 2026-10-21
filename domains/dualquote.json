@@ -4,6 +4,8 @@
     "github": "adoocoke"
   },
   "claimedAt": "2026-10-21T05:25:18.094Z",
-  "records": {},
+  "records": {
+    "CNAME": "cname.vercel-dns.com"
+  },
   "country": "CN"
 }
