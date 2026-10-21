@@ -7,5 +7,12 @@
   "records": {
     "CNAME": "7c65dea1ff919d59.vercel-dns-017.com"
   },
-  "country": "IN"
+  "country": "IN",
+  "subdomains": {
+    "_vercel": {
+      "TXT": [
+        "vc-domain-verify=campuslink.runs-on.dev,87ce0e8fff31d5af4e77"
+      ]
+    }
+  }
 }
