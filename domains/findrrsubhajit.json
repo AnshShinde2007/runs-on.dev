@@ -4,6 +4,8 @@
     "github": "subhajit-io"
   },
   "claimedAt": "2026-10-21T07:33:27.632Z",
-  "records": {},
+  "records": {
+    "CNAME": "cc4b196add56d2f1.vercel-dns-017.com"
+  },
   "country": "IN"
 }
