@@ -4,6 +4,8 @@
     "github": "amrit978"
   },
   "claimedAt": "2026-10-20T05:34:34.217Z",
-  "records": {},
+  "records": {
+    "CNAME": "e1318ec4e5c78c73.vercel-dns-017.com"
+  },
   "country": "IN"
 }
